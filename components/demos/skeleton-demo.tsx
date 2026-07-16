@@ -1,4 +1,4 @@
-import { Skeleton } from "@/registry/apple-ui/skeleton";
+import { Skeleton } from "@/registry/cupertino-ui/skeleton";
 
 export default function SkeletonDemo() {
   return (

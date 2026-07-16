@@ -3,19 +3,19 @@
 import * as React from "react";
 import { Bluetooth, Moon, Sun, Wifi } from "lucide-react";
 
-import { Badge } from "@/registry/apple-ui/badge";
-import { Button } from "@/registry/apple-ui/button";
-import { List, ListItem } from "@/registry/apple-ui/list";
+import { Badge } from "@/registry/cupertino-ui/badge";
+import { Button } from "@/registry/cupertino-ui/button";
+import { List, ListItem } from "@/registry/cupertino-ui/list";
 import {
   SegmentedControl,
   SegmentedControlList,
   SegmentedControlTrigger,
-} from "@/registry/apple-ui/segmented-control";
-import { Slider } from "@/registry/apple-ui/slider";
-import { Stepper } from "@/registry/apple-ui/stepper";
-import { Switch } from "@/registry/apple-ui/switch";
+} from "@/registry/cupertino-ui/segmented-control";
+import { Slider } from "@/registry/cupertino-ui/slider";
+import { Stepper } from "@/registry/cupertino-ui/stepper";
+import { Switch } from "@/registry/cupertino-ui/switch";
 
-/** The landing hero: a live macOS-style window built from apple-ui components. */
+/** The landing hero: a live macOS-style window built from cupertino-ui components. */
 export function HeroWindow() {
   const [brightness, setBrightness] = React.useState([70]);
   const [copies, setCopies] = React.useState(2);

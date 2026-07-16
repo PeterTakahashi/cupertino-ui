@@ -10,7 +10,7 @@ export default function DocsPage() {
       <header className="flex flex-col gap-2">
         <h1 className="text-large-title tracking-tight">Introduction</h1>
         <p className="text-body text-secondary-label">
-          apple-ui brings Apple&apos;s design language to the web: React
+          cupertino-ui brings Apple&apos;s design language to the web: React
           components styled after SwiftUI on iOS and macOS, distributed the
           shadcn way — you install the source and own it.
         </p>
@@ -22,7 +22,7 @@ export default function DocsPage() {
           SwiftUI apps look and feel right because they inherit decades of
           refinement: the SF type scale, the system color palette with its
           label hierarchy, translucent materials, hairline separators, and
-          controls with exact, familiar proportions. apple-ui reproduces those
+          controls with exact, familiar proportions. cupertino-ui reproduces those
           decisions as Tailwind CSS tokens and Radix-based components.
         </p>
         <p className="text-callout leading-relaxed">

@@ -1,4 +1,4 @@
-import { Input } from "@/registry/apple-ui/input";
+import { Input } from "@/registry/cupertino-ui/input";
 
 export default function InputDemo() {
   return (

@@ -1,8 +1,8 @@
 "use client";
 
 import { Bluetooth, Plane, Wifi } from "lucide-react";
-import { List, ListItem } from "@/registry/apple-ui/list";
-import { Switch } from "@/registry/apple-ui/switch";
+import { List, ListItem } from "@/registry/cupertino-ui/list";
+import { Switch } from "@/registry/cupertino-ui/switch";
 
 export default function ListDemo() {
   return (

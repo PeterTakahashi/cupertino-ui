@@ -1,4 +1,4 @@
-import { Separator } from "@/registry/apple-ui/separator";
+import { Separator } from "@/registry/cupertino-ui/separator";
 
 export default function SeparatorDemo() {
   return (

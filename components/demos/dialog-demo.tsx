@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import {
   Dialog,
   DialogAction,
@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/apple-ui/dialog";
+} from "@/registry/cupertino-ui/dialog";
 
 export default function DialogDemo() {
   return (

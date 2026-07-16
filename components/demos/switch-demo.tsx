@@ -1,7 +1,7 @@
 "use client";
 
-import { Switch } from "@/registry/apple-ui/switch";
-import { Label } from "@/registry/apple-ui/label";
+import { Switch } from "@/registry/cupertino-ui/switch";
+import { Label } from "@/registry/cupertino-ui/label";
 
 export default function SwitchDemo() {
   return (

@@ -31,12 +31,12 @@ export default function InstallationPage() {
         </p>
         <CodeBlock code={`npx shadcn@latest add ${base}/r/theme.json`} />
         <p className="text-callout">
-          This places <code className="font-mono text-footnote">apple-ui-theme.css</code> in
+          This places <code className="font-mono text-footnote">cupertino-ui-theme.css</code> in
           your project root. Import it in your global stylesheet, after
           Tailwind:
         </p>
         <CodeBlock
-          code={`@import "tailwindcss";\n@import "tw-animate-css";\n@import "../apple-ui-theme.css";`}
+          code={`@import "tailwindcss";\n@import "tw-animate-css";\n@import "../cupertino-ui-theme.css";`}
         />
         <CodeBlock code="npm install tw-animate-css" />
       </section>

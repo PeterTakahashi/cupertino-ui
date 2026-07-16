@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/registry/apple-ui/tooltip";
+} from "@/registry/cupertino-ui/tooltip";
 
 export default function TooltipDemo() {
   return (

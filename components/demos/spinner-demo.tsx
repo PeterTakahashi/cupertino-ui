@@ -1,4 +1,4 @@
-import { Spinner } from "@/registry/apple-ui/spinner";
+import { Spinner } from "@/registry/cupertino-ui/spinner";
 
 export default function SpinnerDemo() {
   return (

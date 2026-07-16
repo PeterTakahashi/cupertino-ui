@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import {
   Sheet,
   SheetClose,
@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/registry/apple-ui/sheet";
+} from "@/registry/cupertino-ui/sheet";
 
 export default function SheetDemo() {
   return (

@@ -3,8 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "apple-ui — SwiftUI-flavored components for the web",
-    template: "%s — apple-ui",
+    default: "cupertino-ui — SwiftUI-flavored components for the web",
+    template: "%s — cupertino-ui",
   },
   description:
     "Open-source React components with Apple's design language. Built on Tailwind CSS and Radix. Install with the shadcn CLI, then own the code.",

@@ -11,7 +11,7 @@
   ],
   "files": [
     {
-      "path": "registry/apple-ui/radio-group.tsx",
+      "path": "registry/cupertino-ui/radio-group.tsx",
       "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI Picker with .radioGroupStyle (macOS). Accent-filled\n * circle with a white center dot.\n */\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return (\n    <RadioGroupPrimitive.Root\n      data-slot=\"radio-group\"\n      className={cn(\"grid gap-2.5\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      className={cn(\n        \"aspect-square size-[18px] shrink-0 cursor-default rounded-full bg-background shadow-[inset_0_0_0_1px_var(--opaque-separator),0_1px_1px_rgba(0,0,0,0.04)] outline-none transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-blue/40 disabled:opacity-40 data-[state=checked]:bg-blue data-[state=checked]:shadow-[inset_0_0.5px_1px_rgba(255,255,255,0.3),0_1px_1px_rgba(0,0,0,0.08)]\",\n        className\n      )}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator\n        data-slot=\"radio-group-indicator\"\n        className=\"relative flex items-center justify-center\"\n      >\n        <span className=\"block size-[7px] rounded-full bg-white\" />\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
       "type": "registry:ui"
     }

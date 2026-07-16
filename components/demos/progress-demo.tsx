@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Progress } from "@/registry/apple-ui/progress";
+import { Progress } from "@/registry/cupertino-ui/progress";
 
 export default function ProgressDemo() {
   const [progress, setProgress] = React.useState(15);

@@ -1,4 +1,4 @@
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 
 export default function ButtonDemo() {
   return (

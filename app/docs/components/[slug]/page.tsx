@@ -41,8 +41,8 @@ export default async function ComponentPage({
   if (!doc || !Demo) notFound();
 
   const demoSource = readSource("components", "demos", `${slug}-demo.tsx`)
-    .replaceAll("@/registry/apple-ui/", "@/components/ui/");
-  const componentSource = readSource("registry", "apple-ui", `${slug}.tsx`);
+    .replaceAll("@/registry/cupertino-ui/", "@/components/ui/");
+  const componentSource = readSource("registry", "cupertino-ui", `${slug}.tsx`);
   const installCommand = `npx shadcn@latest add ${siteConfig.registryBase}/r/${slug}.json`;
 
   return (

@@ -1,4 +1,4 @@
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import {
   Card,
   CardContent,
@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/registry/apple-ui/card";
+} from "@/registry/cupertino-ui/card";
 
 export default function CardDemo() {
   return (

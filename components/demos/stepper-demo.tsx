@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Stepper } from "@/registry/apple-ui/stepper";
+import { Stepper } from "@/registry/cupertino-ui/stepper";
 
 export default function StepperDemo() {
   const [copies, setCopies] = React.useState(1);

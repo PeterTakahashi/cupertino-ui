@@ -1,5 +1,5 @@
-import { Input } from "@/registry/apple-ui/input";
-import { Label } from "@/registry/apple-ui/label";
+import { Input } from "@/registry/cupertino-ui/input";
+import { Label } from "@/registry/cupertino-ui/label";
 
 export default function LabelDemo() {
   return (

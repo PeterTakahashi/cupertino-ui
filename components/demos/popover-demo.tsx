@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/apple-ui/popover";
+} from "@/registry/cupertino-ui/popover";
 
 export default function PopoverDemo() {
   return (

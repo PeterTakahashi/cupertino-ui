@@ -11,7 +11,7 @@
   ],
   "files": [
     {
-      "path": "registry/apple-ui/avatar.tsx",
+      "path": "registry/cupertino-ui/avatar.tsx",
       "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Avatar as AvatarPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** Contacts-style circular avatar with a gray monogram fallback. */\nfunction Avatar({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Root>) {\n  return (\n    <AvatarPrimitive.Root\n      data-slot=\"avatar\"\n      className={cn(\n        \"relative flex size-10 shrink-0 select-none overflow-hidden rounded-full\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarImage({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Image>) {\n  return (\n    <AvatarPrimitive.Image\n      data-slot=\"avatar-image\"\n      className={cn(\"aspect-square size-full object-cover\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarFallback({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {\n  return (\n    <AvatarPrimitive.Fallback\n      data-slot=\"avatar-fallback\"\n      className={cn(\n        \"flex size-full items-center justify-center bg-[linear-gradient(180deg,var(--system-gray2),var(--system-gray))] font-medium text-white\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Avatar, AvatarFallback, AvatarImage };\n",
       "type": "registry:ui"
     }

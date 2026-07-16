@@ -8,7 +8,7 @@ import {
   SegmentedControlContent,
   SegmentedControlList,
   SegmentedControlTrigger,
-} from "@/registry/apple-ui/segmented-control";
+} from "@/registry/cupertino-ui/segmented-control";
 
 export function ComponentPreview({
   code,

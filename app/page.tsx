@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HeroWindow } from "@/components/site/hero-window";
 import { SiteHeader } from "@/components/site/site-header";
 import { CodeBlock } from "@/components/site/code-block";
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import { components, siteConfig } from "@/lib/docs";
 
 export default function Home() {
@@ -94,7 +94,7 @@ export default function Home() {
       <footer className="shadow-[0_-0.5px_0_0_var(--separator)]">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-2 px-5 py-8 text-footnote text-tertiary-label">
           <span>
-            apple-ui — an independent open-source project, not affiliated with
+            cupertino-ui — an independent open-source project, not affiliated with
             Apple Inc.
           </span>
           <a href={siteConfig.github} className="hover:text-secondary-label">

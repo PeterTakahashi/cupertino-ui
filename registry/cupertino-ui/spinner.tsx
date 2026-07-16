@@ -22,7 +22,7 @@ function Spinner({
       style={{ width: size, height: size }}
       {...props}
     >
-      <style>{`@keyframes apple-ui-spinner { 0% { opacity: 1 } 100% { opacity: 0.15 } }`}</style>
+      <style>{`@keyframes cupertino-ui-spinner { 0% { opacity: 1 } 100% { opacity: 0.15 } }`}</style>
       {Array.from({ length: 8 }, (_, i) => (
         <span
           key={i}
@@ -31,7 +31,7 @@ function Spinner({
             width: size * 0.095,
             height: size * 0.30,
             transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(${-size * 0.34}px)`,
-            animation: `apple-ui-spinner 0.8s linear infinite`,
+            animation: `cupertino-ui-spinner 0.8s linear infinite`,
             animationDelay: `${(i - 8) * 0.1}s`,
           }}
         />

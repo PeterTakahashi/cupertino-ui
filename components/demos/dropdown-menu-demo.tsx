@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/registry/apple-ui/button";
+import { Button } from "@/registry/cupertino-ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/registry/apple-ui/dropdown-menu";
+} from "@/registry/cupertino-ui/dropdown-menu";
 
 export default function DropdownMenuDemo() {
   return (

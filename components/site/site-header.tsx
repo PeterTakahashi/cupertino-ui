@@ -16,16 +16,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-xl shadow-[0_0.5px_0_0_var(--separator)]">
       <div className="mx-auto flex h-12 max-w-6xl items-center gap-6 px-5">
         <Link href="/" className="text-headline tracking-tight">
-           apple-ui
+           cupertino-ui
         </Link>
         <nav className="flex items-center gap-4 text-footnote text-secondary-label">
           <Link href="/docs" className="transition-colors hover:text-label">
             Docs
           </Link>
-          <Link
-            href="/docs/components/button"
-            className="transition-colors hover:text-label"
-          >
+          <Link href="/components" className="transition-colors hover:text-label">
             Components
           </Link>
         </nav>

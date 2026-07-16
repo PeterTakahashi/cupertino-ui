@@ -1,4 +1,4 @@
-import { Badge } from "@/registry/apple-ui/badge";
+import { Badge } from "@/registry/cupertino-ui/badge";
 
 export default function BadgeDemo() {
   return (

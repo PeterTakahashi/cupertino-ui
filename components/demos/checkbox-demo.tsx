@@ -1,7 +1,7 @@
 "use client";
 
-import { Checkbox } from "@/registry/apple-ui/checkbox";
-import { Label } from "@/registry/apple-ui/label";
+import { Checkbox } from "@/registry/cupertino-ui/checkbox";
+import { Label } from "@/registry/cupertino-ui/label";
 
 export default function CheckboxDemo() {
   return (

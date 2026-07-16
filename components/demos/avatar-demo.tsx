@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/apple-ui/avatar";
+} from "@/registry/cupertino-ui/avatar";
 
 export default function AvatarDemo() {
   return (

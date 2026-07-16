@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@/registry/apple-ui/label";
-import { RadioGroup, RadioGroupItem } from "@/registry/apple-ui/radio-group";
+import { Label } from "@/registry/cupertino-ui/label";
+import { RadioGroup, RadioGroupItem } from "@/registry/cupertino-ui/radio-group";
 
 export default function RadioGroupDemo() {
   return (

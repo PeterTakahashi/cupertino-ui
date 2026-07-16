@@ -1,4 +1,4 @@
-# apple-ui
+# cupertino-ui
 
 SwiftUI's design language for the web. React components styled after Apple's
 Human Interface Guidelines — the system color palette, the SF type scale,
@@ -9,7 +9,7 @@ you install the source and own it.
 
 ## What's inside
 
-- **24 components** (`registry/apple-ui/`): Button, Switch, Slider, Segmented
+- **24 components** (`registry/cupertino-ui/`): Button, Switch, Slider, Segmented
   Control, Checkbox, Radio Group, Input, Textarea, Select, Badge, Card, List
   (iOS Settings style), Dialog (iOS alert), Sheet, Dropdown Menu, Popover,
   Tooltip, Progress, Spinner, Separator, Avatar, Skeleton, Label, Stepper
@@ -26,7 +26,7 @@ you install the source and own it.
 ```bash
 # 1. one-time: theme tokens
 npx shadcn@latest add https://<your-deployment>/r/theme.json
-# import apple-ui-theme.css in your global stylesheet, after tailwindcss
+# import cupertino-ui-theme.css in your global stylesheet, after tailwindcss
 
 # 2. any component
 npx shadcn@latest add https://<your-deployment>/r/button.json

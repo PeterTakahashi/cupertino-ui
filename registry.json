@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "apple-ui",
-  "homepage": "https://github.com/PeterTakahashi/apple-ui",
+  "name": "cupertino-ui",
+  "homepage": "https://github.com/PeterTakahashi/cupertino-ui",
   "items": [
     {
       "name": "theme",
@@ -12,7 +12,7 @@
         {
           "path": "registry/theme.css",
           "type": "registry:file",
-          "target": "~/apple-ui-theme.css"
+          "target": "~/cupertino-ui-theme.css"
         }
       ]
     },
@@ -26,7 +26,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/button.tsx",
+          "path": "registry/cupertino-ui/button.tsx",
           "type": "registry:ui"
         }
       ],
@@ -45,7 +45,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/switch.tsx",
+          "path": "registry/cupertino-ui/switch.tsx",
           "type": "registry:ui"
         }
       ],
@@ -63,7 +63,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/slider.tsx",
+          "path": "registry/cupertino-ui/slider.tsx",
           "type": "registry:ui"
         }
       ],
@@ -81,7 +81,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/segmented-control.tsx",
+          "path": "registry/cupertino-ui/segmented-control.tsx",
           "type": "registry:ui"
         }
       ],
@@ -99,7 +99,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/checkbox.tsx",
+          "path": "registry/cupertino-ui/checkbox.tsx",
           "type": "registry:ui"
         }
       ],
@@ -118,7 +118,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/radio-group.tsx",
+          "path": "registry/cupertino-ui/radio-group.tsx",
           "type": "registry:ui"
         }
       ],
@@ -136,7 +136,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/input.tsx",
+          "path": "registry/cupertino-ui/input.tsx",
           "type": "registry:ui"
         }
       ],
@@ -154,7 +154,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/textarea.tsx",
+          "path": "registry/cupertino-ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]
@@ -169,7 +169,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/select.tsx",
+          "path": "registry/cupertino-ui/select.tsx",
           "type": "registry:ui"
         }
       ],
@@ -188,7 +188,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/badge.tsx",
+          "path": "registry/cupertino-ui/badge.tsx",
           "type": "registry:ui"
         }
       ],
@@ -207,7 +207,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/card.tsx",
+          "path": "registry/cupertino-ui/card.tsx",
           "type": "registry:ui"
         }
       ]
@@ -222,7 +222,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/list.tsx",
+          "path": "registry/cupertino-ui/list.tsx",
           "type": "registry:ui"
         }
       ],
@@ -241,7 +241,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/dialog.tsx",
+          "path": "registry/cupertino-ui/dialog.tsx",
           "type": "registry:ui"
         }
       ],
@@ -259,7 +259,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/sheet.tsx",
+          "path": "registry/cupertino-ui/sheet.tsx",
           "type": "registry:ui"
         }
       ],
@@ -277,7 +277,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/dropdown-menu.tsx",
+          "path": "registry/cupertino-ui/dropdown-menu.tsx",
           "type": "registry:ui"
         }
       ],
@@ -296,7 +296,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/popover.tsx",
+          "path": "registry/cupertino-ui/popover.tsx",
           "type": "registry:ui"
         }
       ],
@@ -314,7 +314,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/tooltip.tsx",
+          "path": "registry/cupertino-ui/tooltip.tsx",
           "type": "registry:ui"
         }
       ],
@@ -332,7 +332,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/progress.tsx",
+          "path": "registry/cupertino-ui/progress.tsx",
           "type": "registry:ui"
         }
       ],
@@ -350,7 +350,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/spinner.tsx",
+          "path": "registry/cupertino-ui/spinner.tsx",
           "type": "registry:ui"
         }
       ]
@@ -365,7 +365,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/separator.tsx",
+          "path": "registry/cupertino-ui/separator.tsx",
           "type": "registry:ui"
         }
       ],
@@ -383,7 +383,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/avatar.tsx",
+          "path": "registry/cupertino-ui/avatar.tsx",
           "type": "registry:ui"
         }
       ],
@@ -401,7 +401,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/skeleton.tsx",
+          "path": "registry/cupertino-ui/skeleton.tsx",
           "type": "registry:ui"
         }
       ]
@@ -416,7 +416,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/label.tsx",
+          "path": "registry/cupertino-ui/label.tsx",
           "type": "registry:ui"
         }
       ],
@@ -434,7 +434,7 @@
       ],
       "files": [
         {
-          "path": "registry/apple-ui/stepper.tsx",
+          "path": "registry/cupertino-ui/stepper.tsx",
           "type": "registry:ui"
         }
       ],
