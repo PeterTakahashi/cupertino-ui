@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel",
+  "title": "Carousel",
+  "description": "TabView .page style: scroll-snap paging with a dot indicator.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/carousel.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI TabView with .tabViewStyle(.page) — horizontal paging\n * with scroll-snap and a UIPageControl dot row. No dependencies;\n * swipe, trackpad, or tap the dots.\n */\nfunction Carousel({\n  className,\n  showPageControl = true,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Hide the dots if the surrounding UI provides its own. */\n  showPageControl?: boolean;\n}) {\n  const trackRef = React.useRef<HTMLDivElement>(null);\n  const [page, setPage] = React.useState(0);\n  const count = React.Children.count(children);\n\n  const onScroll = () => {\n    const el = trackRef.current;\n    if (!el) return;\n    setPage(Math.round(el.scrollLeft / el.clientWidth));\n  };\n\n  const goTo = (i: number) => {\n    const el = trackRef.current;\n    if (!el) return;\n    el.scrollTo({ left: i * el.clientWidth, behavior: \"smooth\" });\n  };\n\n  return (\n    <div\n      data-slot=\"carousel\"\n      role=\"region\"\n      aria-roledescription=\"carousel\"\n      className={cn(\"flex w-full flex-col gap-3\", className)}\n      {...props}\n    >\n      <div\n        ref={trackRef}\n        onScroll={onScroll}\n        data-slot=\"carousel-track\"\n        className=\"flex w-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain rounded-[var(--radius-group)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden\"\n      >\n        {children}\n      </div>\n      {showPageControl && count > 1 ? (\n        <div className=\"flex items-center justify-center gap-[9px]\">\n          {Array.from({ length: count }, (_, i) => (\n            <button\n              key={i}\n              type=\"button\"\n              aria-label={`Page ${i + 1}`}\n              aria-current={i === page}\n              onClick={() => goTo(i)}\n              className={cn(\n                \"size-[7px] shrink-0 cursor-default rounded-full outline-none transition-colors duration-200 focus-visible:ring-[3px] focus-visible:ring-blue/40\",\n                i === page ? \"bg-label/85\" : \"bg-label/25\"\n              )}\n            />\n          ))}\n        </div>\n      ) : null}\n    </div>\n  );\n}\n\nfunction CarouselItem({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"carousel-item\"\n      role=\"group\"\n      aria-roledescription=\"slide\"\n      className={cn(\"w-full shrink-0 snap-center\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Carousel, CarouselItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

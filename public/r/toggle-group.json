@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "The macOS toggle cluster, like text-style controls in Pages.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/toggle-group.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * macOS toggle cluster — like the text-alignment control in Pages:\n * bordered segments on one platter, pressed segments filled.\n */\nfunction ToggleGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Root>) {\n  return (\n    <ToggleGroupPrimitive.Root\n      data-slot=\"toggle-group\"\n      className={cn(\n        \"inline-flex items-stretch overflow-hidden rounded-[7px] bg-background shadow-[inset_0_0_0_0.5px_var(--opaque-separator),0_0.5px_2px_rgba(0,0,0,0.08)] dark:bg-gray-4 [&>*:not(:first-child)]:shadow-[-0.5px_0_0_0_var(--separator)]\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ToggleGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Item>) {\n  return (\n    <ToggleGroupPrimitive.Item\n      data-slot=\"toggle-group-item\"\n      className={cn(\n        \"flex h-[26px] min-w-9 cursor-default select-none items-center justify-center gap-1 px-2 text-footnote text-label outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-inset focus-visible:ring-blue/40 active:bg-fill-tertiary disabled:pointer-events-none disabled:opacity-40 data-[state=on]:bg-blue/15 data-[state=on]:text-blue dark:data-[state=on]:bg-blue/25 [&_svg]:size-3.5 [&_svg]:shrink-0\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

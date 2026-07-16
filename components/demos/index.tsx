@@ -39,7 +39,40 @@ import SidebarDemo from "@/components/demos/sidebar-demo";
 import TabBarDemo from "@/components/demos/tab-bar-demo";
 import ToolbarDemo from "@/components/demos/toolbar-demo";
 
+import AccordionDemo from "@/components/demos/accordion-demo";
+import AlertDemo from "@/components/demos/alert-demo";
+import BreadcrumbDemo from "@/components/demos/breadcrumb-demo";
+import CarouselDemo from "@/components/demos/carousel-demo";
+import ComboboxDemo from "@/components/demos/combobox-demo";
+import CommandDemo from "@/components/demos/command-demo";
+import ContextMenuDemo from "@/components/demos/context-menu-demo";
+import HoverCardDemo from "@/components/demos/hover-card-demo";
+import InputOtpDemo from "@/components/demos/input-otp-demo";
+import MenubarDemo from "@/components/demos/menubar-demo";
+import PageControlDemo from "@/components/demos/page-control-demo";
+import ResizableDemo from "@/components/demos/resizable-demo";
+import ScrollAreaDemo from "@/components/demos/scroll-area-demo";
+import TableDemo from "@/components/demos/table-demo";
+import ToastDemo from "@/components/demos/toast-demo";
+import ToggleGroupDemo from "@/components/demos/toggle-group-demo";
+
 export const demos: Record<string, React.ComponentType> = {
+  accordion: AccordionDemo,
+  alert: AlertDemo,
+  breadcrumb: BreadcrumbDemo,
+  carousel: CarouselDemo,
+  combobox: ComboboxDemo,
+  command: CommandDemo,
+  "context-menu": ContextMenuDemo,
+  "hover-card": HoverCardDemo,
+  "input-otp": InputOtpDemo,
+  menubar: MenubarDemo,
+  "page-control": PageControlDemo,
+  resizable: ResizableDemo,
+  "scroll-area": ScrollAreaDemo,
+  table: TableDemo,
+  toast: ToastDemo,
+  "toggle-group": ToggleGroupDemo,
   "action-sheet": ActionSheetDemo,
   "color-picker": ColorPickerDemo,
   "content-unavailable": ContentUnavailableDemo,

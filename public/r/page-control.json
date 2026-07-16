@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-control",
+  "title": "Page Control",
+  "description": "UIPageControl dots for paged content.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/page-control.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * UIPageControl — the row of dots under a paging TabView. The\n * current dot is opaque; tapping a dot jumps to that page.\n */\nfunction PageControl({\n  className,\n  count,\n  page,\n  onPageChange,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"onChange\"> & {\n  count: number;\n  page: number;\n  onPageChange?: (page: number) => void;\n}) {\n  return (\n    <div\n      data-slot=\"page-control\"\n      role=\"tablist\"\n      aria-label=\"Pages\"\n      className={cn(\"flex items-center justify-center gap-[9px]\", className)}\n      {...props}\n    >\n      {Array.from({ length: count }, (_, i) => (\n        <button\n          key={i}\n          type=\"button\"\n          role=\"tab\"\n          aria-selected={i === page}\n          aria-label={`Page ${i + 1}`}\n          onClick={() => onPageChange?.(i)}\n          className={cn(\n            \"size-[7px] shrink-0 cursor-default rounded-full outline-none transition-colors duration-200 focus-visible:ring-[3px] focus-visible:ring-blue/40\",\n            i === page ? \"bg-label/85\" : \"bg-label/25\"\n          )}\n        />\n      ))}\n    </div>\n  );\n}\n\nexport { PageControl };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

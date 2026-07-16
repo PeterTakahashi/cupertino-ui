@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert",
+  "description": "Inline tinted banner, like iOS battery and storage warnings.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/alert.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Inline banner on a tinted platter — the way iOS surfaces\n * inline warnings (e.g. Battery Low, storage alerts in Settings).\n */\nconst alertVariants = cva(\n  \"relative grid w-full grid-cols-[0fr_1fr] items-start gap-x-0 rounded-[var(--radius-card)] px-4 py-3 text-subheadline has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-3 [&>svg]:mt-0.5 [&>svg]:size-[18px]\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-blue/10 text-label dark:bg-blue/20 [&>svg]:text-blue\",\n        warning:\n          \"bg-orange/10 text-label dark:bg-orange/20 [&>svg]:text-orange\",\n        destructive: \"bg-red/10 text-label dark:bg-red/20 [&>svg]:text-red\",\n        gray: \"bg-fill-tertiary text-label [&>svg]:text-secondary-label\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n);\n\nfunction Alert({\n  className,\n  variant,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof alertVariants>) {\n  return (\n    <div\n      data-slot=\"alert\"\n      role=\"alert\"\n      className={cn(alertVariants({ variant }), className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-title\"\n      className={cn(\n        \"col-start-2 font-semibold leading-snug text-label\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-description\"\n      className={cn(\n        \"col-start-2 text-subheadline leading-snug text-secondary-label [&_a]:text-blue\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Alert, AlertDescription, AlertTitle };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

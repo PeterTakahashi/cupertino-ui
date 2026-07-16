@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable",
+  "title": "Resizable",
+  "description": "NavigationSplitView's draggable hairline divider.",
+  "dependencies": [
+    "lucide-react",
+    "react-resizable-panels"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/resizable.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport * as ResizablePrimitive from \"react-resizable-panels\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * NavigationSplitView's draggable divider: a hairline separator\n * whose hit area extends invisibly, highlighting the accent color\n * while dragging.\n */\nfunction ResizablePanelGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof ResizablePrimitive.Group>) {\n  return (\n    <ResizablePrimitive.Group\n      data-slot=\"resizable-panel-group\"\n      className={cn(\"flex h-full w-full\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ResizablePanel({\n  className,\n  ...props\n}: React.ComponentProps<typeof ResizablePrimitive.Panel>) {\n  return (\n    <ResizablePrimitive.Panel\n      data-slot=\"resizable-panel\"\n      className={cn(\"overflow-hidden\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ResizableHandle({\n  className,\n  ...props\n}: React.ComponentProps<typeof ResizablePrimitive.Separator>) {\n  return (\n    <ResizablePrimitive.Separator\n      data-slot=\"resizable-handle\"\n      className={cn(\n        \"relative shrink-0 bg-separator outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-blue/40 active:bg-blue\",\n        // A separator between side-by-side panels is aria-vertical.\n        \"aria-[orientation=vertical]:w-px aria-[orientation=vertical]:after:absolute aria-[orientation=vertical]:after:inset-y-0 aria-[orientation=vertical]:after:-left-1 aria-[orientation=vertical]:after:w-2\",\n        \"aria-[orientation=horizontal]:h-px aria-[orientation=horizontal]:after:absolute aria-[orientation=horizontal]:after:inset-x-0 aria-[orientation=horizontal]:after:-top-1 aria-[orientation=horizontal]:after:h-2\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { ResizableHandle, ResizablePanel, ResizablePanelGroup };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

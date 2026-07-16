@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "title": "Toast",
+  "description": "iOS notification banners on thick material; toast() from anywhere.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/toast.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Toast as ToastPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * iOS notification banner. Call `toast({ title, description, icon })`\n * from anywhere; render `<Toaster />` once near the root. Banners\n * drop in from the top on a thick material, exactly like incoming\n * notifications.\n */\ntype ToastData = {\n  id: number;\n  title: React.ReactNode;\n  description?: React.ReactNode;\n  /** Leading icon tile, like an app icon. */\n  icon?: React.ReactNode;\n  /** Tile background color. */\n  iconColor?: string;\n  duration?: number;\n};\n\ntype Listener = (toasts: ToastData[]) => void;\n\nlet count = 0;\nlet toasts: ToastData[] = [];\nconst listeners = new Set<Listener>();\n\nfunction emit() {\n  for (const l of listeners) l([...toasts]);\n}\n\nfunction toast(data: Omit<ToastData, \"id\">) {\n  const id = ++count;\n  toasts = [...toasts, { id, duration: 4000, ...data }];\n  emit();\n  return {\n    id,\n    dismiss: () => {\n      toasts = toasts.filter((t) => t.id !== id);\n      emit();\n    },\n  };\n}\n\nfunction Toaster({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToastPrimitive.Provider> & {\n  /** Extra classes for each banner. */\n  className?: string;\n}) {\n  const [items, setItems] = React.useState<ToastData[]>([]);\n\n  React.useEffect(() => {\n    const listener: Listener = setItems;\n    listeners.add(listener);\n    return () => {\n      listeners.delete(listener);\n    };\n  }, []);\n\n  return (\n    <ToastPrimitive.Provider swipeDirection=\"up\" {...props}>\n      {items.map((t) => (\n        <ToastPrimitive.Root\n          key={t.id}\n          duration={t.duration}\n          onOpenChange={(open) => {\n            if (!open) {\n              toasts = toasts.filter((x) => x.id !== t.id);\n              emit();\n            }\n          }}\n          className={cn(\n            // Explicit blur (no saturate): materials with saturate() render\n            // incorrectly at the viewport top edge in Chrome.\n            \"pointer-events-auto flex w-full items-center gap-3 rounded-[var(--radius-group)] bg-white/85 p-3 shadow-[var(--shadow-menu)] outline-none backdrop-blur-2xl dark:bg-gray-6/90\",\n            \"data-[state=open]:animate-in data-[state=open]:slide-in-from-top-4 data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-top-4 data-[state=closed]:fade-out-0 data-[swipe=end]:animate-out data-[swipe=end]:slide-out-to-top-4\",\n            className\n          )}\n        >\n          {t.icon ? (\n            <span\n              className=\"flex size-9 shrink-0 items-center justify-center rounded-[9px] text-white [&_svg]:size-5\"\n              style={{ backgroundColor: t.iconColor ?? \"var(--system-blue)\" }}\n            >\n              {t.icon}\n            </span>\n          ) : null}\n          <div className=\"flex min-w-0 flex-1 flex-col\">\n            <ToastPrimitive.Title className=\"truncate text-subheadline font-semibold text-label\">\n              {t.title}\n            </ToastPrimitive.Title>\n            {t.description ? (\n              <ToastPrimitive.Description className=\"line-clamp-2 text-subheadline text-label/80\">\n                {t.description}\n              </ToastPrimitive.Description>\n            ) : null}\n          </div>\n        </ToastPrimitive.Root>\n      ))}\n      <ToastPrimitive.Viewport className=\"fixed left-1/2 top-3 z-[60] flex w-[min(380px,calc(100vw-24px))] -translate-x-1/2 flex-col gap-2 outline-none\" />\n    </ToastPrimitive.Provider>\n  );\n}\n\nexport { toast, Toaster };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

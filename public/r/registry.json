@@ -17,6 +17,25 @@
       ]
     },
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Grouped-inset disclosure list with rotating chevrons.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
       "name": "action-sheet",
       "type": "registry:ui",
       "title": "Action Sheet",
@@ -32,6 +51,24 @@
       ],
       "dependencies": [
         "radix-ui"
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline tinted banner, like iOS battery and storage warnings.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "class-variance-authority"
       ]
     },
     {
@@ -72,6 +109,24 @@
       ]
     },
     {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "The macOS Finder path bar with chevron separators.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
@@ -101,6 +156,21 @@
       "files": [
         {
           "path": "registry/cupertino-ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "TabView .page style: scroll-snap paging with a dot indicator.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/carousel.tsx",
           "type": "registry:ui"
         }
       ]
@@ -140,6 +210,45 @@
       ]
     },
     {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "The macOS NSComboBox: bordered field with a filtered suggestion menu.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Spotlight: a command palette on thick material with cmd-K dialog.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react",
+        "cmdk"
+      ]
+    },
+    {
       "name": "content-unavailable",
       "type": "registry:ui",
       "title": "Content Unavailable",
@@ -152,6 +261,25 @@
           "path": "registry/cupertino-ui/content-unavailable.tsx",
           "type": "registry:ui"
         }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "The macOS right-click menu on thick blurred material.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
       ]
     },
     {
@@ -274,6 +402,24 @@
       ]
     },
     {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "A hover preview panel on thick material.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
@@ -289,6 +435,25 @@
       ],
       "dependencies": [
         "class-variance-authority"
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "iOS verification-code cells with a blinking caret.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react",
+        "input-otp"
       ]
     },
     {
@@ -329,6 +494,25 @@
       ]
     },
     {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "The macOS menu bar with blue-highlight triggers and material menus.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
       "name": "navigation-stack",
       "type": "registry:ui",
       "title": "Navigation Stack",
@@ -344,6 +528,21 @@
       ],
       "dependencies": [
         "lucide-react"
+      ]
+    },
+    {
+      "name": "page-control",
+      "type": "registry:ui",
+      "title": "Page Control",
+      "description": "UIPageControl dots for paged content.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/page-control.tsx",
+          "type": "registry:ui"
+        }
       ]
     },
     {
@@ -393,6 +592,43 @@
       "files": [
         {
           "path": "registry/cupertino-ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "NavigationSplitView's draggable hairline divider.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-resizable-panels"
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "macOS overlay scrollbars that fade in over content.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/scroll-area.tsx",
           "type": "registry:ui"
         }
       ],
@@ -609,6 +845,21 @@
       ]
     },
     {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "The macOS list view: alternating rows, hairline header, accent selection.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
@@ -619,6 +870,39 @@
       "files": [
         {
           "path": "registry/cupertino-ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "iOS notification banners on thick material; toast() from anywhere.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/toast.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "The macOS toggle cluster, like text-style controls in Pages.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/toggle-group.tsx",
           "type": "registry:ui"
         }
       ]

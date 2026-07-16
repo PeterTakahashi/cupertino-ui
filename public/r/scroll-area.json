@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "description": "macOS overlay scrollbars that fade in over content.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/scroll-area.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { ScrollArea as ScrollAreaPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * macOS overlay scrollbars: thin rounded thumbs that appear over\n * the content while scrolling and fade away.\n */\nfunction ScrollArea({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof ScrollAreaPrimitive.Root>) {\n  return (\n    <ScrollAreaPrimitive.Root\n      data-slot=\"scroll-area\"\n      type=\"hover\"\n      className={cn(\"relative overflow-hidden\", className)}\n      {...props}\n    >\n      <ScrollAreaPrimitive.Viewport\n        data-slot=\"scroll-area-viewport\"\n        className=\"size-full rounded-[inherit] outline-none transition-shadow focus-visible:ring-[3px] focus-visible:ring-blue/40\"\n      >\n        {children}\n      </ScrollAreaPrimitive.Viewport>\n      <ScrollBar />\n      <ScrollBar orientation=\"horizontal\" />\n      <ScrollAreaPrimitive.Corner />\n    </ScrollAreaPrimitive.Root>\n  );\n}\n\nfunction ScrollBar({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>) {\n  return (\n    <ScrollAreaPrimitive.ScrollAreaScrollbar\n      data-slot=\"scroll-area-scrollbar\"\n      orientation={orientation}\n      className={cn(\n        \"z-10 flex touch-none select-none p-0.5 data-[state=visible]:animate-in data-[state=visible]:fade-in-0 data-[state=hidden]:animate-out data-[state=hidden]:fade-out-0\",\n        orientation === \"vertical\" && \"h-full w-2.5\",\n        orientation === \"horizontal\" && \"h-2.5 flex-col\",\n        className\n      )}\n      {...props}\n    >\n      <ScrollAreaPrimitive.ScrollAreaThumb\n        data-slot=\"scroll-area-thumb\"\n        className=\"relative flex-1 rounded-full bg-label/35\"\n      />\n    </ScrollAreaPrimitive.ScrollAreaScrollbar>\n  );\n}\n\nexport { ScrollArea, ScrollBar };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
