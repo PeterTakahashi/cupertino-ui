@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "album-header",
+  "title": "Album Header",
+  "description": "The album page header: large artwork, red artist, Play / Shuffle pair.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/album-header.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { PlayIcon, ShuffleIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * The Apple Music album page header: large centered artwork,\n * album title, red artist name, meta line, and the Play / Shuffle\n * button pair.\n */\nfunction AlbumHeader({\n  className,\n  artworkUrl,\n  title,\n  artist,\n  meta,\n  onPlay,\n  onShuffle,\n  ...props\n}: React.ComponentProps<\"header\"> & {\n  artworkUrl?: string;\n  title: string;\n  artist: string;\n  /** Meta line, e.g. \"Electronic · 2026 · Lossless\". */\n  meta?: string;\n  onPlay?: () => void;\n  onShuffle?: () => void;\n}) {\n  return (\n    <header\n      data-slot=\"album-header\"\n      className={cn(\"flex flex-col items-center gap-4 text-center\", className)}\n      {...props}\n    >\n      <span className=\"block w-56 max-w-[70%] overflow-hidden rounded-[10px] shadow-[0_0_0_0.5px_var(--separator),0_10px_30px_rgba(0,0,0,0.25)]\">\n        {artworkUrl ? (\n          // eslint-disable-next-line @next/next/no-img-element\n          <img src={artworkUrl} alt=\"\" className=\"aspect-square size-full object-cover\" />\n        ) : (\n          <span className=\"block aspect-square bg-fill-tertiary\" />\n        )}\n      </span>\n      <div className=\"flex flex-col gap-0.5\">\n        <h1 className=\"text-title-3 text-label\">{title}</h1>\n        <p className=\"text-title-3 font-normal text-red\">{artist}</p>\n        {meta ? (\n          <p className=\"text-caption-1 uppercase text-secondary-label\">{meta}</p>\n        ) : null}\n      </div>\n      <div className=\"flex w-full max-w-xs items-center gap-3\">\n        <button\n          type=\"button\"\n          onClick={onPlay}\n          className=\"flex h-[46px] flex-1 cursor-default select-none items-center justify-center gap-2 rounded-[var(--radius-field)] bg-fill-tertiary text-body font-semibold text-red outline-none transition-transform focus-visible:ring-[3px] focus-visible:ring-blue/40 active:scale-[0.97] [&_svg]:size-4 [&_svg]:fill-current\"\n        >\n          <PlayIcon /> Play\n        </button>\n        <button\n          type=\"button\"\n          onClick={onShuffle}\n          className=\"flex h-[46px] flex-1 cursor-default select-none items-center justify-center gap-2 rounded-[var(--radius-field)] bg-fill-tertiary text-body font-semibold text-red outline-none transition-transform focus-visible:ring-[3px] focus-visible:ring-blue/40 active:scale-[0.97] [&_svg]:size-4\"\n        >\n          <ShuffleIcon /> Shuffle\n        </button>\n      </div>\n    </header>\n  );\n}\n\nexport { AlbumHeader };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

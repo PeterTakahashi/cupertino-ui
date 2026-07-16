@@ -56,7 +56,20 @@ import TableDemo from "@/components/demos/table-demo";
 import ToastDemo from "@/components/demos/toast-demo";
 import ToggleGroupDemo from "@/components/demos/toggle-group-demo";
 
+import AlbumGridDemo from "@/components/demos/album-grid-demo";
+import AlbumHeaderDemo from "@/components/demos/album-header-demo";
+import AudioPlayerDemo from "@/components/demos/audio-player-demo";
+import MiniPlayerDemo from "@/components/demos/mini-player-demo";
+import NowPlayingDemo from "@/components/demos/now-playing-demo";
+import TrackListDemo from "@/components/demos/track-list-demo";
+
 export const demos: Record<string, React.ComponentType> = {
+  "album-grid": AlbumGridDemo,
+  "album-header": AlbumHeaderDemo,
+  "audio-player": AudioPlayerDemo,
+  "mini-player": MiniPlayerDemo,
+  "now-playing": NowPlayingDemo,
+  "track-list": TrackListDemo,
   accordion: AccordionDemo,
   alert: AlertDemo,
   breadcrumb: BreadcrumbDemo,

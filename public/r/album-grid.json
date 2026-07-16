@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "album-grid",
+  "title": "Album Grid",
+  "description": "The Apple Music library grid with rounded artwork and two-line captions.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/album-grid.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * The Apple Music library grid: rounded artwork with a hairline,\n * two-line caption underneath.\n */\nfunction AlbumGrid({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"album-grid\"\n      className={cn(\"grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-4\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlbumCard({\n  className,\n  artworkUrl,\n  title,\n  subtitle,\n  size,\n  ...props\n}: React.ComponentProps<\"button\"> & {\n  artworkUrl?: string;\n  title: string;\n  subtitle?: string;\n  /** Fixed artwork size in px; defaults to fluid. */\n  size?: number;\n}) {\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"album-card\"\n      className={cn(\n        \"group flex cursor-default select-none flex-col gap-1.5 text-left outline-none\",\n        className\n      )}\n      style={size ? { width: size } : undefined}\n      {...props}\n    >\n      <span\n        className=\"block w-full overflow-hidden rounded-[8px] bg-fill-tertiary shadow-[inset_0_0_0_0.5px_var(--separator)] transition-transform duration-200 ease-[var(--ease-out-expo)] group-active:scale-[0.97] group-focus-visible:ring-[3px] group-focus-visible:ring-blue/40\"\n        style={{ aspectRatio: \"1 / 1\" }}\n      >\n        {artworkUrl ? (\n          // eslint-disable-next-line @next/next/no-img-element\n          <img\n            src={artworkUrl}\n            alt=\"\"\n            className=\"size-full object-cover\"\n            loading=\"lazy\"\n          />\n        ) : null}\n      </span>\n      <span className=\"flex flex-col\">\n        <span className=\"truncate text-subheadline text-label\">{title}</span>\n        {subtitle ? (\n          <span className=\"truncate text-subheadline text-secondary-label\">\n            {subtitle}\n          </span>\n        ) : null}\n      </span>\n    </button>\n  );\n}\n\nexport { AlbumCard, AlbumGrid };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

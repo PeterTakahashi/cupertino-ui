@@ -9,7 +9,10 @@ export type ComponentDoc = {
 export const components: ComponentDoc[] = [
   { slug: "accordion", title: "Accordion", description: "Grouped-inset disclosure list with rotating chevrons.", swiftui: "DisclosureGroup in a List" },
   { slug: "action-sheet", title: "Action Sheet", description: "Stacked action groups rising from the bottom, with a detached Cancel.", swiftui: ".confirmationDialog(_:isPresented:)" },
+  { slug: "album-grid", title: "Album Grid", description: "The Apple Music library grid.", swiftui: "LazyVGrid of artwork" },
+  { slug: "album-header", title: "Album Header", description: "Album artwork, red artist name, Play / Shuffle." },
   { slug: "alert", title: "Alert", description: "Inline tinted banner for warnings and status." },
+  { slug: "audio-player", title: "Audio Player", description: "Queue, transport, seek, volume — as a hook.", swiftui: "MusicKit player" },
   { slug: "avatar", title: "Avatar", description: "Contacts-style circular avatar with a monogram fallback.", swiftui: "AsyncImage in a Circle clip" },
   { slug: "badge", title: "Badge", description: "iOS badges and tinted capsules.", swiftui: ".badge(_:)" },
   { slug: "breadcrumb", title: "Breadcrumb", description: "The Finder path bar with chevron separators." },
@@ -35,7 +38,9 @@ export const components: ComponentDoc[] = [
   { slug: "label", title: "Label", description: "Form label set in the subheadline style.", swiftui: "LabeledContent" },
   { slug: "list", title: "List", description: "The iOS Settings list: icon tiles, chevrons, hairline separators.", swiftui: "List + .listStyle(.insetGrouped)" },
   { slug: "menubar", title: "Menubar", description: "The macOS menu bar with material menus.", swiftui: ".commands { CommandMenu(...) }" },
+  { slug: "mini-player", title: "Mini Player", description: "The floating capsule above the tab bar." },
   { slug: "navigation-stack", title: "Navigation Stack", description: "Push/pop slide transitions with a back-button nav bar.", swiftui: "NavigationStack + NavigationLink" },
+  { slug: "now-playing", title: "Now Playing", description: "The full player with shrinking artwork." },
   { slug: "page-control", title: "Page Control", description: "Dots for paged content.", swiftui: "UIPageControl" },
   { slug: "popover", title: "Popover", description: "A blurred material panel anchored to a control.", swiftui: ".popover(isPresented:)" },
   { slug: "progress", title: "Progress", description: "The thin linear progress bar.", swiftui: "ProgressView(value:)" },
@@ -60,6 +65,7 @@ export const components: ComponentDoc[] = [
   { slug: "toggle-group", title: "Toggle Group", description: "The macOS toggle cluster on one platter.", swiftui: "Toggle + ControlGroup" },
   { slug: "toolbar", title: "Toolbar", description: "The macOS window toolbar with icon buttons.", swiftui: ".toolbar { ToolbarItem(...) }" },
   { slug: "tooltip", title: "Tooltip", description: "The macOS help tag.", swiftui: ".help(_:)" },
+  { slug: "track-list", title: "Track List", description: "Numbered rows with animated equalizer bars." },
 ];
 
 export const siteConfig = {

@@ -97,19 +97,30 @@ function Sidebar({
   const { open } = React.useContext(SidebarContext);
 
   return (
-    <nav
-      data-slot="sidebar"
+    <div
+      data-slot="sidebar-wrapper"
       data-state={open ? "open" : "collapsed"}
-      aria-hidden={!open}
       className={cn(
-        "flex h-full w-60 shrink-0 flex-col gap-4 overflow-y-auto overflow-x-hidden bg-secondary-background/80 backdrop-blur-xl transition-[width,padding,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] dark:bg-gray-6/80",
-        open ? "w-60 p-2.5 opacity-100" : "pointer-events-none w-0 p-0 opacity-0",
-        className
+        "shrink-0 self-stretch py-2 pl-2 transition-[width,padding,opacity,transform] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
+        open
+          ? "w-[248px] opacity-100"
+          : "pointer-events-none w-0 -translate-x-2 pl-0 opacity-0"
       )}
-      {...props}
     >
-      <div className="flex w-[220px] shrink-0 flex-col gap-4">{children}</div>
-    </nav>
+      {/* Modern macOS sidebars float: an inset, rounded glass panel
+          detached from the window edge. */}
+      <nav
+        data-slot="sidebar"
+        aria-hidden={!open}
+        className={cn(
+          "flex h-full w-60 flex-col gap-4 overflow-y-auto overflow-x-hidden rounded-[12px] bg-secondary-background/75 p-2.5 shadow-[0_0_0_0.5px_var(--separator),0_8px_24px_rgba(0,0,0,0.08)] backdrop-blur-2xl dark:bg-gray-6/75",
+          className
+        )}
+        {...props}
+      >
+        <div className="flex w-[220px] shrink-0 flex-col gap-4">{children}</div>
+      </nav>
+    </div>
   );
 }
 

@@ -54,6 +54,39 @@
       ]
     },
     {
+      "name": "album-grid",
+      "type": "registry:ui",
+      "title": "Album Grid",
+      "description": "The Apple Music library grid with rounded artwork and two-line captions.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/album-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "album-header",
+      "type": "registry:ui",
+      "title": "Album Header",
+      "description": "The album page header: large artwork, red artist, Play / Shuffle pair.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/album-header.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
@@ -69,6 +102,21 @@
       ],
       "dependencies": [
         "class-variance-authority"
+      ]
+    },
+    {
+      "name": "audio-player",
+      "type": "registry:ui",
+      "title": "Audio Player",
+      "description": "HTMLAudioElement engine: queue, transport, seek, and volume behind a context hook.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/audio-player.tsx",
+          "type": "registry:ui"
+        }
       ]
     },
     {
@@ -513,6 +561,28 @@
       ]
     },
     {
+      "name": "mini-player",
+      "type": "registry:ui",
+      "title": "Mini Player",
+      "description": "The floating capsule above the tab bar with play/pause and next.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/mini-player.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/audio-player.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
       "name": "navigation-stack",
       "type": "registry:ui",
       "title": "Navigation Stack",
@@ -523,6 +593,28 @@
       "files": [
         {
           "path": "registry/cupertino-ui/navigation-stack.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "now-playing",
+      "type": "registry:ui",
+      "title": "Now Playing",
+      "description": "The full player: shrinking artwork, scrubber, transport, and volume.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/now-playing.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/audio-player.tsx",
           "type": "registry:ui"
         }
       ],
@@ -938,6 +1030,24 @@
       ],
       "dependencies": [
         "radix-ui"
+      ]
+    },
+    {
+      "name": "track-list",
+      "type": "registry:ui",
+      "title": "Track List",
+      "description": "Numbered track rows; the current track shows animated equalizer bars.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/track-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
       ]
     }
   ]
