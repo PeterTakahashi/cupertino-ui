@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "macOS checkbox: accent-filled rounded square with a white check.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/apple-ui/checkbox.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\";\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI Toggle with .checkboxStyle (macOS). A small rounded\n * square that fills with the accent color when checked.\n */\nfunction Checkbox({\n  className,\n  ...props\n}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      className={cn(\n        \"peer size-[18px] shrink-0 cursor-default rounded-[5px] bg-background shadow-[inset_0_0_0_1px_var(--opaque-separator),0_1px_1px_rgba(0,0,0,0.04)] outline-none transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-blue/40 disabled:opacity-40 data-[state=checked]:bg-blue data-[state=checked]:shadow-[inset_0_0.5px_1px_rgba(255,255,255,0.3),0_1px_1px_rgba(0,0,0,0.08)] data-[state=indeterminate]:bg-blue data-[state=indeterminate]:shadow-none\",\n        className\n      )}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"flex items-center justify-center text-white\"\n      >\n        {props.checked === \"indeterminate\" ? (\n          <MinusIcon className=\"size-3.5\" strokeWidth={3} />\n        ) : (\n          <CheckIcon className=\"size-3.5\" strokeWidth={3.5} />\n        )}\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  );\n}\n\nexport { Checkbox };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "SwiftUI-style button: filled, tinted, gray, plain, and destructive variants.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/apple-ui/button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Slot } from \"radix-ui\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI Button. Variants mirror SwiftUI button styles:\n * `filled` = .borderedProminent, `tinted` = .bordered with tint,\n * `gray` = .bordered, `plain` = .borderless.\n */\nconst buttonVariants = cva(\n  \"inline-flex shrink-0 cursor-default select-none items-center justify-center gap-1.5 whitespace-nowrap font-[590] outline-none transition-[background-color,color,transform,opacity] duration-150 ease-out active:scale-[0.97] active:opacity-75 disabled:pointer-events-none disabled:opacity-40 focus-visible:ring-[3px] focus-visible:ring-blue/40 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n  {\n    variants: {\n      variant: {\n        filled: \"bg-blue text-white active:bg-blue/85\",\n        tinted:\n          \"bg-blue/15 text-blue active:bg-blue/25 dark:bg-blue/25 dark:active:bg-blue/35\",\n        gray: \"bg-fill-secondary text-label active:bg-fill\",\n        plain: \"text-blue active:opacity-50\",\n        destructive: \"bg-red text-white active:bg-red/85\",\n        \"destructive-tinted\":\n          \"bg-red/15 text-red active:bg-red/25 dark:bg-red/25 dark:active:bg-red/35\",\n      },\n      size: {\n        sm: \"h-7 rounded-full px-3 text-footnote font-[590]\",\n        default: \"h-[34px] rounded-full px-4 text-subheadline font-[590]\",\n        lg: \"h-[50px] rounded-[var(--radius-field)] px-5 text-body font-[590] [&_svg]:size-5\",\n        icon: \"size-[34px] rounded-full [&_svg]:size-4\",\n      },\n    },\n    defaultVariants: {\n      variant: \"filled\",\n      size: \"default\",\n    },\n  }\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

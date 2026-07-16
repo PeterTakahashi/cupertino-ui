@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list",
+  "title": "List",
+  "description": "The iOS Settings list: inset grouped rows, icon tiles, chevrons, hairline separators.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/apple-ui/list.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { ChevronRightIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI List with .listStyle(.insetGrouped) — the signature\n * iOS Settings look: rounded sections, hairline separators that\n * start after the leading icon, and disclosure chevrons.\n */\nfunction List({\n  className,\n  header,\n  footer,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  header?: React.ReactNode;\n  footer?: React.ReactNode;\n}) {\n  return (\n    <div data-slot=\"list\" className={cn(\"flex flex-col\", className)} {...props}>\n      {header ? (\n        <div className=\"px-5 pb-1.5 text-footnote uppercase text-secondary-label\">\n          {header}\n        </div>\n      ) : null}\n      <div className=\"overflow-hidden rounded-[var(--radius-card)] bg-grouped-secondary [&>[data-slot=list-item]:not(:first-child)>[data-slot=list-item-inner]]:shadow-[0_-0.5px_0_0_var(--separator)]\">\n        {children}\n      </div>\n      {footer ? (\n        <div className=\"px-5 pt-1.5 text-footnote text-secondary-label\">\n          {footer}\n        </div>\n      ) : null}\n    </div>\n  );\n}\n\nfunction ListItem({\n  className,\n  icon,\n  iconColor,\n  detail,\n  chevron = false,\n  href,\n  children,\n  ...props\n}: React.HTMLAttributes<HTMLElement> & {\n  /** Leading icon, rendered on an iOS Settings-style colored tile. */\n  icon?: React.ReactNode;\n  /** Background of the icon tile, e.g. \"var(--system-blue)\". */\n  iconColor?: string;\n  /** Trailing detail text or element (value, badge, control). */\n  detail?: React.ReactNode;\n  /** Show a disclosure chevron. */\n  chevron?: boolean;\n  /** Render the row as a link. */\n  href?: string;\n}) {\n  // Rows become interactive elements when they navigate or handle clicks.\n  const Comp: React.ElementType = href ? \"a\" : props.onClick ? \"button\" : \"div\";\n\n  return (\n    <Comp\n      href={href}\n      type={Comp === \"button\" ? \"button\" : undefined}\n      data-slot=\"list-item\"\n      className={cn(\n        \"group/item flex w-full cursor-default select-none items-center gap-3.5 pl-4 text-left text-body text-label outline-none focus-visible:bg-fill-quaternary [a&]:active:bg-fill-tertiary [button&]:active:bg-fill-tertiary\",\n        className\n      )}\n      {...props}\n    >\n      {icon ? (\n        <span\n          className=\"flex size-[29px] shrink-0 items-center justify-center rounded-[7px] text-white [&_svg]:size-[18px]\"\n          style={{ backgroundColor: iconColor ?? \"var(--system-blue)\" }}\n        >\n          {icon}\n        </span>\n      ) : null}\n      <span\n        data-slot=\"list-item-inner\"\n        className=\"flex min-h-11 min-w-0 flex-1 items-center gap-3 py-2.5 pr-4\"\n      >\n        <span className=\"min-w-0 flex-1 truncate\">{children}</span>\n        {detail ? (\n          <span className=\"shrink-0 text-body text-secondary-label\">\n            {detail}\n          </span>\n        ) : null}\n        {chevron ? (\n          <ChevronRightIcon\n            className=\"size-[17px] shrink-0 text-tertiary-label\"\n            strokeWidth={2.5}\n          />\n        ) : null}\n      </span>\n    </Comp>\n  );\n}\n\nexport { List, ListItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

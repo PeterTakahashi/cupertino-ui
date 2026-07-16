@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "SwiftUI TextField: iOS inset field or macOS rounded-border style.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/apple-ui/input.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI TextField. `inset` = iOS grouped-form field on a gray\n * platter; `bordered` = macOS .textFieldStyle(.roundedBorder).\n */\nconst inputVariants = cva(\n  \"flex w-full min-w-0 text-label outline-none transition-[box-shadow,background-color] duration-150 placeholder:text-tertiary-label disabled:pointer-events-none disabled:opacity-40 file:inline-flex file:border-0 file:bg-transparent file:font-medium\",\n  {\n    variants: {\n      variant: {\n        inset:\n          \"h-11 rounded-[var(--radius-field)] bg-fill-tertiary px-4 text-body focus:ring-[3px] focus:ring-blue/40\",\n        bordered:\n          \"h-[26px] rounded-[6px] bg-background px-2 text-footnote shadow-[inset_0_0_0_1px_var(--separator),0_0.5px_1px_rgba(0,0,0,0.05)] focus:shadow-[inset_0_0_0_1px_var(--separator)] focus:ring-[3px] focus:ring-blue/40\",\n      },\n    },\n    defaultVariants: {\n      variant: \"inset\",\n    },\n  }\n);\n\nfunction Input({\n  className,\n  variant,\n  type,\n  ...props\n}: React.ComponentProps<\"input\"> & VariantProps<typeof inputVariants>) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      className={cn(inputVariants({ variant, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Input, inputVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

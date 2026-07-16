@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "SwiftUI TextEditor as an iOS inset field.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/apple-ui/textarea.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** SwiftUI TextEditor rendered as an iOS inset field. */\nfunction Textarea({\n  className,\n  ...props\n}: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"flex min-h-24 w-full rounded-[var(--radius-field)] bg-fill-tertiary px-4 py-3 text-body text-label outline-none transition-shadow duration-150 placeholder:text-tertiary-label focus:ring-[3px] focus:ring-blue/40 disabled:pointer-events-none disabled:opacity-40\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Textarea };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

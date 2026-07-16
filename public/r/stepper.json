@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stepper",
+  "title": "Stepper",
+  "description": "The iOS − / + stepper control.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/apple-ui/stepper.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { MinusIcon, PlusIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI Stepper — the iOS − / + control on a segmented gray\n * platter. Controlled or uncontrolled via value/defaultValue.\n */\nfunction Stepper({\n  className,\n  value: valueProp,\n  defaultValue = 0,\n  onValueChange,\n  min = -Infinity,\n  max = Infinity,\n  step = 1,\n  disabled,\n  ...props\n}: Omit<React.ComponentProps<\"div\">, \"defaultValue\" | \"onChange\"> & {\n  value?: number;\n  defaultValue?: number;\n  onValueChange?: (value: number) => void;\n  min?: number;\n  max?: number;\n  step?: number;\n  disabled?: boolean;\n}) {\n  const [internal, setInternal] = React.useState(defaultValue);\n  const value = valueProp ?? internal;\n\n  const update = (next: number) => {\n    const clamped = Math.min(max, Math.max(min, next));\n    if (valueProp === undefined) setInternal(clamped);\n    onValueChange?.(clamped);\n  };\n\n  const buttonClass =\n    \"flex h-8 w-[47px] cursor-default select-none items-center justify-center text-label outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-blue/40 active:bg-fill disabled:pointer-events-none disabled:opacity-30 [&_svg]:size-[15px]\";\n\n  return (\n    <div\n      data-slot=\"stepper\"\n      role=\"group\"\n      className={cn(\n        \"inline-flex items-center overflow-hidden rounded-[9px] bg-fill-tertiary\",\n        disabled && \"pointer-events-none opacity-40\",\n        className\n      )}\n      {...props}\n    >\n      <button\n        type=\"button\"\n        aria-label=\"Decrement\"\n        disabled={disabled || value <= min}\n        onClick={() => update(value - step)}\n        className={buttonClass}\n      >\n        <MinusIcon strokeWidth={2.5} />\n      </button>\n      <span aria-hidden className=\"h-[18px] w-px shrink-0 bg-separator\" />\n      <button\n        type=\"button\"\n        aria-label=\"Increment\"\n        disabled={disabled || value >= max}\n        onClick={() => update(value + step)}\n        className={buttonClass}\n      >\n        <PlusIcon strokeWidth={2.5} />\n      </button>\n    </div>\n  );\n}\n\nexport { Stepper };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

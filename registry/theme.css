@@ -1,0 +1,270 @@
+/* apple-ui theme — Apple HIG design tokens for Tailwind CSS v4.
+   Import after tailwindcss:
+     @import "tailwindcss";
+     @import "./theme.css";                                        */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Apple system colors — light                                         */
+/* Values from the Apple Human Interface Guidelines color tables.      */
+/* ------------------------------------------------------------------ */
+:root {
+  --system-blue: #007aff;
+  --system-red: #ff3b30;
+  --system-green: #34c759;
+  --system-orange: #ff9500;
+  --system-yellow: #ffcc00;
+  --system-teal: #30b0c7;
+  --system-cyan: #32ade6;
+  --system-mint: #00c7be;
+  --system-indigo: #5856d6;
+  --system-purple: #af52de;
+  --system-pink: #ff2d55;
+  --system-brown: #a2845e;
+
+  --system-gray: #8e8e93;
+  --system-gray2: #aeaeb2;
+  --system-gray3: #c7c7cc;
+  --system-gray4: #d1d1d6;
+  --system-gray5: #e5e5ea;
+  --system-gray6: #f2f2f7;
+
+  --label: #000000;
+  --secondary-label: rgba(60, 60, 67, 0.6);
+  --tertiary-label: rgba(60, 60, 67, 0.3);
+  --quaternary-label: rgba(60, 60, 67, 0.18);
+
+  --separator: rgba(60, 60, 67, 0.29);
+  --opaque-separator: #c6c6c8;
+
+  --system-background: #ffffff;
+  --secondary-system-background: #f2f2f7;
+  --tertiary-system-background: #ffffff;
+
+  --grouped-background: #f2f2f7;
+  --secondary-grouped-background: #ffffff;
+  --tertiary-grouped-background: #f2f2f7;
+
+  --system-fill: rgba(120, 120, 128, 0.2);
+  --secondary-fill: rgba(120, 120, 128, 0.16);
+  --tertiary-fill: rgba(118, 118, 128, 0.12);
+  --quaternary-fill: rgba(116, 116, 128, 0.08);
+
+  --material-thick: rgba(246, 246, 246, 0.84);
+  --material-regular: rgba(246, 246, 246, 0.72);
+  --material-thin: rgba(246, 246, 246, 0.56);
+  --material-ultrathin: rgba(246, 246, 246, 0.36);
+
+  --accent: var(--system-blue);
+  --on-accent: #ffffff;
+  --destructive: var(--system-red);
+}
+
+/* Apple system colors — dark */
+.dark {
+  --system-blue: #0a84ff;
+  --system-red: #ff453a;
+  --system-green: #30d158;
+  --system-orange: #ff9f0a;
+  --system-yellow: #ffd60a;
+  --system-teal: #40cbe0;
+  --system-cyan: #64d2ff;
+  --system-mint: #63e6e2;
+  --system-indigo: #5e5ce6;
+  --system-purple: #bf5af2;
+  --system-pink: #ff375f;
+  --system-brown: #ac8e68;
+
+  --system-gray: #8e8e93;
+  --system-gray2: #636366;
+  --system-gray3: #48484a;
+  --system-gray4: #3a3a3c;
+  --system-gray5: #2c2c2e;
+  --system-gray6: #1c1c1e;
+
+  --label: #ffffff;
+  --secondary-label: rgba(235, 235, 245, 0.6);
+  --tertiary-label: rgba(235, 235, 245, 0.3);
+  --quaternary-label: rgba(235, 235, 245, 0.16);
+
+  --separator: rgba(84, 84, 88, 0.6);
+  --opaque-separator: #38383a;
+
+  --system-background: #000000;
+  --secondary-system-background: #1c1c1e;
+  --tertiary-system-background: #2c2c2e;
+
+  --grouped-background: #000000;
+  --secondary-grouped-background: #1c1c1e;
+  --tertiary-grouped-background: #2c2c2e;
+
+  --system-fill: rgba(120, 120, 128, 0.36);
+  --secondary-fill: rgba(120, 120, 128, 0.32);
+  --tertiary-fill: rgba(118, 118, 128, 0.24);
+  --quaternary-fill: rgba(116, 116, 128, 0.18);
+
+  --material-thick: rgba(37, 37, 37, 0.9);
+  --material-regular: rgba(37, 37, 37, 0.82);
+  --material-thin: rgba(37, 37, 37, 0.7);
+  --material-ultrathin: rgba(37, 37, 37, 0.55);
+}
+
+@theme inline {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Monaco,
+    "Cascadia Code", monospace;
+
+  --color-blue: var(--system-blue);
+  --color-red: var(--system-red);
+  --color-green: var(--system-green);
+  --color-orange: var(--system-orange);
+  --color-yellow: var(--system-yellow);
+  --color-teal: var(--system-teal);
+  --color-cyan: var(--system-cyan);
+  --color-mint: var(--system-mint);
+  --color-indigo: var(--system-indigo);
+  --color-purple: var(--system-purple);
+  --color-pink: var(--system-pink);
+  --color-brown: var(--system-brown);
+
+  --color-gray: var(--system-gray);
+  --color-gray-2: var(--system-gray2);
+  --color-gray-3: var(--system-gray3);
+  --color-gray-4: var(--system-gray4);
+  --color-gray-5: var(--system-gray5);
+  --color-gray-6: var(--system-gray6);
+
+  --color-label: var(--label);
+  --color-secondary-label: var(--secondary-label);
+  --color-tertiary-label: var(--tertiary-label);
+  --color-quaternary-label: var(--quaternary-label);
+
+  --color-separator: var(--separator);
+  --color-opaque-separator: var(--opaque-separator);
+
+  --color-background: var(--system-background);
+  --color-secondary-background: var(--secondary-system-background);
+  --color-tertiary-background: var(--tertiary-system-background);
+  --color-grouped: var(--grouped-background);
+  --color-grouped-secondary: var(--secondary-grouped-background);
+  --color-grouped-tertiary: var(--tertiary-grouped-background);
+
+  --color-fill: var(--system-fill);
+  --color-fill-secondary: var(--secondary-fill);
+  --color-fill-tertiary: var(--tertiary-fill);
+  --color-fill-quaternary: var(--quaternary-fill);
+
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-destructive: var(--destructive);
+
+  /* Approximations of Apple's continuous corner curve at common sizes. */
+  --radius-control: 7px;
+  --radius-field: 10px;
+  --radius-card: 12px;
+  --radius-group: 16px;
+  --radius-sheet: 20px;
+
+  --shadow-card: 0 0 0 0.5px rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-menu: 0 0 0 0.5px rgba(0, 0, 0, 0.08),
+    0 5px 15px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.12);
+  --shadow-window: 0 0 0 0.5px rgba(0, 0, 0, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.18), 0 30px 90px rgba(0, 0, 0, 0.22);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* HIG type scale (size / line-height / SF tracking)                   */
+/* ------------------------------------------------------------------ */
+@utility text-large-title {
+  font-size: 34px;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+@utility text-title-1 {
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.38px;
+  font-weight: 700;
+}
+@utility text-title-2 {
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  font-weight: 700;
+}
+@utility text-title-3 {
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.45px;
+  font-weight: 600;
+}
+@utility text-headline {
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  font-weight: 600;
+}
+@utility text-body {
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  font-weight: 400;
+}
+@utility text-callout {
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  font-weight: 400;
+}
+@utility text-subheadline {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+  font-weight: 400;
+}
+@utility text-footnote {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.08px;
+  font-weight: 400;
+}
+@utility text-caption-1 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+@utility text-caption-2 {
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.06px;
+  font-weight: 400;
+}
+
+/* System materials — translucent blur layers */
+@utility material-ultrathin {
+  background-color: var(--material-ultrathin);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+@utility material-thin {
+  background-color: var(--material-thin);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+@utility material-regular {
+  background-color: var(--material-regular);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+}
+@utility material-thick {
+  background-color: var(--material-thick);
+  backdrop-filter: blur(48px) saturate(180%);
+  -webkit-backdrop-filter: blur(48px) saturate(180%);
+}
