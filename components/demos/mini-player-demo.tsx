@@ -7,17 +7,17 @@ import { Button } from "@/registry/cupertino-ui/button";
 import { allTracks } from "@/lib/music-library";
 
 function Demo() {
-  const { play, track } = useAudioPlayer();
+  const { load, track } = useAudioPlayer();
 
   React.useEffect(() => {
-    if (!track) play(allTracks, 0);
+    if (!track) load(allTracks, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="flex w-full max-w-sm flex-col items-center gap-4">
       <MiniPlayer />
-      <Button variant="plain" onClick={() => play(allTracks, 0)}>
+      <Button variant="plain" onClick={() => load(allTracks, 0)}>
         Reset queue
       </Button>
     </div>

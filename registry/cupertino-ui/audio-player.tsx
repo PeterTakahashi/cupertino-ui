@@ -30,6 +30,8 @@ type AudioPlayerState = {
   volume: number;
   /** Replace the queue and start playing at startIndex. */
   play: (queue?: AudioTrack[], startIndex?: number) => void;
+  /** Replace the queue WITHOUT starting playback (no autoplay). */
+  load: (queue: AudioTrack[], startIndex?: number) => void;
   toggle: () => void;
   next: () => void;
   prev: () => void;
@@ -127,6 +129,12 @@ function AudioPlayerProvider({ children }: { children: React.ReactNode }) {
     [index, queue.length]
   );
 
+  const load = React.useCallback((nextQueue: AudioTrack[], startIndex = 0) => {
+    setPlaying(false);
+    setQueue(nextQueue);
+    setIndex(startIndex);
+  }, []);
+
   const toggle = React.useCallback(() => setPlaying((p) => !p), []);
 
   const next = React.useCallback(
@@ -175,6 +183,7 @@ function AudioPlayerProvider({ children }: { children: React.ReactNode }) {
         duration,
         volume,
         play,
+        load,
         toggle,
         next,
         prev,

@@ -6,10 +6,10 @@ import { NowPlaying } from "@/components/ui/now-playing";
 import { allTracks } from "@/lib/music-library";
 
 function Demo() {
-  const { play, track } = useAudioPlayer();
+  const { load, track } = useAudioPlayer();
 
   React.useEffect(() => {
-    if (!track) play(allTracks, 0);
+    if (!track) load(allTracks, 0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
