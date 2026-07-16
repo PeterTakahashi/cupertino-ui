@@ -25,6 +25,9 @@ export function SiteHeader() {
           <Link href="/components" className="transition-colors hover:text-label">
             Components
           </Link>
+          <Link href="/showcases" className="transition-colors hover:text-label">
+            Showcases
+          </Link>
         </nav>
         <div className="ml-auto flex items-center gap-1">
           <a
