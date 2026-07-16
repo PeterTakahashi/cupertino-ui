@@ -4,6 +4,14 @@ import * as React from "react";
 import { BikeIcon, DumbbellIcon, FootprintsIcon, WavesIcon } from "lucide-react";
 
 import { ShowcaseFrame } from "@/components/site/showcase-frame";
+import { List, ListItem } from "@/registry/cupertino-ui/list";
+import {
+  TabBar,
+  TabBarContent,
+  TabBarItem,
+  TabBarList,
+} from "@/registry/cupertino-ui/tab-bar";
+import { FlameIcon, Share2Icon } from "lucide-react";
 import { Badge } from "@/registry/cupertino-ui/badge";
 import {
   Card,
@@ -47,7 +55,7 @@ export default function FitnessShowcase() {
 
   return (
     <ShowcaseFrame title="Fitness">
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
+      <div className="mx-auto hidden w-full max-w-3xl flex-col gap-6 md:flex">
         <header className="flex items-end justify-between px-1">
           <div>
             <h1 className="text-large-title tracking-tight">Summary</h1>
@@ -150,6 +158,96 @@ export default function FitnessShowcase() {
           </Table>
         </section>
       </div>
+      <FitnessMobile />
     </ShowcaseFrame>
+  );
+}
+
+function FitnessMobile() {
+  const [period, setPeriod] = React.useState("day");
+  const d = periods[period];
+
+  return (
+    <div className="mx-auto flex h-[calc(100dvh-120px)] max-h-[820px] w-full max-w-md flex-col overflow-hidden rounded-[24px] bg-grouped shadow-[var(--shadow-window)] md:hidden">
+      <TabBar defaultValue="summary" className="h-full">
+        <TabBarContent value="summary" className="min-h-0 overflow-y-auto p-4">
+          <div className="flex flex-col gap-4">
+            <header className="flex items-end justify-between">
+              <div>
+                <p className="text-footnote text-secondary-label">Thursday, July 17</p>
+                <h1 className="text-large-title tracking-tight">Summary</h1>
+              </div>
+            </header>
+
+            <SegmentedControl value={period} onValueChange={setPeriod}>
+              <SegmentedControlList className="w-full">
+                <SegmentedControlTrigger value="day">D</SegmentedControlTrigger>
+                <SegmentedControlTrigger value="week">W</SegmentedControlTrigger>
+                <SegmentedControlTrigger value="month">M</SegmentedControlTrigger>
+              </SegmentedControlList>
+            </SegmentedControl>
+
+            <Card className="gap-3">
+              <CardHeader>
+                <CardTitle>Activity</CardTitle>
+              </CardHeader>
+              <div className="flex items-center justify-around pb-1">
+                <Gauge value={d.move} size={84} label="Move" tint="var(--system-red)" currentValueLabel={`${d.move}%`} />
+                <Gauge value={d.exercise} size={84} label="Exercise" tint="var(--system-green)" currentValueLabel={`${d.exercise}%`} />
+                <Gauge value={d.stand} size={84} label="Stand" tint="var(--system-cyan)" currentValueLabel={`${d.stand}%`} />
+              </div>
+            </Card>
+
+            <Card className="gap-2">
+              <CardHeader>
+                <CardTitle className="text-subheadline font-semibold text-secondary-label">
+                  Steps
+                </CardTitle>
+              </CardHeader>
+              <p className="text-title-1 tabular-nums tracking-tight">
+                {d.steps.toLocaleString()}
+              </p>
+              <Progress value={Math.min(100, (d.steps / 10000) * 100)} />
+            </Card>
+
+            <section className="flex flex-col gap-2">
+              <h2 className="px-1 text-title-3">Workouts</h2>
+              <List>
+                {workouts.map((w) => (
+                  <ListItem
+                    key={w.name}
+                    icon={<w.icon />}
+                    iconColor="var(--system-green)"
+                    detail={`${w.kcal} kcal`}
+                    chevron
+                    onClick={() => {}}
+                  >
+                    {w.name}
+                    <span className="block text-footnote text-secondary-label">
+                      {w.when} · {w.duration}
+                    </span>
+                  </ListItem>
+                ))}
+              </List>
+            </section>
+          </div>
+        </TabBarContent>
+
+        <TabBarContent value="sharing" className="flex min-h-0 items-center justify-center overflow-y-auto p-4">
+          <p className="text-center text-subheadline text-secondary-label">
+            Share your rings with friends.
+          </p>
+        </TabBarContent>
+
+        <TabBarList>
+          <TabBarItem value="summary" icon={<FlameIcon />} className="data-[state=active]:text-green">
+            Summary
+          </TabBarItem>
+          <TabBarItem value="sharing" icon={<Share2Icon />} className="data-[state=active]:text-green">
+            Sharing
+          </TabBarItem>
+        </TabBarList>
+      </TabBar>
+    </div>
   );
 }

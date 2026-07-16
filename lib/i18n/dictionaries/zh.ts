@@ -76,6 +76,8 @@ export const zh: Dict = {
     "lead": "全部 {n} 个组件实时展示,均可交互 — 点击标题查看安装方法与源码。"
   },
   "descriptions": {
+    "lyrics-view": "随播放点亮的加粗歌词行,点按跳转。",
+    "queue-list": "即将播放:当前曲目置顶,下面是后续曲目。",
     "accordion": "带旋转箭头的分组折叠列表。",
     "action-sheet": "自下而上的堆叠操作组与独立取消按钮。",
     "alert": "iOS 风格的内联提示横幅。",

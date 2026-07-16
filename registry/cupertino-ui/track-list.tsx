@@ -26,8 +26,7 @@ function EqualizerBars({ paused }: { paused?: boolean }) {
             height: "40%",
             animation: paused
               ? "none"
-              : `cupertino-ui-eq ${0.7 + i * 0.13}s ease-in-out infinite`,
-            animationDelay: `${i * -0.19}s`,
+              : `cupertino-ui-eq ${0.7 + i * 0.13}s ease-in-out ${i * -0.19}s infinite`,
           }}
         />
       ))}

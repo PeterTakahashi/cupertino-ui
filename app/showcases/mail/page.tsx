@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 
 import { ShowcaseFrame } from "@/components/site/showcase-frame";
+import { List, ListItem } from "@/registry/cupertino-ui/list";
+import {
+  NavigationLink,
+  NavigationStack,
+} from "@/registry/cupertino-ui/navigation-stack";
+import { SearchField } from "@/registry/cupertino-ui/search-field";
 import { Avatar, AvatarFallback } from "@/registry/cupertino-ui/avatar";
 import { Button } from "@/registry/cupertino-ui/button";
 import {
@@ -87,7 +93,7 @@ export default function MailShowcase() {
     <ShowcaseFrame title="Mail">
       <Toaster />
       <SidebarProvider selected={mailbox} onSelect={setMailbox}>
-        <div className="flex h-[620px] flex-col overflow-hidden rounded-[12px] bg-background shadow-[var(--shadow-window)]">
+        <div className="hidden h-[620px] flex-col overflow-hidden rounded-[12px] bg-background shadow-[var(--shadow-window)] md:flex">
           <Toolbar className="shrink-0">
             <SidebarToggle />
             <ToolbarSpacer />
@@ -214,7 +220,120 @@ export default function MailShowcase() {
             </ResizablePanelGroup>
           </div>
         </div>
+
+        <MailMobile />
       </SidebarProvider>
     </ShowcaseFrame>
+  );
+}
+
+function MessageScreen({ message }: { message: (typeof messages)[number] }) {
+  return (
+    <article className="flex flex-col gap-4">
+      <header className="flex items-center gap-3">
+        <Avatar>
+          <AvatarFallback>
+            {message.from.split(" ").map((w) => w[0]).join("").slice(0, 2)}
+          </AvatarFallback>
+        </Avatar>
+        <div className="min-w-0 flex-1">
+          <p className="text-headline">{message.from}</p>
+          <p className="text-footnote text-secondary-label">
+            To: you · {message.time}
+          </p>
+        </div>
+      </header>
+      <h1 className="text-title-3">{message.subject}</h1>
+      <div className="whitespace-pre-line rounded-[var(--radius-card)] bg-grouped-secondary p-4 text-callout leading-relaxed">
+        {message.body}
+      </div>
+      <Button
+        variant="tinted"
+        onClick={() =>
+          toast({ title: "Reply", description: `Replying to ${message.from}`, icon: <ReplyIcon /> })
+        }
+      >
+        <ReplyIcon className="size-4" /> Reply
+      </Button>
+    </article>
+  );
+}
+
+function InboxScreen() {
+  const [query, setQuery] = React.useState("");
+  const shown = messages.filter(
+    (m) =>
+      m.from.toLowerCase().includes(query.toLowerCase()) ||
+      m.subject.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return (
+    <div className="flex flex-col gap-3">
+      <SearchField placeholder="Search" onValueChange={setQuery} />
+      <div className="overflow-hidden rounded-[var(--radius-card)] bg-grouped-secondary">
+        {shown.map((m) => (
+          <NavigationLink
+            key={m.subject}
+            title={m.from}
+            destination={<MessageScreen message={m} />}
+            className="[&>[data-slot=list-item-inner]]:py-1.5"
+          >
+            <span className="flex items-center gap-2">
+              {m.unread ? <span className="size-2 shrink-0 rounded-full bg-blue" /> : null}
+              <span className="truncate text-subheadline font-semibold">{m.from}</span>
+              <span className="ml-auto shrink-0 pl-2 text-caption-1 text-tertiary-label">
+                {m.time}
+              </span>
+            </span>
+            <span className="block truncate text-footnote">{m.subject}</span>
+            <span className="block truncate text-footnote text-secondary-label">
+              {m.preview}
+            </span>
+          </NavigationLink>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MailMobile() {
+  return (
+    <div className="mx-auto h-[calc(100dvh-120px)] max-h-[820px] w-full max-w-md overflow-hidden rounded-[24px] shadow-[var(--shadow-window)] md:hidden">
+      <NavigationStack title="Mailboxes" className="h-full">
+        <List>
+          <NavigationLink
+            title="Inbox"
+            icon={<InboxIcon />}
+            destination={<InboxScreen />}
+            detail="2"
+          />
+          <NavigationLink
+            title="Sent"
+            icon={<SendIcon />}
+            iconColor="var(--system-green)"
+            destination={
+              <ListItem className="text-secondary-label">No sent mail.</ListItem>
+            }
+          />
+          <NavigationLink
+            title="Drafts"
+            icon={<FileTextIcon />}
+            iconColor="var(--system-orange)"
+            destination={
+              <ListItem className="text-secondary-label">1 draft.</ListItem>
+            }
+            detail="1"
+          />
+          <NavigationLink
+            title="Trash"
+            icon={<Trash2Icon />}
+            iconColor="var(--system-red)"
+            destination={
+              <ListItem className="text-secondary-label">Empty.</ListItem>
+            }
+          />
+        </List>
+      </NavigationStack>
+    </div>
   );
 }

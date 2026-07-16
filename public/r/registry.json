@@ -542,6 +542,25 @@
       ]
     },
     {
+      "name": "lyrics-view",
+      "type": "registry:ui",
+      "title": "Lyrics View",
+      "description": "Apple Music lyrics: bold synced lines that light up with playback and seek on tap.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/lyrics-view.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/audio-player.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
@@ -671,6 +690,32 @@
       ],
       "dependencies": [
         "radix-ui"
+      ]
+    },
+    {
+      "name": "queue-list",
+      "type": "registry:ui",
+      "title": "Queue List",
+      "description": "Up Next: the current track pinned with upcoming tracks below; tap to jump.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/queue-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/audio-player.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/track-list.tsx",
+          "type": "registry:ui"
+        }
       ]
     },
     {

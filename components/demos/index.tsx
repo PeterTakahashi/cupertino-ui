@@ -63,7 +63,12 @@ import MiniPlayerDemo from "@/components/demos/mini-player-demo";
 import NowPlayingDemo from "@/components/demos/now-playing-demo";
 import TrackListDemo from "@/components/demos/track-list-demo";
 
+import LyricsViewDemo from "@/components/demos/lyrics-view-demo";
+import QueueListDemo from "@/components/demos/queue-list-demo";
+
 export const demos: Record<string, React.ComponentType> = {
+  "lyrics-view": LyricsViewDemo,
+  "queue-list": QueueListDemo,
   "album-grid": AlbumGridDemo,
   "album-header": AlbumHeaderDemo,
   "audio-player": AudioPlayerDemo,

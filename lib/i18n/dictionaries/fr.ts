@@ -76,6 +76,8 @@ export const fr: Dict = {
     "lead": "Les {n} composants, en direct. Tout est interactif — cliquez un titre pour l'installation et la source."
   },
   "descriptions": {
+    "lyrics-view": "Paroles en gras synchronisées ; toucher pour naviguer.",
+    "queue-list": "À suivre : morceau actuel épinglé, la suite en dessous.",
     "accordion": "Liste dépliante groupée à chevrons rotatifs.",
     "action-sheet": "Groupes d'actions empilés montant du bas, avec Annuler détaché.",
     "alert": "Bannière en ligne façon iOS.",

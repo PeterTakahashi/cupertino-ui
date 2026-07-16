@@ -76,6 +76,8 @@ export const de: Dict = {
     "lead": "Alle {n} Komponenten, live. Alles ist interaktiv — Titel anklicken für Installation und Quellcode."
   },
   "descriptions": {
+    "lyrics-view": "Fette Lyriczeilen, synchron beleuchtet; Tippen sucht.",
+    "queue-list": "Als Nächstes: aktueller Track oben, kommende darunter.",
     "accordion": "Gruppierte Aufklapp-Liste mit rotierenden Chevrons.",
     "action-sheet": "Gestapelte Aktionsgruppen von unten, mit separatem Abbrechen.",
     "alert": "Inline-Banner im iOS-Stil.",

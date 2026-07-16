@@ -3,6 +3,8 @@
 import * as React from "react";
 import {
   ChevronLeftIcon,
+  ListMusicIcon as QueueIcon,
+  QuoteIcon,
   ListMusicIcon,
   MicVocalIcon,
   MusicIcon,
@@ -31,9 +33,25 @@ import {
   ToolbarButton,
   ToolbarSpacer,
 } from "@/registry/cupertino-ui/toolbar";
-import { albums, allTracks, playlists, type Album } from "@/lib/music-library";
+import { LyricsView } from "@/components/ui/lyrics-view";
+import { QueueList } from "@/components/ui/queue-list";
+import {
+  albums,
+  allTracks,
+  artists,
+  lyrics,
+  playlists,
+  type Album,
+  type Artist,
+} from "@/lib/music-library";
 
-function PlayerBar() {
+function PlayerBar({
+  panel,
+  setPanel,
+}: {
+  panel: "none" | "lyrics" | "queue";
+  setPanel: (p: "none" | "lyrics" | "queue") => void;
+}) {
   const {
     track,
     playing,
@@ -99,6 +117,27 @@ function PlayerBar() {
         )}
       </div>
 
+      <div className="flex items-center gap-1 text-secondary-label">
+        <button
+          type="button"
+          aria-label="Lyrics"
+          aria-pressed={panel === "lyrics"}
+          onClick={() => setPanel(panel === "lyrics" ? "none" : "lyrics")}
+          className={`rounded-[6px] p-1.5 hover:bg-fill-quaternary [&_svg]:size-4 ${panel === "lyrics" ? "bg-fill-tertiary text-blue" : ""}`}
+        >
+          <QuoteIcon />
+        </button>
+        <button
+          type="button"
+          aria-label="Up Next"
+          aria-pressed={panel === "queue"}
+          onClick={() => setPanel(panel === "queue" ? "none" : "queue")}
+          className={`rounded-[6px] p-1.5 hover:bg-fill-quaternary [&_svg]:size-4 ${panel === "queue" ? "bg-fill-tertiary text-blue" : ""}`}
+        >
+          <QueueIcon />
+        </button>
+      </div>
+
       <div className="hidden w-32 sm:block">
         <Slider
           value={[volume * 100]}
@@ -113,6 +152,8 @@ function PlayerBar() {
 export function MusicDesktop({ className }: { className?: string }) {
   const [section, setSection] = React.useState("albums");
   const [openAlbum, setOpenAlbum] = React.useState<Album | null>(null);
+  const [openArtist, setOpenArtist] = React.useState<Artist | null>(null);
+  const [panel, setPanel] = React.useState<"none" | "lyrics" | "queue">("none");
   const [query, setQuery] = React.useState("");
   const { play, track, playing } = useAudioPlayer();
 
@@ -129,13 +170,20 @@ export function MusicDesktop({ className }: { className?: string }) {
         onSelect={(v) => {
           setSection(v);
           setOpenAlbum(null);
+          setOpenArtist(null);
         }}
       >
         <div className="flex h-[640px] w-full flex-col overflow-hidden rounded-[12px] bg-background shadow-[var(--shadow-window)]">
           <Toolbar className="shrink-0 gap-2 shadow-none">
             <SidebarToggle />
-            {openAlbum ? (
-              <ToolbarButton aria-label="Back" onClick={() => setOpenAlbum(null)}>
+            {openAlbum || openArtist ? (
+              <ToolbarButton
+                aria-label="Back"
+                onClick={() => {
+                  setOpenAlbum(null);
+                  setOpenArtist(null);
+                }}
+              >
                 <ChevronLeftIcon />
               </ToolbarButton>
             ) : null}
@@ -173,7 +221,61 @@ export function MusicDesktop({ className }: { className?: string }) {
             </Sidebar>
 
             <main className="min-w-0 flex-1 overflow-y-auto p-6">
-              {openAlbum ? (
+              {openArtist ? (
+                <div className="mx-auto flex max-w-xl flex-col gap-6">
+                  <header className="flex items-center gap-5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={openArtist.artworkUrl}
+                      alt=""
+                      className="size-28 rounded-full object-cover shadow-[0_0_0_0.5px_var(--separator),0_8px_24px_rgba(0,0,0,0.2)]"
+                    />
+                    <div className="flex flex-col gap-2">
+                      <h1 className="text-title-1 tracking-tight">{openArtist.name}</h1>
+                      <p className="text-footnote text-secondary-label">
+                        {openArtist.tracks.length} song
+                        {openArtist.tracks.length > 1 ? "s" : ""} in library
+                      </p>
+                    </div>
+                  </header>
+                  <section className="flex flex-col gap-2">
+                    <h2 className="text-title-3">Top Songs</h2>
+                    <TrackList className="rounded-[var(--radius-card)] bg-grouped-secondary">
+                      {openArtist.tracks.map((tr, i) => (
+                        <TrackRow
+                          key={tr.id}
+                          title={tr.title}
+                          subtitle={tr.album}
+                          artworkUrl={tr.artworkUrl}
+                          duration={formatTime(tr.duration ?? 0)}
+                          active={track?.id === tr.id}
+                          playing={playing}
+                          onClick={() => play(openArtist.tracks, i)}
+                        />
+                      ))}
+                    </TrackList>
+                  </section>
+                  <section className="flex flex-col gap-3">
+                    <h2 className="text-title-3">Albums</h2>
+                    <AlbumGrid>
+                      {albums
+                        .filter((a) => a.tracks.some((t) => t.artist === openArtist.name))
+                        .map((a) => (
+                          <AlbumCard
+                            key={a.id}
+                            artworkUrl={a.artworkUrl}
+                            title={a.title}
+                            subtitle={a.meta}
+                            onClick={() => {
+                              setOpenArtist(null);
+                              setOpenAlbum(a);
+                            }}
+                          />
+                        ))}
+                    </AlbumGrid>
+                  </section>
+                </div>
+              ) : openAlbum ? (
                 <div className="mx-auto flex max-w-xl flex-col gap-5">
                   <AlbumHeader
                     artworkUrl={openAlbum.artworkUrl}
@@ -238,20 +340,15 @@ export function MusicDesktop({ className }: { className?: string }) {
                 <>
                   <h1 className="mb-5 text-title-1 tracking-tight">Artists</h1>
                   <TrackList className="rounded-[var(--radius-card)] bg-grouped-secondary">
-                    {[...new Set(allTracks.map((x) => x.artist))].map((artist) => {
-                      const first = allTracks.find((x) => x.artist === artist)!;
-                      return (
-                        <TrackRow
-                          key={artist}
-                          title={artist}
-                          subtitle={`${allTracks.filter((x) => x.artist === artist).length} song(s)`}
-                          artworkUrl={first.artworkUrl}
-                          onClick={() =>
-                            play(allTracks, allTracks.findIndex((x) => x.artist === artist))
-                          }
-                        />
-                      );
-                    })}
+                    {artists.map((a) => (
+                      <TrackRow
+                        key={a.name}
+                        title={a.name}
+                        subtitle={`${a.tracks.length} song${a.tracks.length > 1 ? "s" : ""}`}
+                        artworkUrl={a.artworkUrl}
+                        onClick={() => setOpenArtist(a)}
+                      />
+                    ))}
                   </TrackList>
                 </>
               ) : (
@@ -272,9 +369,28 @@ export function MusicDesktop({ className }: { className?: string }) {
                 </>
               )}
             </main>
+
+            {panel !== "none" ? (
+              <aside className="w-72 shrink-0 self-stretch overflow-hidden bg-secondary-background/60 py-4 shadow-[-0.5px_0_0_0_var(--separator)]">
+                {panel === "lyrics" ? (
+                  track && lyrics[track.id] ? (
+                    <LyricsView
+                      lines={lyrics[track.id]}
+                      className="[&>button]:text-[19px]"
+                    />
+                  ) : (
+                    <p className="flex h-full items-center justify-center px-6 text-center text-footnote text-secondary-label">
+                      Play a song to see lyrics.
+                    </p>
+                  )
+                ) : (
+                  <QueueList />
+                )}
+              </aside>
+            ) : null}
           </div>
 
-          <PlayerBar />
+          <PlayerBar panel={panel} setPanel={setPanel} />
         </div>
       </SidebarProvider>
     </div>
