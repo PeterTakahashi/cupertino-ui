@@ -28,7 +28,8 @@ export const ja: Dict = {
     "components": "コンポーネント",
     "introduction": "イントロダクション",
     "installation": "インストール",
-    "theming": "テーマ"
+    "theming": "テーマ",
+    "skills": "スキル"
   },
   "intro": {
     "title": "イントロダクション",
@@ -137,5 +138,25 @@ export const ja: Dict = {
     "toolbar": "アイコンボタン付きのmacOSウィンドウツールバー。",
     "tooltip": "macOSのヘルプタグ。",
     "track-list": "アニメーションイコライザーバー付きの番号行。"
-  }
+  },
+  "skills": {
+  "title": "スキル",
+  "lead": "AIエージェントに cupertino-ui での開発を教える。",
+  "whatTitle": "スキルとは?",
+  "whatBody": "スキルは、AIコーディングエージェント(Claude Code など)が該当タスクの際に読み込む指示書です。cupertino-ui スキルは、テーマのセットアップ、Apple ソフトウェアらしく見せるトークンと作法、コンポーネントの組み合わせ方、避けるべき落とし穴をエージェントに教えます。「Apple 風の設定画面を作って」と言うだけで、正しい流儀の結果が得られます。",
+  "learnsTitle": "エージェントが学ぶこと",
+  "learns": [
+    "セットアップ順序: shadcn init → テーマトークン → コンポーネント(テーマが先である理由も)",
+    "セマンティックトークン: ラベル階層、フィル、grouped 背景、SF型スケール、マテリアル",
+    "HIG の作法: ヘアライン区切り、cursor-default、押下フィードバック、ダークモード",
+    "合成パターン: 設定リスト、NavigationStack の push、macOS ウィンドウシェル、音声再生",
+    "既知の落とし穴: tailwind-merge のクラス衝突、上端の backdrop-filter バグなど"
+  ],
+  "installCliTitle": "プロジェクトにインストール(推奨)",
+  "installCliBody": "リポジトリの .claude/skills/cupertino-ui/ にスキルを配置し、そのプロジェクトの全エージェントセッションで有効になります:",
+  "installUserTitle": "ユーザーアカウントにインストール",
+  "installUserBody": "すべてのプロジェクトで使うには、ホームディレクトリにコピーします:",
+  "contentsTitle": "中身",
+  "contentsBody": "2ファイル構成: SKILL.md(セットアップ・トークン・作法・パターン・落とし穴)と references/components.md(全コンポーネントのカタログ)。全文は以下で読めます。"
+}
 };

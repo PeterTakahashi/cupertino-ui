@@ -28,6 +28,7 @@ export default function DocsLayout({
                 {dict.sidebar.installation}
               </SidebarLink>
               <SidebarLink href="/docs/theming">{dict.sidebar.theming}</SidebarLink>
+              <SidebarLink href="/docs/skills">{dict.sidebar.skills}</SidebarLink>
             </div>
             <div className="flex flex-col gap-1">
               <p className="px-2.5 pb-1 text-caption-1 font-semibold uppercase tracking-wide text-tertiary-label">

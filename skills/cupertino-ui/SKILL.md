@@ -58,7 +58,7 @@ import { Button } from "@/components/ui/button";
 <Button variant="tinted">Continue</Button>
 ```
 
-For the full catalog (67 components) with exports, key props, and usage
+For the full catalog (61 components) with exports, key props, and usage
 snippets, read [references/components.md](references/components.md). Skim its
 table of contents and read only the sections you need.
 
@@ -79,8 +79,9 @@ Type scale = SF text styles with correct tracking: `text-large-title`,
 `text-subheadline`, `text-footnote`, `text-caption-1/2`. Prefer these over
 `text-sm`/`text-lg` — they carry HIG size, line-height, and letter-spacing.
 
-Radii tokens: `rounded-[var(--radius-control|field|card|group|sheet)]`
-(7/10/12/16/20 px). Shadows: `shadow-[var(--shadow-card|menu|window)]`.
+Radii tokens (7/10/12/16/20 px): `rounded-[var(--radius-control)]`,
+`--radius-field`, `--radius-card`, `--radius-group`, `--radius-sheet`.
+Shadows: `shadow-[var(--shadow-card)]`, `--shadow-menu`, `--shadow-window`.
 
 Dark mode is class-based: toggle `dark` on `<html>`. All tokens swap
 automatically; never write `dark:` overrides for token-based colors.

@@ -28,7 +28,8 @@ export const de: Dict = {
     "components": "Komponenten",
     "introduction": "Einführung",
     "installation": "Installation",
-    "theming": "Theming"
+    "theming": "Theming",
+    "skills": "Skills"
   },
   "intro": {
     "title": "Einführung",
@@ -137,5 +138,25 @@ export const de: Dict = {
     "toolbar": "Die macOS-Fensterwerkzeugleiste.",
     "tooltip": "Das macOS-Hilfeschild.",
     "track-list": "Nummerierte Zeilen mit animierten Equalizer-Balken."
-  }
+  },
+  "skills": {
+  "title": "Skills",
+  "lead": "Bring deinem KI-Agenten bei, mit cupertino-ui zu bauen.",
+  "whatTitle": "Was ist ein Skill?",
+  "whatBody": "Ein Skill ist ein Satz von Anweisungen, den ein KI-Coding-Agent (wie Claude Code) bei passenden Aufgaben lädt. Der cupertino-ui-Skill vermittelt Theme-Setup, die Tokens und Konventionen für echtes Apple-Gefühl, Kompositionsmuster und bekannte Fallstricke — sag einfach „bau einen Apple-artigen Einstellungsbildschirm“ und erhalte idiomatische Ergebnisse.",
+  "learnsTitle": "Was der Agent lernt",
+  "learns": [
+    "Setup-Reihenfolge: shadcn init → Theme-Tokens → Komponenten, und warum das Theme zuerst kommt",
+    "Semantische Tokens: Label-Hierarchie, Fills, gruppierte Hintergründe, SF-Typoskala, Materialien",
+    "HIG-Konventionen: Haarlinien, cursor-default, Druck-Feedback, Dunkelmodus",
+    "Kompositionsmuster: Einstellungslisten, NavigationStack-Push, macOS-Fensterschalen, Audiowiedergabe",
+    "Bekannte Fallstricke wie die tailwind-merge-Klassenkollision und den Backdrop-Filter-Bug"
+  ],
+  "installCliTitle": "In ein Projekt installieren (empfohlen)",
+  "installCliBody": "Installiert die Skill-Dateien nach .claude/skills/cupertino-ui/ im Repo — jede Agent-Session im Projekt lädt sie:",
+  "installUserTitle": "Für dein Benutzerkonto installieren",
+  "installUserBody": "Für alle Projekte: kopiere den Skill stattdessen ins Home-Verzeichnis:",
+  "contentsTitle": "Inhalt",
+  "contentsBody": "Zwei Dateien: SKILL.md (Setup, Tokens, Konventionen, Muster, Fallstricke) und references/components.md (der vollständige Komponentenkatalog). Der volle Quelltext steht unten."
+}
 };

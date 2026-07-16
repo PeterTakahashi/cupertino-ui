@@ -1098,6 +1098,24 @@
       "dependencies": [
         "lucide-react"
       ]
+    },
+    {
+      "name": "skill",
+      "type": "registry:item",
+      "title": "Agent Skill",
+      "description": "Claude Code skill that teaches an AI agent how to install and compose cupertino-ui: setup, design tokens, HIG conventions, composition patterns, pitfalls, and the full component catalog.",
+      "files": [
+        {
+          "path": "skills/cupertino-ui/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/cupertino-ui/SKILL.md"
+        },
+        {
+          "path": "skills/cupertino-ui/references/components.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/cupertino-ui/references/components.md"
+        }
+      ]
     }
   ]
 }

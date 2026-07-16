@@ -35,6 +35,7 @@ export type Dict = {
     introduction: string;
     installation: string;
     theming: string;
+    skills: string;
   };
   intro: {
     title: string;
@@ -80,6 +81,20 @@ export type Dict = {
   gallery: {
     title: string;
     lead: string; // {n} placeholder
+  };
+  skills: {
+    title: string;
+    lead: string;
+    whatTitle: string;
+    whatBody: string;
+    learnsTitle: string;
+    learns: string[];
+    installCliTitle: string;
+    installCliBody: string;
+    installUserTitle: string;
+    installUserBody: string;
+    contentsTitle: string;
+    contentsBody: string;
   };
   /** Component one-line descriptions keyed by slug; falls back to English. */
   descriptions?: Record<string, string>;

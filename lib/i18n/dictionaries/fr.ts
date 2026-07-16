@@ -28,7 +28,8 @@ export const fr: Dict = {
     "components": "Composants",
     "introduction": "Introduction",
     "installation": "Installation",
-    "theming": "Thème"
+    "theming": "Thème",
+    "skills": "Skills"
   },
   "intro": {
     "title": "Introduction",
@@ -137,5 +138,25 @@ export const fr: Dict = {
     "toolbar": "La barre d'outils de fenêtre macOS.",
     "tooltip": "L'étiquette d'aide macOS.",
     "track-list": "Rangées numérotées à égaliseur animé."
-  }
+  },
+  "skills": {
+  "title": "Skills",
+  "lead": "Apprenez à votre agent IA à construire avec cupertino-ui.",
+  "whatTitle": "Qu'est-ce qu'un skill ?",
+  "whatBody": "Un skill est un ensemble d'instructions qu'un agent de codage IA (comme Claude Code) charge pour les tâches correspondantes. Le skill cupertino-ui lui enseigne la mise en place du thème, les tokens et conventions qui donnent le rendu Apple, les patrons de composition et les pièges à éviter — dites simplement « fais un écran de réglages façon Apple » et obtenez un résultat idiomatique.",
+  "learnsTitle": "Ce que l'agent apprend",
+  "learns": [
+    "L'ordre d'installation : shadcn init → tokens du thème → composants, et pourquoi le thème vient d'abord",
+    "Les tokens sémantiques : hiérarchie des labels, fills, fonds groupés, échelle SF, matériaux",
+    "Les conventions HIG : séparateurs capillaires, cursor-default, retour d'appui, mode sombre",
+    "Les patrons : listes de réglages, push NavigationStack, coquilles de fenêtres macOS, lecture audio",
+    "Les pièges connus : collision de classes tailwind-merge, bug du backdrop-filter en haut de viewport"
+  ],
+  "installCliTitle": "Installer dans un projet (recommandé)",
+  "installCliBody": "Installe les fichiers du skill dans .claude/skills/cupertino-ui/ du dépôt ; toute session d'agent du projet le charge :",
+  "installUserTitle": "Installer pour votre compte",
+  "installUserBody": "Pour tous vos projets, copiez plutôt le skill dans votre répertoire personnel :",
+  "contentsTitle": "Contenu",
+  "contentsBody": "Deux fichiers : SKILL.md (installation, tokens, conventions, patrons, pièges) et references/components.md (le catalogue complet). La source intégrale est ci-dessous."
+}
 };

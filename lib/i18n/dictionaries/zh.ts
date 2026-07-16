@@ -28,7 +28,8 @@ export const zh: Dict = {
     "components": "组件",
     "introduction": "介绍",
     "installation": "安装",
-    "theming": "主题"
+    "theming": "主题",
+    "skills": "技能"
   },
   "intro": {
     "title": "介绍",
@@ -137,5 +138,25 @@ export const zh: Dict = {
     "toolbar": "带图标按钮的 macOS 窗口工具栏。",
     "tooltip": "macOS 帮助标签。",
     "track-list": "带动态均衡条的编号曲目行。"
-  }
+  },
+  "skills": {
+  "title": "技能",
+  "lead": "教你的 AI 代理使用 cupertino-ui 构建界面。",
+  "whatTitle": "什么是技能?",
+  "whatBody": "技能是 AI 编码代理(如 Claude Code)在处理匹配任务时加载的一组指令。cupertino-ui 技能教代理如何配置主题、哪些令牌与惯例能让界面具有 Apple 质感、如何组合组件以及要避开哪些坑——你只需说“做一个 Apple 风格的设置页”,就能得到地道的结果。",
+  "learnsTitle": "代理会学到什么",
+  "learns": [
+    "安装顺序:shadcn init → 主题令牌 → 组件,以及主题必须先装的原因",
+    "语义令牌:标签层级、填充、分组背景、SF 字号体系、材质",
+    "HIG 惯例:发丝线分隔、cursor-default、按压反馈、深色模式",
+    "组合模式:设置列表、NavigationStack 推入、macOS 窗口骨架、音频播放",
+    "已知的坑:tailwind-merge 类冲突、顶部 backdrop-filter 渲染问题等"
+  ],
+  "installCliTitle": "安装到项目(推荐)",
+  "installCliBody": "把技能文件放进仓库的 .claude/skills/cupertino-ui/,项目内所有代理会话都会加载:",
+  "installUserTitle": "安装到用户账户",
+  "installUserBody": "若想在所有项目中可用,改为复制到主目录:",
+  "contentsTitle": "内容",
+  "contentsBody": "两个文件:SKILL.md(安装、令牌、惯例、模式、坑)和 references/components.md(完整组件目录)。完整源码见下方。"
+}
 };

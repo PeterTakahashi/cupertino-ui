@@ -28,6 +28,7 @@ export const en: Dict = {
     introduction: "Introduction",
     installation: "Installation",
     theming: "Theming",
+    skills: "Skills",
   },
   intro: {
     title: "Introduction",
@@ -80,5 +81,25 @@ export const en: Dict = {
   gallery: {
     title: "Components",
     lead: "All {n} components, live. Everything below is interactive — click a title for install instructions and source.",
+  },
+  skills: {
+    "title": "Skills",
+    "lead": "Teach your AI agent to build with cupertino-ui.",
+    "whatTitle": "What is a skill?",
+    "whatBody": "A skill is a set of instructions an AI coding agent (like Claude Code) loads when it works on a matching task. The cupertino-ui skill teaches the agent how to set up the theme, which tokens and conventions make UIs feel like Apple software, how to compose the components, and which pitfalls to avoid — so you can say “make an Apple-style settings screen” and get idiomatic results.",
+    "learnsTitle": "What the agent learns",
+    "learns": [
+      "Setup order: shadcn init → theme tokens → components, and why the theme must come first",
+      "The semantic tokens: label hierarchy, fills, grouped backgrounds, SF type scale, materials",
+      "HIG conventions: hairline separators, cursor-default controls, press feedback, dark mode",
+      "Composition patterns: settings lists, NavigationStack push flows, macOS window shells, audio playback",
+      "Known pitfalls, like the tailwind-merge class-collision issue and the top-edge backdrop-filter bug"
+    ],
+    "installCliTitle": "Install into a project (recommended)",
+    "installCliBody": "Installs the skill files into .claude/skills/cupertino-ui/ in your repo, so every agent session in the project picks it up:",
+    "installUserTitle": "Install for your user account",
+    "installUserBody": "To make the skill available in every project, copy it into your home directory instead:",
+    "contentsTitle": "What's inside",
+    "contentsBody": "Two files: SKILL.md (setup, tokens, conventions, patterns, pitfalls) and references/components.md (the full catalog of all components with exports and links). The full source is below."
   },
 };

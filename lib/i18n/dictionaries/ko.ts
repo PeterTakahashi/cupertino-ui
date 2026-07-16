@@ -28,7 +28,8 @@ export const ko: Dict = {
     "components": "컴포넌트",
     "introduction": "소개",
     "installation": "설치",
-    "theming": "테마"
+    "theming": "테마",
+    "skills": "스킬"
   },
   "intro": {
     "title": "소개",
@@ -137,5 +138,25 @@ export const ko: Dict = {
     "toolbar": "아이콘 버튼의 macOS 창 툴바.",
     "tooltip": "macOS 도움말 태그.",
     "track-list": "움직이는 이퀄라이저 바의 번호 행."
-  }
+  },
+  "skills": {
+  "title": "스킬",
+  "lead": "AI 에이전트에게 cupertino-ui 사용법을 가르치세요.",
+  "whatTitle": "스킬이란?",
+  "whatBody": "스킬은 AI 코딩 에이전트(Claude Code 등)가 해당 작업을 할 때 불러오는 지침 모음입니다. cupertino-ui 스킬은 테마 설정, Apple 소프트웨어처럼 보이게 하는 토큰과 관례, 컴포넌트 조합법, 피해야 할 함정을 가르칩니다. “Apple 스타일 설정 화면 만들어줘”라고만 해도 올바른 결과를 얻을 수 있습니다.",
+  "learnsTitle": "에이전트가 배우는 것",
+  "learns": [
+    "설치 순서: shadcn init → 테마 토큰 → 컴포넌트, 그리고 테마가 먼저여야 하는 이유",
+    "시맨틱 토큰: 레이블 계층, 필, 그룹 배경, SF 타입 스케일, 머티리얼",
+    "HIG 관례: 헤어라인 구분선, cursor-default, 누름 피드백, 다크 모드",
+    "조합 패턴: 설정 리스트, NavigationStack 푸시, macOS 창 셸, 오디오 재생",
+    "알려진 함정: tailwind-merge 클래스 충돌, 상단 backdrop-filter 버그 등"
+  ],
+  "installCliTitle": "프로젝트에 설치(권장)",
+  "installCliBody": "저장소의 .claude/skills/cupertino-ui/ 에 스킬 파일을 설치해 프로젝트의 모든 에이전트 세션에서 사용됩니다:",
+  "installUserTitle": "사용자 계정에 설치",
+  "installUserBody": "모든 프로젝트에서 쓰려면 홈 디렉터리에 복사하세요:",
+  "contentsTitle": "구성",
+  "contentsBody": "SKILL.md(설정·토큰·관례·패턴·함정)와 references/components.md(전체 컴포넌트 카탈로그) 두 파일입니다. 전문은 아래에서 볼 수 있습니다."
+}
 };
