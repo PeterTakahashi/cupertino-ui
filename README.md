@@ -12,7 +12,7 @@ you install the source and own it.
 
 ## What's inside
 
-- **67 components** (`registry/cupertino-ui/`) — the full shadcn/ui surface
+- **61 components** (`registry/cupertino-ui/`) — the full shadcn/ui surface
   reimagined for Apple HIG (Button, Switch, Slider, Segmented Control, List,
   Dialog, Sheet, Menus, Table, Command/Spotlight, Toast, …) plus
   SwiftUI-native pieces shadcn doesn't have: NavigationStack with push/pop
@@ -57,6 +57,15 @@ npm install
 npm run dev            # docs site at localhost:3000
 npm run registry:build # rebuild public/r/*.json after editing registry/
 npm run build          # registry + production build (fully static)
+```
+
+## Agent skill
+
+`skills/cupertino-ui/` contains a [Claude Code skill](https://docs.anthropic.com/claude-code)
+that teaches an AI agent how to install and compose these components. Install:
+
+```bash
+cp -r skills/cupertino-ui ~/.claude/skills/
 ```
 
 ## Sibling project
