@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { I18nProvider } from "@/lib/i18n";
+
 export const metadata: Metadata = {
   title: {
     default: "cupertino-ui — SwiftUI-flavored components for the web",
@@ -28,7 +30,9 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className="flex min-h-dvh flex-col antialiased">{children}</body>
+      <body className="flex min-h-dvh flex-col antialiased">
+        <I18nProvider>{children}</I18nProvider>
+      </body>
     </html>
   );
 }

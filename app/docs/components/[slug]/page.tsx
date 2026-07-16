@@ -7,6 +7,12 @@ import { CodeBlock } from "@/components/site/code-block";
 import { ComponentPreview } from "@/components/site/component-preview";
 import { demos } from "@/components/demos";
 import { components, siteConfig } from "@/lib/docs";
+import {
+  ComponentDescription,
+  InstallationHeading,
+  SourceHeading,
+  ThemeNote,
+} from "@/components/site/i18n-bits";
 
 export const dynamicParams = false;
 
@@ -49,7 +55,9 @@ export default async function ComponentPage({
     <article className="flex max-w-3xl flex-col gap-8">
       <header className="flex flex-col gap-2">
         <h1 className="text-large-title tracking-tight">{doc.title}</h1>
-        <p className="text-body text-secondary-label">{doc.description}</p>
+        <p className="text-body text-secondary-label">
+          <ComponentDescription slug={doc.slug} fallback={doc.description} />
+        </p>
         {doc.swiftui ? (
           <p className="text-footnote text-tertiary-label">
             SwiftUI: <code className="font-mono">{doc.swiftui}</code>
@@ -62,19 +70,15 @@ export default async function ComponentPage({
       </ComponentPreview>
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-title-3">Installation</h2>
+        <h2 className="text-title-3"><InstallationHeading /></h2>
         <CodeBlock code={installCommand} />
         <p className="text-footnote text-secondary-label">
-          Requires the theme tokens — see{" "}
-          <a href="/docs/installation" className="text-blue">
-            Installation
-          </a>{" "}
-          if this is your first component.
+          <ThemeNote />
         </p>
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-title-3">Source</h2>
+        <h2 className="text-title-3"><SourceHeading /></h2>
         <CodeBlock code={componentSource} collapsible />
       </section>
     </article>

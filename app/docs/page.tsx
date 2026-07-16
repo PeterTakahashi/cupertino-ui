@@ -1,38 +1,29 @@
+"use client";
+
 import Link from "next/link";
 
 import { components } from "@/lib/docs";
-
-export const metadata = { title: "Introduction" };
+import { useI18n } from "@/lib/i18n";
 
 export default function DocsPage() {
+  const { dict } = useI18n();
+  const t = dict.intro;
+
   return (
     <article className="flex max-w-3xl flex-col gap-8">
       <header className="flex flex-col gap-2">
-        <h1 className="text-large-title tracking-tight">Introduction</h1>
-        <p className="text-body text-secondary-label">
-          cupertino-ui brings Apple&apos;s design language to the web: React
-          components styled after SwiftUI on iOS and macOS, distributed the
-          shadcn way — you install the source and own it.
-        </p>
+        <h1 className="text-large-title tracking-tight">{t.title}</h1>
+        <p className="text-body text-secondary-label">{t.lead}</p>
       </header>
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-title-3">Why</h2>
-        <p className="text-callout leading-relaxed">
-          SwiftUI apps look and feel right because they inherit decades of
-          refinement: the SF type scale, the system color palette with its
-          label hierarchy, translucent materials, hairline separators, and
-          controls with exact, familiar proportions. cupertino-ui reproduces those
-          decisions as Tailwind CSS tokens and Radix-based components.
-        </p>
-        <p className="text-callout leading-relaxed">
-          Like shadcn/ui, this is not a package you depend on. Each component
-          is a file the CLI copies into your project. Change anything.
-        </p>
+        <h2 className="text-title-3">{t.whyTitle}</h2>
+        <p className="text-callout leading-relaxed">{t.whyP1}</p>
+        <p className="text-callout leading-relaxed">{t.whyP2}</p>
       </section>
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-title-3">Components</h2>
+        <h2 className="text-title-3">{t.componentsTitle}</h2>
         <ul className="grid grid-cols-2 gap-1.5 sm:grid-cols-3">
           {components.map((c) => (
             <li key={c.slug}>

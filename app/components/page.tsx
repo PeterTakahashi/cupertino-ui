@@ -4,6 +4,7 @@ import { ChevronRightIcon } from "lucide-react";
 import { SiteHeader } from "@/components/site/site-header";
 import { demos } from "@/components/demos";
 import { components } from "@/lib/docs";
+import { ComponentDescription, GalleryHeader } from "@/components/site/i18n-bits";
 
 export const metadata = {
   title: "Components",
@@ -16,13 +17,7 @@ export default function ComponentsPage() {
       <SiteHeader />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-5 pb-24">
-        <header className="flex flex-col gap-2 py-12">
-          <h1 className="text-large-title tracking-tight">Components</h1>
-          <p className="max-w-xl text-body text-secondary-label">
-            {`All ${components.length} components, live. Everything below is
-            interactive — click a title for install instructions and source.`}
-          </p>
-        </header>
+        <GalleryHeader count={components.length} />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {components.map((c) => {
@@ -43,7 +38,7 @@ export default function ComponentsPage() {
                   />
                 </Link>
                 <p className="px-5 text-footnote text-secondary-label">
-                  {c.description}
+                  <ComponentDescription slug={c.slug} fallback={c.description} />
                 </p>
                 <div className="flex min-h-56 flex-1 items-center justify-center p-6">
                   <Demo />
