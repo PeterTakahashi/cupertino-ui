@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search-field",
+  "title": "Search Field",
+  "description": "The iOS .searchable() bar with magnifier, clear button, and Cancel.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/search-field.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { SearchIcon, XIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI .searchable() — the iOS search bar: gray capsule field\n * with a magnifier, a clear button while typing, and an optional\n * Cancel button that appears on focus.\n */\nfunction SearchField({\n  className,\n  cancelLabel = \"Cancel\",\n  showCancel = true,\n  onValueChange,\n  ...props\n}: Omit<React.ComponentProps<\"input\">, \"type\"> & {\n  /** Label of the cancel button (e.g. localized). */\n  cancelLabel?: string;\n  /** Show the cancel button while the field is focused. */\n  showCancel?: boolean;\n  onValueChange?: (value: string) => void;\n}) {\n  const inputRef = React.useRef<HTMLInputElement>(null);\n  const [focused, setFocused] = React.useState(false);\n  const [hasValue, setHasValue] = React.useState(\n    Boolean(props.defaultValue || props.value)\n  );\n\n  React.useEffect(() => {\n    if (props.value !== undefined) setHasValue(String(props.value).length > 0);\n  }, [props.value]);\n\n  const clear = () => {\n    const el = inputRef.current;\n    if (!el) return;\n    const setter = Object.getOwnPropertyDescriptor(\n      HTMLInputElement.prototype,\n      \"value\"\n    )?.set;\n    setter?.call(el, \"\");\n    el.dispatchEvent(new Event(\"input\", { bubbles: true }));\n    el.focus();\n  };\n\n  return (\n    <div\n      data-slot=\"search-field\"\n      className={cn(\"flex w-full items-center gap-2\", className)}\n    >\n      <div className=\"relative flex h-9 flex-1 items-center\">\n        <SearchIcon className=\"pointer-events-none absolute left-2.5 size-4 text-secondary-label\" />\n        <input\n          ref={inputRef}\n          type=\"search\"\n          data-slot=\"search-field-input\"\n          className=\"h-full w-full rounded-[10px] bg-fill-tertiary pl-8 pr-8 text-body text-label outline-none transition-shadow placeholder:text-secondary-label focus:ring-[3px] focus:ring-blue/40 disabled:pointer-events-none disabled:opacity-40 [&::-webkit-search-cancel-button]:hidden\"\n          placeholder=\"Search\"\n          onFocus={(e) => {\n            setFocused(true);\n            props.onFocus?.(e);\n          }}\n          onBlur={(e) => {\n            setFocused(false);\n            props.onBlur?.(e);\n          }}\n          {...props}\n          onChange={(e) => {\n            setHasValue(e.target.value.length > 0);\n            onValueChange?.(e.target.value);\n            props.onChange?.(e);\n          }}\n        />\n        {hasValue ? (\n          <button\n            type=\"button\"\n            aria-label=\"Clear search\"\n            onMouseDown={(e) => e.preventDefault()}\n            onClick={clear}\n            className=\"absolute right-2 flex size-[18px] cursor-default items-center justify-center rounded-full bg-fill text-background outline-none dark:text-gray-6\"\n          >\n            <XIcon className=\"size-3\" strokeWidth={3} />\n          </button>\n        ) : null}\n      </div>\n      {showCancel && (focused || hasValue) ? (\n        <button\n          type=\"button\"\n          onMouseDown={(e) => e.preventDefault()}\n          onClick={() => {\n            clear();\n            inputRef.current?.blur();\n          }}\n          className=\"shrink-0 cursor-default select-none text-body text-blue outline-none duration-200 animate-in fade-in slide-in-from-right-2 active:opacity-50\"\n        >\n          {cancelLabel}\n        </button>\n      ) : null}\n    </div>\n  );\n}\n\nexport { SearchField };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

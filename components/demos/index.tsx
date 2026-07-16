@@ -25,7 +25,34 @@ import SwitchDemo from "@/components/demos/switch-demo";
 import TextareaDemo from "@/components/demos/textarea-demo";
 import TooltipDemo from "@/components/demos/tooltip-demo";
 
+import ActionSheetDemo from "@/components/demos/action-sheet-demo";
+import ColorPickerDemo from "@/components/demos/color-picker-demo";
+import ContentUnavailableDemo from "@/components/demos/content-unavailable-demo";
+import ControlGroupDemo from "@/components/demos/control-group-demo";
+import DatePickerDemo from "@/components/demos/date-picker-demo";
+import DisclosureGroupDemo from "@/components/demos/disclosure-group-demo";
+import FormDemo from "@/components/demos/form-demo";
+import GaugeDemo from "@/components/demos/gauge-demo";
+import NavigationStackDemo from "@/components/demos/navigation-stack-demo";
+import SearchFieldDemo from "@/components/demos/search-field-demo";
+import SidebarDemo from "@/components/demos/sidebar-demo";
+import TabBarDemo from "@/components/demos/tab-bar-demo";
+import ToolbarDemo from "@/components/demos/toolbar-demo";
+
 export const demos: Record<string, React.ComponentType> = {
+  "action-sheet": ActionSheetDemo,
+  "color-picker": ColorPickerDemo,
+  "content-unavailable": ContentUnavailableDemo,
+  "control-group": ControlGroupDemo,
+  "date-picker": DatePickerDemo,
+  "disclosure-group": DisclosureGroupDemo,
+  form: FormDemo,
+  gauge: GaugeDemo,
+  "navigation-stack": NavigationStackDemo,
+  "search-field": SearchFieldDemo,
+  sidebar: SidebarDemo,
+  "tab-bar": TabBarDemo,
+  toolbar: ToolbarDemo,
   avatar: AvatarDemo,
   badge: BadgeDemo,
   button: ButtonDemo,

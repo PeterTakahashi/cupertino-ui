@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toolbar",
+  "title": "Toolbar",
+  "description": "The macOS window toolbar with title, icon buttons, and placement groups.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/toolbar.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI .toolbar() — the macOS window toolbar: a hairline-divided\n * bar with title, borderless icon buttons, and placement groups.\n */\nfunction Toolbar({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"toolbar\"\n      className={cn(\n        \"flex h-[52px] w-full items-center gap-2 bg-background/80 px-3 shadow-[0_0.5px_0_0_var(--separator)] backdrop-blur-xl\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n/** Title block: window title + optional subtitle, like macOS Finder. */\nfunction ToolbarTitle({\n  className,\n  subtitle,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & { subtitle?: string }) {\n  return (\n    <div\n      data-slot=\"toolbar-title\"\n      className={cn(\"flex min-w-0 flex-col\", className)}\n      {...props}\n    >\n      <span className=\"truncate text-subheadline font-semibold text-label\">\n        {children}\n      </span>\n      {subtitle ? (\n        <span className=\"truncate text-caption-1 text-secondary-label\">\n          {subtitle}\n        </span>\n      ) : null}\n    </div>\n  );\n}\n\n/** Toolbar icon button, borderless with a hover platter. */\nfunction ToolbarButton({\n  className,\n  active,\n  ...props\n}: React.ComponentProps<\"button\"> & {\n  /** Highlighted state, like an active view-mode control. */\n  active?: boolean;\n}) {\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"toolbar-button\"\n      className={cn(\n        \"flex h-7 min-w-8 shrink-0 cursor-default select-none items-center justify-center gap-1 rounded-[6px] px-1.5 text-secondary-label outline-none transition-colors duration-100 hover:bg-fill-quaternary focus-visible:ring-[3px] focus-visible:ring-blue/40 active:bg-fill-tertiary disabled:pointer-events-none disabled:opacity-40 [&_svg]:size-[17px] [&_svg]:shrink-0\",\n        active && \"bg-fill-tertiary text-blue\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n/** Pushes following items to the trailing edge. */\nfunction ToolbarSpacer({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"toolbar-spacer\"\n      aria-hidden\n      className={cn(\"flex-1\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ToolbarSeparator({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"toolbar-separator\"\n      aria-hidden\n      className={cn(\"mx-1 h-5 w-px shrink-0 bg-separator\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  Toolbar,\n  ToolbarButton,\n  ToolbarSeparator,\n  ToolbarSpacer,\n  ToolbarTitle,\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

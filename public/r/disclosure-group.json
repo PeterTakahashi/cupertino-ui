@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "disclosure-group",
+  "title": "Disclosure Group",
+  "description": "Rotating-chevron disclosure rows, like macOS outline views.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/disclosure-group.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Collapsible as CollapsiblePrimitive } from \"radix-ui\";\nimport { ChevronRightIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI DisclosureGroup — a row with a rotating chevron that\n * reveals indented content, like macOS outline views.\n */\nfunction DisclosureGroup({\n  className,\n  label,\n  children,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root> & {\n  /** Row label shown next to the disclosure chevron. */\n  label: React.ReactNode;\n}) {\n  return (\n    <CollapsiblePrimitive.Root\n      data-slot=\"disclosure-group\"\n      className={cn(\"flex w-full flex-col\", className)}\n      {...props}\n    >\n      <CollapsiblePrimitive.Trigger\n        data-slot=\"disclosure-group-trigger\"\n        className=\"group flex min-h-9 cursor-default select-none items-center gap-1.5 rounded-[7px] px-2 text-left text-subheadline text-label outline-none transition-colors hover:bg-fill-quaternary focus-visible:ring-[3px] focus-visible:ring-blue/40 active:bg-fill-tertiary\"\n      >\n        <ChevronRightIcon\n          className=\"size-3.5 shrink-0 text-secondary-label transition-transform duration-200 group-data-[state=open]:rotate-90\"\n          strokeWidth={2.5}\n        />\n        <span className=\"min-w-0 flex-1\">{label}</span>\n      </CollapsiblePrimitive.Trigger>\n      <CollapsiblePrimitive.Content\n        data-slot=\"disclosure-group-content\"\n        className=\"overflow-hidden pl-7 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-top-1 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-1\"\n      >\n        <div className=\"py-1 text-subheadline text-label\">{children}</div>\n      </CollapsiblePrimitive.Content>\n    </CollapsiblePrimitive.Root>\n  );\n}\n\nexport { DisclosureGroup };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

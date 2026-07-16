@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar",
+  "title": "Sidebar",
+  "description": "NavigationSplitView source list: translucent platter, sections, accent selection.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/sidebar.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * NavigationSplitView sidebar — the macOS/iPadOS source list:\n * translucent platter, section headers, and the accent-tinted\n * selection pill.\n */\nconst SidebarContext = React.createContext<{\n  selected?: string;\n  onSelect?: (value: string) => void;\n}>({});\n\nfunction Sidebar({\n  className,\n  selected,\n  onSelect,\n  children,\n  ...props\n}: Omit<React.ComponentProps<\"nav\">, \"onSelect\"> & {\n  /** Value of the selected item (controlled). */\n  selected?: string;\n  onSelect?: (value: string) => void;\n}) {\n  return (\n    <SidebarContext.Provider value={{ selected, onSelect }}>\n      <nav\n        data-slot=\"sidebar\"\n        className={cn(\n          \"flex h-full w-60 flex-col gap-4 overflow-y-auto bg-secondary-background/80 p-2.5 backdrop-blur-xl dark:bg-gray-6/80\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </nav>\n    </SidebarContext.Provider>\n  );\n}\n\nfunction SidebarSection({\n  className,\n  title,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & { title?: string }) {\n  return (\n    <div\n      data-slot=\"sidebar-section\"\n      className={cn(\"flex flex-col gap-px\", className)}\n      {...props}\n    >\n      {title ? (\n        <p className=\"px-2.5 pb-1 text-caption-1 font-semibold text-secondary-label\">\n          {title}\n        </p>\n      ) : null}\n      {children}\n    </div>\n  );\n}\n\nfunction SidebarItem({\n  className,\n  value,\n  icon,\n  badge,\n  children,\n  ...props\n}: Omit<React.ComponentProps<\"button\">, \"value\"> & {\n  /** Identity used for selection. */\n  value: string;\n  /** Leading icon, tinted with the accent color. */\n  icon?: React.ReactNode;\n  /** Trailing count or badge. */\n  badge?: React.ReactNode;\n}) {\n  const { selected, onSelect } = React.useContext(SidebarContext);\n  const isSelected = selected === value;\n\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"sidebar-item\"\n      data-selected={isSelected || undefined}\n      onClick={() => onSelect?.(value)}\n      className={cn(\n        \"flex h-8 w-full shrink-0 cursor-default select-none items-center gap-2.5 rounded-[7px] px-2.5 text-left text-subheadline text-label outline-none transition-colors duration-100 focus-visible:ring-[3px] focus-visible:ring-blue/40\",\n        isSelected\n          ? \"bg-blue text-white [&_svg]:text-white\"\n          : \"hover:bg-fill-quaternary active:bg-fill-tertiary [&_svg]:text-blue\",\n        \"[&_svg]:size-[17px] [&_svg]:shrink-0\",\n        className\n      )}\n      {...props}\n    >\n      {icon}\n      <span className=\"min-w-0 flex-1 truncate\">{children}</span>\n      {badge ? (\n        <span\n          className={cn(\n            \"shrink-0 text-footnote\",\n            isSelected ? \"text-white/80\" : \"text-secondary-label\"\n          )}\n        >\n          {badge}\n        </span>\n      ) : null}\n    </button>\n  );\n}\n\nexport { Sidebar, SidebarItem, SidebarSection };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

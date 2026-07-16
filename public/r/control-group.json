@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "control-group",
+  "title": "Control Group",
+  "description": "A bordered cluster of buttons sharing one platter, like macOS back/forward.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/control-group.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI ControlGroup — a cluster of bordered buttons sharing one\n * platter with hairline dividers, like macOS back/forward controls.\n */\nfunction ControlGroup({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"control-group\"\n      role=\"group\"\n      className={cn(\n        \"inline-flex items-stretch overflow-hidden rounded-[7px] bg-background shadow-[inset_0_0_0_0.5px_var(--opaque-separator),0_0.5px_2px_rgba(0,0,0,0.08)] dark:bg-gray-4 [&>*:not(:first-child)]:shadow-[-0.5px_0_0_0_var(--separator)]\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ControlGroupButton({\n  className,\n  active,\n  ...props\n}: React.ComponentProps<\"button\"> & { active?: boolean }) {\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"control-group-button\"\n      className={cn(\n        \"flex h-[26px] min-w-8 cursor-default select-none items-center justify-center gap-1 px-2 text-footnote text-label outline-none transition-colors focus-visible:ring-[3px] focus-visible:ring-inset focus-visible:ring-blue/40 active:bg-fill-tertiary disabled:pointer-events-none disabled:opacity-40 [&_svg]:size-3.5 [&_svg]:shrink-0\",\n        active && \"bg-fill-secondary\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { ControlGroup, ControlGroupButton };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

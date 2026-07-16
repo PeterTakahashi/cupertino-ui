@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "title": "Form",
+  "description": "SwiftUI Form: grouped-inset sections of label/control rows.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/form.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI Form — grouped-inset sections of labeled rows, the way\n * iOS renders every settings form. Rows lay out label-left /\n * control-right, with separators that start after the label gutter.\n */\nfunction Form({ className, ...props }: React.ComponentProps<\"form\">) {\n  return (\n    <form\n      data-slot=\"form\"\n      className={cn(\"flex w-full flex-col gap-6\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction FormSection({\n  className,\n  header,\n  footer,\n  children,\n  ...props\n}: React.ComponentProps<\"section\"> & {\n  header?: React.ReactNode;\n  footer?: React.ReactNode;\n}) {\n  return (\n    <section\n      data-slot=\"form-section\"\n      className={cn(\"flex flex-col\", className)}\n      {...props}\n    >\n      {header ? (\n        <div className=\"px-5 pb-1.5 text-footnote uppercase text-secondary-label\">\n          {header}\n        </div>\n      ) : null}\n      <div className=\"overflow-hidden rounded-[var(--radius-card)] bg-grouped-secondary [&>[data-slot=form-row]:not(:first-child)]:shadow-[0_-0.5px_0_0_var(--separator)]\">\n        {children}\n      </div>\n      {footer ? (\n        <div className=\"px-5 pt-1.5 text-footnote text-secondary-label\">\n          {footer}\n        </div>\n      ) : null}\n    </section>\n  );\n}\n\nfunction FormRow({\n  className,\n  label,\n  htmlFor,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  label?: React.ReactNode;\n  htmlFor?: string;\n}) {\n  return (\n    <div\n      data-slot=\"form-row\"\n      className={cn(\n        \"flex min-h-11 items-center gap-4 py-1.5 pl-4 pr-4\",\n        className\n      )}\n      {...props}\n    >\n      {label ? (\n        <label\n          htmlFor={htmlFor}\n          className=\"shrink-0 select-none text-body text-label\"\n        >\n          {label}\n        </label>\n      ) : null}\n      <div className=\"flex min-w-0 flex-1 items-center justify-end gap-2 [&_input]:text-right\">\n        {children}\n      </div>\n    </div>\n  );\n}\n\nexport { Form, FormRow, FormSection };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

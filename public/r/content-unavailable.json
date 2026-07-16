@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "content-unavailable",
+  "title": "Content Unavailable",
+  "description": "SwiftUI ContentUnavailableView: the centered empty state.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/content-unavailable.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * SwiftUI ContentUnavailableView — the centered empty state with a\n * large gray symbol, title, description, and optional actions.\n */\nfunction ContentUnavailable({\n  className,\n  icon,\n  title,\n  description,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Large symbol shown above the title. */\n  icon?: React.ReactNode;\n  title: React.ReactNode;\n  description?: React.ReactNode;\n}) {\n  return (\n    <div\n      data-slot=\"content-unavailable\"\n      className={cn(\n        \"flex flex-col items-center justify-center gap-1.5 px-8 py-12 text-center\",\n        className\n      )}\n      {...props}\n    >\n      {icon ? (\n        <div className=\"mb-2 text-tertiary-label [&_svg]:size-12 [&_svg]:stroke-[1.5]\">\n          {icon}\n        </div>\n      ) : null}\n      <h3 className=\"text-title-3 text-label\">{title}</h3>\n      {description ? (\n        <p className=\"max-w-sm text-subheadline text-secondary-label\">\n          {description}\n        </p>\n      ) : null}\n      {children ? (\n        <div className=\"mt-3 flex items-center gap-2\">{children}</div>\n      ) : null}\n    </div>\n  );\n}\n\nexport { ContentUnavailable };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

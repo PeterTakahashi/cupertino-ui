@@ -17,355 +17,16 @@
       ]
     },
     {
-      "name": "button",
+      "name": "action-sheet",
       "type": "registry:ui",
-      "title": "Button",
-      "description": "SwiftUI-style button: filled, tinted, gray, plain, and destructive variants.",
+      "title": "Action Sheet",
+      "description": "SwiftUI confirmationDialog: stacked blurred action groups with a detached Cancel.",
       "registryDependencies": [
         "utils"
       ],
       "files": [
         {
-          "path": "registry/cupertino-ui/button.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui",
-        "class-variance-authority"
-      ]
-    },
-    {
-      "name": "switch",
-      "type": "registry:ui",
-      "title": "Switch",
-      "description": "The iOS toggle, springy knob and systemGreen on-state included.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/switch.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "slider",
-      "type": "registry:ui",
-      "title": "Slider",
-      "description": "iOS slider with the 28pt white thumb on a hairline track.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/slider.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "segmented-control",
-      "type": "registry:ui",
-      "title": "Segmented Control",
-      "description": "UISegmentedControl built on Radix Tabs; the selected segment floats on a platter.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/segmented-control.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "checkbox",
-      "type": "registry:ui",
-      "title": "Checkbox",
-      "description": "macOS checkbox: accent-filled rounded square with a white check.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/checkbox.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui",
-        "lucide-react"
-      ]
-    },
-    {
-      "name": "radio-group",
-      "type": "registry:ui",
-      "title": "Radio Group",
-      "description": "macOS radio buttons with the accent fill and center dot.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/radio-group.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "input",
-      "type": "registry:ui",
-      "title": "Input",
-      "description": "SwiftUI TextField: iOS inset field or macOS rounded-border style.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/input.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ]
-    },
-    {
-      "name": "textarea",
-      "type": "registry:ui",
-      "title": "Textarea",
-      "description": "SwiftUI TextEditor as an iOS inset field.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/textarea.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "select",
-      "type": "registry:ui",
-      "title": "Select",
-      "description": "The macOS pop-up button with the accent chevron capsule, on a blurred menu.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/select.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui",
-        "lucide-react"
-      ]
-    },
-    {
-      "name": "badge",
-      "type": "registry:ui",
-      "title": "Badge",
-      "description": "iOS badges and tinted capsules.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/badge.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui",
-        "class-variance-authority"
-      ]
-    },
-    {
-      "name": "card",
-      "type": "registry:ui",
-      "title": "Card",
-      "description": "SwiftUI GroupBox: a grouped-inset card with hairline shadow.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/card.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "list",
-      "type": "registry:ui",
-      "title": "List",
-      "description": "The iOS Settings list: inset grouped rows, icon tiles, chevrons, hairline separators.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/list.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui",
-        "lucide-react"
-      ]
-    },
-    {
-      "name": "dialog",
-      "type": "registry:ui",
-      "title": "Dialog",
-      "description": "The iOS alert on a thick material with hairline-separated actions.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/dialog.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "sheet",
-      "type": "registry:ui",
-      "title": "Sheet",
-      "description": "The iOS bottom sheet with a grabber, plus slide-over panels for other edges.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/sheet.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "dropdown-menu",
-      "type": "registry:ui",
-      "title": "Dropdown Menu",
-      "description": "SwiftUI Menu: the macOS pull-down on blurred material with accent highlight.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/dropdown-menu.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui",
-        "lucide-react"
-      ]
-    },
-    {
-      "name": "popover",
-      "type": "registry:ui",
-      "title": "Popover",
-      "description": "SwiftUI popover on a thick blurred material.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/popover.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "tooltip",
-      "type": "registry:ui",
-      "title": "Tooltip",
-      "description": "The macOS help tag.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/tooltip.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "progress",
-      "type": "registry:ui",
-      "title": "Progress",
-      "description": "SwiftUI ProgressView(value:) \u2014 the thin linear bar.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/progress.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": [
-        "radix-ui"
-      ]
-    },
-    {
-      "name": "spinner",
-      "type": "registry:ui",
-      "title": "Spinner",
-      "description": "The UIActivityIndicator with eight fading spokes.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/spinner.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "separator",
-      "type": "registry:ui",
-      "title": "Separator",
-      "description": "SwiftUI Divider \u2014 a hairline.",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/cupertino-ui/separator.tsx",
+          "path": "registry/cupertino-ui/action-sheet.tsx",
           "type": "registry:ui"
         }
       ],
@@ -392,18 +53,242 @@
       ]
     },
     {
-      "name": "skeleton",
+      "name": "badge",
       "type": "registry:ui",
-      "title": "Skeleton",
-      "description": "Redaction placeholder, like .redacted(reason: .placeholder).",
+      "title": "Badge",
+      "description": "iOS badges and tinted capsules.",
       "registryDependencies": [
         "utils"
       ],
       "files": [
         {
-          "path": "registry/cupertino-ui/skeleton.tsx",
+          "path": "registry/cupertino-ui/badge.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "SwiftUI-style button: filled, tinted, gray, plain, and destructive variants.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "SwiftUI GroupBox: a grouped-inset card with hairline shadow.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "macOS checkbox: accent-filled rounded square with a white check.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:ui",
+      "title": "Color Picker",
+      "description": "The rainbow-ring color well plus Apple system-color swatches.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/color-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "content-unavailable",
+      "type": "registry:ui",
+      "title": "Content Unavailable",
+      "description": "SwiftUI ContentUnavailableView: the centered empty state.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/content-unavailable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "control-group",
+      "type": "registry:ui",
+      "title": "Control Group",
+      "description": "A bordered cluster of buttons sharing one platter, like macOS back/forward.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/control-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "The .graphical inline calendar with month paging and tinted selection.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "The iOS alert on a thick material with hairline-separated actions.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "disclosure-group",
+      "type": "registry:ui",
+      "title": "Disclosure Group",
+      "description": "Rotating-chevron disclosure rows, like macOS outline views.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/disclosure-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "SwiftUI Menu: the macOS pull-down on blurred material with accent highlight.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "SwiftUI Form: grouped-inset sections of label/control rows.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gauge",
+      "type": "registry:ui",
+      "title": "Gauge",
+      "description": "SwiftUI Gauge: the accessoryCircular open ring and the linear capacity bar.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/gauge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "SwiftUI TextField: iOS inset field or macOS rounded-border style.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "class-variance-authority"
       ]
     },
     {
@@ -425,6 +310,251 @@
       ]
     },
     {
+      "name": "list",
+      "type": "registry:ui",
+      "title": "List",
+      "description": "The iOS Settings list: inset grouped rows, icon tiles, chevrons, hairline separators.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "navigation-stack",
+      "type": "registry:ui",
+      "title": "Navigation Stack",
+      "description": "SwiftUI NavigationStack: push/pop slide transitions with a back-button nav bar, no routing.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/navigation-stack.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "SwiftUI popover on a thick blurred material.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "SwiftUI ProgressView(value:) \u2014 the thin linear bar.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "macOS radio buttons with the accent fill and center dot.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "search-field",
+      "type": "registry:ui",
+      "title": "Search Field",
+      "description": "The iOS .searchable() bar with magnifier, clear button, and Cancel.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/search-field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "UISegmentedControl built on Radix Tabs; the selected segment floats on a platter.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/segmented-control.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "The macOS pop-up button with the accent chevron capsule, on a blurred menu.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "SwiftUI Divider \u2014 a hairline.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "The iOS bottom sheet with a grabber, plus slide-over panels for other edges.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "NavigationSplitView source list: translucent platter, sections, accent selection.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Redaction placeholder, like .redacted(reason: .placeholder).",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "iOS slider with the 28pt white thumb on a hairline track.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "The UIActivityIndicator with eight fading spokes.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "stepper",
       "type": "registry:ui",
       "title": "Stepper",
@@ -440,6 +570,90 @@
       ],
       "dependencies": [
         "lucide-react"
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "The iOS toggle, springy knob and systemGreen on-state included.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "tab-bar",
+      "type": "registry:ui",
+      "title": "Tab Bar",
+      "description": "The iOS bottom tab bar on blurred material, built on Radix Tabs.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/tab-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "SwiftUI TextEditor as an iOS inset field.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "Toolbar",
+      "description": "The macOS window toolbar with title, icon buttons, and placement groups.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "The macOS help tag.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
       ]
     }
   ]
