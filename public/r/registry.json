@@ -7,12 +7,16 @@
       "name": "theme",
       "type": "registry:item",
       "title": "Theme",
-      "description": "Apple HIG design tokens: system colors, label hierarchy, fills, materials, and the SF type scale for Tailwind CSS v4.",
+      "description": "Apple HIG design tokens: system colors, label hierarchy, fills, materials, and the SF type scale for Tailwind CSS v4. Includes a cn() helper taught the HIG type scale.",
       "files": [
         {
           "path": "registry/theme.css",
           "type": "registry:file",
           "target": "~/cupertino-ui-theme.css"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
         }
       ]
     },
