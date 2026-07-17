@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ShoppingBagIcon, SparklesIcon } from "lucide-react";
+import { GlassButton } from "@/components/ui/glass-button";
 
 import { ShowcaseFrame } from "@/components/site/showcase-frame";
 import { Badge } from "@/registry/cupertino-ui/badge";
@@ -86,10 +87,10 @@ export default function StoreShowcase() {
           </div>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="tinted">
+              <GlassButton>
                 <ShoppingBagIcon className="size-4" /> Bag
                 {count > 0 ? <Badge variant="red">{count}</Badge> : null}
-              </Button>
+              </GlassButton>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
@@ -156,13 +157,20 @@ export default function StoreShowcase() {
           {heroes.map((h) => (
             <CarouselItem key={h.title}>
               <div
-                className="flex h-44 flex-col items-start justify-end gap-1 p-6 text-white"
+                className="relative flex h-44 flex-col items-start justify-end gap-1 p-6 text-white"
                 style={{
                   background: `linear-gradient(140deg, hsl(${h.hue} 75% 55%), hsl(${h.hue + 50} 75% 40%))`,
                 }}
               >
                 <h2 className="text-title-2">{h.title}</h2>
                 <p className="text-subheadline text-white/80">{h.subtitle}</p>
+                <GlassButton
+                  variant="clear"
+                  size="sm"
+                  className="absolute bottom-5 right-5 text-white"
+                >
+                  Shop Now
+                </GlassButton>
               </div>
             </CarouselItem>
           ))}
@@ -188,9 +196,9 @@ export default function StoreShowcase() {
                 <CardDescription>${p.price}</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button size="sm" variant="tinted" onClick={() => add(p.id)}>
+                <GlassButton size="sm" tint="var(--system-blue)" onClick={() => add(p.id)}>
                   Add to Bag
-                </Button>
+                </GlassButton>
               </CardFooter>
             </Card>
           ))}

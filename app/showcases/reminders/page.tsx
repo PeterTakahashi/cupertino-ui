@@ -6,6 +6,7 @@ import { CalendarIcon, CheckIcon, FlagIcon, PlusIcon } from "lucide-react";
 import { ShowcaseFrame } from "@/components/site/showcase-frame";
 import { Badge } from "@/registry/cupertino-ui/badge";
 import { Button } from "@/registry/cupertino-ui/button";
+import { GlassButton } from "@/components/ui/glass-button";
 import { Input } from "@/registry/cupertino-ui/input";
 import { List, ListItem } from "@/registry/cupertino-ui/list";
 import {
@@ -112,9 +113,9 @@ export default function RemindersShowcase() {
           </div>
           <Sheet>
             <SheetTrigger asChild>
-              <Button size="icon" variant="tinted" aria-label="List options">
+              <GlassButton size="icon" aria-label="List options">
                 <span className="text-[17px] leading-none">…</span>
-              </Button>
+              </GlassButton>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
@@ -180,9 +181,9 @@ export default function RemindersShowcase() {
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && add()}
           />
-          <Button size="icon" onClick={add} aria-label="Add reminder" className="bg-orange">
+          <GlassButton size="icon" onClick={add} aria-label="Add reminder" tint="var(--system-orange)">
             <PlusIcon />
-          </Button>
+          </GlassButton>
         </div>
       </div>
     </ShowcaseFrame>

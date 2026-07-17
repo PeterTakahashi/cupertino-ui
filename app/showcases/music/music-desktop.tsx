@@ -67,7 +67,7 @@ function PlayerBar({
   const total = duration || track?.duration || 0;
 
   return (
-    <div className="flex shrink-0 items-center gap-4 bg-secondary-background/80 px-4 py-2 shadow-[0_-0.5px_0_0_var(--separator)] backdrop-blur-xl">
+    <div className="glass-regular flex shrink-0 items-center gap-4 px-4 py-2">
       <div className="flex items-center gap-1 text-label">
         <button type="button" aria-label="Previous" onClick={prev} className="rounded p-1.5 hover:bg-fill-quaternary [&_svg]:size-5 [&_svg]:fill-current">
           <SkipBackIcon />
@@ -174,7 +174,7 @@ export function MusicDesktop({ className }: { className?: string }) {
         }}
       >
         <div className="flex h-[640px] w-full flex-col overflow-hidden rounded-[12px] bg-background shadow-[var(--shadow-window)]">
-          <Toolbar className="shrink-0 gap-2 shadow-none">
+          <Toolbar className="glass-regular shrink-0 gap-2 bg-transparent shadow-none backdrop-blur-none">
             <SidebarToggle />
             {openAlbum || openArtist ? (
               <ToolbarButton

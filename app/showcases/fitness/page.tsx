@@ -5,12 +5,7 @@ import { BikeIcon, DumbbellIcon, FootprintsIcon, WavesIcon } from "lucide-react"
 
 import { ShowcaseFrame } from "@/components/site/showcase-frame";
 import { List, ListItem } from "@/registry/cupertino-ui/list";
-import {
-  TabBar,
-  TabBarContent,
-  TabBarItem,
-  TabBarList,
-} from "@/registry/cupertino-ui/tab-bar";
+import { GlassTabBar } from "@/components/ui/glass-tab-bar";
 import { FlameIcon, Share2Icon } from "lucide-react";
 import { Badge } from "@/registry/cupertino-ui/badge";
 import {
@@ -165,12 +160,13 @@ export default function FitnessShowcase() {
 
 function FitnessMobile() {
   const [period, setPeriod] = React.useState("day");
+  const [tab, setTab] = React.useState("summary");
   const d = periods[period];
 
   return (
-    <div className="mx-auto flex h-[calc(100dvh-120px)] max-h-[820px] w-full max-w-md flex-col overflow-hidden rounded-[24px] bg-grouped shadow-[var(--shadow-window)] md:hidden">
-      <TabBar defaultValue="summary" className="h-full">
-        <TabBarContent value="summary" className="min-h-0 overflow-y-auto p-4">
+    <div className="relative mx-auto flex h-[calc(100dvh-120px)] max-h-[820px] w-full max-w-md flex-col overflow-hidden rounded-[24px] bg-grouped shadow-[var(--shadow-window)] md:hidden">
+      <div className="h-full">
+        <div className={tab === "summary" ? "h-full min-h-0 overflow-y-auto p-4 pb-24" : "hidden"}>
           <div className="flex flex-col gap-4">
             <header className="flex items-end justify-between">
               <div>
@@ -231,23 +227,27 @@ function FitnessMobile() {
               </List>
             </section>
           </div>
-        </TabBarContent>
+        </div>
 
-        <TabBarContent value="sharing" className="flex min-h-0 items-center justify-center overflow-y-auto p-4">
+        <div className={tab === "sharing" ? "flex h-full min-h-0 items-center justify-center overflow-y-auto p-4" : "hidden"}>
           <p className="text-center text-subheadline text-secondary-label">
             Share your rings with friends.
           </p>
-        </TabBarContent>
+        </div>
+      </div>
 
-        <TabBarList>
-          <TabBarItem value="summary" icon={<FlameIcon />} className="data-[state=active]:text-green">
-            Summary
-          </TabBarItem>
-          <TabBarItem value="sharing" icon={<Share2Icon />} className="data-[state=active]:text-green">
-            Sharing
-          </TabBarItem>
-        </TabBarList>
-      </TabBar>
+      {/* Floating Liquid Glass tab bar */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-4 z-10 flex justify-center">
+        <GlassTabBar
+          className="pointer-events-auto"
+          value={tab}
+          onValueChange={setTab}
+          items={[
+            { value: "summary", icon: <FlameIcon />, label: "Summary" },
+            { value: "sharing", icon: <Share2Icon />, label: "Sharing" },
+          ]}
+        />
+      </div>
     </div>
   );
 }

@@ -18,6 +18,7 @@ import {
   NavigationStack,
 } from "@/registry/cupertino-ui/navigation-stack";
 import { SearchField } from "@/registry/cupertino-ui/search-field";
+import { GlassButton } from "@/components/ui/glass-button";
 import { Avatar, AvatarFallback } from "@/registry/cupertino-ui/avatar";
 import { Button } from "@/registry/cupertino-ui/button";
 import {
@@ -94,7 +95,7 @@ export default function MailShowcase() {
       <Toaster />
       <SidebarProvider selected={mailbox} onSelect={setMailbox}>
         <div className="hidden h-[620px] flex-col overflow-hidden rounded-[12px] bg-background shadow-[var(--shadow-window)] md:flex">
-          <Toolbar className="shrink-0">
+          <Toolbar className="glass-regular shrink-0 bg-transparent backdrop-blur-none">
             <SidebarToggle />
             <ToolbarSpacer />
             <ToolbarButton
@@ -298,7 +299,21 @@ function InboxScreen() {
 
 function MailMobile() {
   return (
-    <div className="mx-auto h-[calc(100dvh-120px)] max-h-[820px] w-full max-w-md overflow-hidden rounded-[24px] shadow-[var(--shadow-window)] md:hidden">
+    <div className="relative mx-auto h-[calc(100dvh-120px)] max-h-[820px] w-full max-w-md overflow-hidden rounded-[24px] shadow-[var(--shadow-window)] md:hidden">
+      {/* Floating Liquid Glass compose button */}
+      <div className="pointer-events-none absolute bottom-5 right-5 z-10">
+        <GlassButton
+          size="icon-lg"
+          tint="var(--system-blue)"
+          aria-label="Compose"
+          className="pointer-events-auto"
+          onClick={() =>
+            toast({ title: "New Message", description: "A compose sheet would open here.", icon: <PencilIcon /> })
+          }
+        >
+          <PencilIcon />
+        </GlassButton>
+      </div>
       <NavigationStack title="Mailboxes" className="h-full">
         <List>
           <NavigationLink

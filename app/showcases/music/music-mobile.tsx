@@ -31,12 +31,7 @@ import {
   SheetContent,
   SheetTitle,
 } from "@/registry/cupertino-ui/sheet";
-import {
-  TabBar,
-  TabBarContent,
-  TabBarItem,
-  TabBarList,
-} from "@/registry/cupertino-ui/tab-bar";
+import { GlassTabBar } from "@/components/ui/glass-tab-bar";
 import { LyricsView } from "@/components/ui/lyrics-view";
 import { QueueList } from "@/components/ui/queue-list";
 import {
@@ -386,43 +381,45 @@ function SearchTab() {
 
 export function MusicMobile({ className }: { className?: string }) {
   const [nowPlayingOpen, setNowPlayingOpen] = React.useState(false);
+  const [tab, setTab] = React.useState("library");
   const { track } = useAudioPlayer();
 
   return (
     <div className={className}>
       <div className="relative mx-auto flex h-[calc(100dvh-96px)] max-h-[820px] w-full max-w-md flex-col overflow-hidden rounded-[24px] bg-grouped shadow-[var(--shadow-window)]">
-        <TabBar defaultValue="library" className="h-full">
-          <TabBarContent value="library" className="min-h-0 overflow-hidden">
+        {/* Content scrolls beneath the floating Liquid Glass controls */}
+        <div className="min-h-0 flex-1 overflow-hidden">
+          {tab === "library" ? (
             <LibraryTab />
-          </TabBarContent>
-          <TabBarContent value="browse" className="min-h-0 overflow-hidden">
+          ) : tab === "browse" ? (
             <BrowseTab />
-          </TabBarContent>
-          <TabBarContent value="search" className="min-h-0 overflow-hidden">
+          ) : (
             <SearchTab />
-          </TabBarContent>
+          )}
+        </div>
 
-          {track ? (
-            <div className="pointer-events-none absolute inset-x-2 bottom-[56px] z-10">
-              <MiniPlayer
-                className="pointer-events-auto"
-                onExpand={() => setNowPlayingOpen(true)}
-              />
-            </div>
-          ) : null}
+        {track ? (
+          <div className="pointer-events-none absolute inset-x-3 bottom-[86px] z-10">
+            <MiniPlayer
+              className="pointer-events-auto glass-regular bg-transparent dark:bg-transparent"
+              onExpand={() => setNowPlayingOpen(true)}
+            />
+          </div>
+        ) : null}
 
-          <TabBarList>
-            <TabBarItem value="library" icon={<LibraryIcon />} className="data-[state=active]:text-red">
-              Library
-            </TabBarItem>
-            <TabBarItem value="browse" icon={<SquareStackIcon />} className="data-[state=active]:text-red">
-              Browse
-            </TabBarItem>
-            <TabBarItem value="search" icon={<SearchIcon />} className="data-[state=active]:text-red">
-              Search
-            </TabBarItem>
-          </TabBarList>
-        </TabBar>
+        {/* iOS 26 floating Liquid Glass tab bar */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-4 z-10 flex justify-center">
+          <GlassTabBar
+            className="pointer-events-auto"
+            value={tab}
+            onValueChange={setTab}
+            items={[
+              { value: "library", icon: <LibraryIcon />, label: "Library" },
+              { value: "browse", icon: <SquareStackIcon />, label: "Browse" },
+              { value: "search", icon: <SearchIcon />, label: "Search" },
+            ]}
+          />
+        </div>
       </div>
 
       <Sheet open={nowPlayingOpen} onOpenChange={setNowPlayingOpen}>
