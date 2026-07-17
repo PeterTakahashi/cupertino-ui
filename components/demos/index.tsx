@@ -66,7 +66,14 @@ import TrackListDemo from "@/components/demos/track-list-demo";
 import LyricsViewDemo from "@/components/demos/lyrics-view-demo";
 import QueueListDemo from "@/components/demos/queue-list-demo";
 
+import GlassDemo from "@/components/demos/glass-demo";
+import GlassButtonDemo from "@/components/demos/glass-button-demo";
+import GlassTabBarDemo from "@/components/demos/glass-tab-bar-demo";
+
 export const demos: Record<string, React.ComponentType> = {
+  glass: GlassDemo,
+  "glass-button": GlassButtonDemo,
+  "glass-tab-bar": GlassTabBarDemo,
   "lyrics-view": LyricsViewDemo,
   "queue-list": QueueListDemo,
   "album-grid": AlbumGridDemo,

@@ -58,7 +58,7 @@ import { Button } from "@/components/ui/button";
 <Button variant="tinted">Continue</Button>
 ```
 
-For the full catalog (61 components) with exports, key props, and usage
+For the full catalog (64 components) with exports, key props, and usage
 snippets, read [references/components.md](references/components.md). Skim its
 table of contents and read only the sections you need.
 

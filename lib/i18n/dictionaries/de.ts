@@ -77,6 +77,9 @@ export const de: Dict = {
     "lead": "Alle {n} Komponenten, live. Alles ist interaktiv — Titel anklicken für Installation und Quellcode."
   },
   "descriptions": {
+    "glass": "Liquid Glass: das lichtbrechende Material der Steuerungsebene (regular/clear).",
+    "glass-button": "Liquid-Glass-Kapselknopf mit federndem Druck; Akzent per tint.",
+    "glass-tab-bar": "Schwebende Glas-Tab-Leiste mit morphender Pille.",
     "lyrics-view": "Fette Lyriczeilen, synchron beleuchtet; Tippen sucht.",
     "queue-list": "Als Nächstes: aktueller Track oben, kommende darunter.",
     "accordion": "Gruppierte Aufklapp-Liste mit rotierenden Chevrons.",

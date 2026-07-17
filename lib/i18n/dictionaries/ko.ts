@@ -77,6 +77,9 @@ export const ko: Dict = {
     "lead": "{n}개 컴포넌트 전부를 라이브로. 모두 조작 가능합니다 — 제목을 클릭하면 설치 방법과 소스를 볼 수 있습니다."
   },
   "descriptions": {
+    "glass": "Liquid Glass: 빛을 굴절시키는 컨트롤 레이어 머티리얼(regular / clear).",
+    "glass-button": "누르면 튕기는 리퀴드 글래스 캡슐 버튼. tint로 강조색 주입.",
+    "glass-tab-bar": "탭 사이를 필이 모핑하는 플로팅 글래스 탭 바.",
     "lyrics-view": "재생에 맞춰 빛나는 굵은 가사 줄. 탭하면 탐색.",
     "queue-list": "다음 트랙: 현재 곡을 고정하고 다음 곡을 나열.",
     "accordion": "회전 셰브런이 있는 그룹 접이식 리스트.",

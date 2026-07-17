@@ -77,6 +77,9 @@ export const ja: Dict = {
     "lead": "全 {n} コンポーネントをライブ表示。すべて操作できます — タイトルをクリックするとインストール手順とソースが見られます。"
   },
   "descriptions": {
+    "glass": "Liquid Glass: 光を曲げるコントロール層マテリアル(regular / clear)。",
+    "glass-button": "押すと弾む Liquid Glass カプセルボタン。tint でアクセントを注入。",
+    "glass-tab-bar": "タブ間をピルがモーフィングする浮遊ガラスタブバー。",
     "lyrics-view": "再生に同期して光る太字の歌詞行。タップでシーク。",
     "queue-list": "Up Next: 現在の曲を先頭に、次の曲を一覧表示。",
     "accordion": "回転シェブロン付きのグループ化開閉リスト。",

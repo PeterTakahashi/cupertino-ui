@@ -77,6 +77,9 @@ export const zh: Dict = {
     "lead": "全部 {n} 个组件实时展示,均可交互 — 点击标题查看安装方法与源码。"
   },
   "descriptions": {
+    "glass": "Liquid Glass:折射光线的控制层材质(regular / clear)。",
+    "glass-button": "按压回弹的液态玻璃胶囊按钮,可注入 tint 强调色。",
+    "glass-tab-bar": "药丸在标签间变形滑动的悬浮玻璃标签栏。",
     "lyrics-view": "随播放点亮的加粗歌词行,点按跳转。",
     "queue-list": "即将播放:当前曲目置顶,下面是后续曲目。",
     "accordion": "带旋转箭头的分组折叠列表。",

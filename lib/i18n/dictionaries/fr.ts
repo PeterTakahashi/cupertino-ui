@@ -77,6 +77,9 @@ export const fr: Dict = {
     "lead": "Les {n} composants, en direct. Tout est interactif — cliquez un titre pour l'installation et la source."
   },
   "descriptions": {
+    "glass": "Liquid Glass : le matériau réfractant de la couche de contrôle (regular/clear).",
+    "glass-button": "Bouton capsule Liquid Glass à pression élastique ; accent via tint.",
+    "glass-tab-bar": "Barre d'onglets en verre flottante à pilule morphante.",
     "lyrics-view": "Paroles en gras synchronisées ; toucher pour naviguer.",
     "queue-list": "À suivre : morceau actuel épinglé, la suite en dessous.",
     "accordion": "Liste dépliante groupée à chevrons rotatifs.",

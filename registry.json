@@ -454,6 +454,68 @@
       ]
     },
     {
+      "name": "glass",
+      "type": "registry:ui",
+      "title": "Glass",
+      "description": "Liquid Glass (iOS 26): the adaptive light-bending material for the control layer, in regular and clear variants.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/glass.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glass-button",
+      "type": "registry:ui",
+      "title": "Glass Button",
+      "description": "Liquid Glass capsule button that flexes on press; pour an accent in with the tint prop.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/glass-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/glass.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "glass-tab-bar",
+      "type": "registry:ui",
+      "title": "Glass Tab Bar",
+      "description": "The floating iOS 26 tab bar: a glass capsule with a brighter pill morphing between tabs.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/cupertino-ui/glass-tab-bar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/cupertino-ui/glass.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
@@ -899,6 +961,24 @@
       ]
     },
     {
+      "name": "skill",
+      "type": "registry:item",
+      "title": "Agent Skill",
+      "description": "Claude Code skill that teaches an AI agent how to install and compose cupertino-ui: setup, design tokens, HIG conventions, composition patterns, pitfalls, and the full component catalog.",
+      "files": [
+        {
+          "path": "skills/cupertino-ui/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/cupertino-ui/SKILL.md"
+        },
+        {
+          "path": "skills/cupertino-ui/references/components.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/cupertino-ui/references/components.md"
+        }
+      ]
+    },
+    {
       "name": "slider",
       "type": "registry:ui",
       "title": "Slider",
@@ -1097,24 +1177,6 @@
       ],
       "dependencies": [
         "lucide-react"
-      ]
-    },
-    {
-      "name": "skill",
-      "type": "registry:item",
-      "title": "Agent Skill",
-      "description": "Claude Code skill that teaches an AI agent how to install and compose cupertino-ui: setup, design tokens, HIG conventions, composition patterns, pitfalls, and the full component catalog.",
-      "files": [
-        {
-          "path": "skills/cupertino-ui/SKILL.md",
-          "type": "registry:file",
-          "target": "~/.claude/skills/cupertino-ui/SKILL.md"
-        },
-        {
-          "path": "skills/cupertino-ui/references/components.md",
-          "type": "registry:file",
-          "target": "~/.claude/skills/cupertino-ui/references/components.md"
-        }
       ]
     }
   ]

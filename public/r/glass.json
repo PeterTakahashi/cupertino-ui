@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "glass",
+  "title": "Glass",
+  "description": "Liquid Glass (iOS 26): the adaptive light-bending material for the control layer, in regular and clear variants.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cupertino-ui/glass.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Liquid Glass (iOS 26 / macOS Tahoe) — a floating, light-bending\n * material for the CONTROL layer. Per Apple's guidance: use it for\n * elements that float above content (bars, buttons, badges), never\n * for the content itself, and avoid stacking glass on glass.\n *\n * `regular` adapts and stays legible anywhere; `clear` is more\n * transparent and belongs over media-rich backgrounds.\n */\nconst glassVariants = cva(\"relative isolate\", {\n  variants: {\n    variant: {\n      regular: \"glass-regular\",\n      clear: \"glass-clear\",\n    },\n    interactive: {\n      true: \"cursor-default select-none transition-[transform,background-color] duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:bg-[color-mix(in_srgb,var(--glass-bg)_100%,rgba(255,255,255,0.12))] active:scale-[0.96] focus-visible:ring-[3px] focus-visible:ring-blue/40 outline-none\",\n      false: \"\",\n    },\n  },\n  defaultVariants: {\n    variant: \"regular\",\n    interactive: false,\n  },\n});\n\n/** Moving specular sheen, the \"liquid\" part. Rendered on top. */\nfunction GlassSheen() {\n  return (\n    <span\n      aria-hidden\n      data-slot=\"glass-sheen\"\n      className=\"pointer-events-none absolute inset-0 -z-[1] overflow-hidden rounded-[inherit]\"\n    >\n      <span className=\"absolute -inset-x-1/4 -top-3/4 h-full rotate-[-8deg] bg-[radial-gradient(50%_60%_at_50%_100%,rgba(255,255,255,0.28),transparent_70%)]\" />\n    </span>\n  );\n}\n\nfunction Glass({\n  className,\n  variant,\n  interactive,\n  asChild: _ignored,\n  sheen = true,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> &\n  VariantProps<typeof glassVariants> & {\n    asChild?: never;\n    /** Disable the specular sheen layer. */\n    sheen?: boolean;\n  }) {\n  return (\n    <div\n      data-slot=\"glass\"\n      className={cn(glassVariants({ variant, interactive }), className)}\n      {...props}\n    >\n      {sheen ? <GlassSheen /> : null}\n      {children}\n    </div>\n  );\n}\n\nexport { Glass, GlassSheen, glassVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

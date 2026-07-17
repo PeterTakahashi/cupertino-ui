@@ -12,7 +12,7 @@ you install the source and own it.
 
 ## What's inside
 
-- **61 components** (`registry/cupertino-ui/`) — the full shadcn/ui surface
+- **64 components** (`registry/cupertino-ui/`) — the full shadcn/ui surface
   reimagined for Apple HIG (Button, Switch, Slider, Segmented Control, List,
   Dialog, Sheet, Menus, Table, Command/Spotlight, Toast, …) plus
   SwiftUI-native pieces shadcn doesn't have: NavigationStack with push/pop

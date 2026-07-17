@@ -14,6 +14,7 @@ Import from `@/components/ui/<slug>`. Per-component docs with live demos:
 - [Controls](#controls) — button, checkbox, color-picker, control-group, date-picker, input-otp, radio-group, segmented-control, slider, stepper, switch, toggle-group
 - [Inputs](#inputs) — combobox, form, input, label, search-field, select, textarea
 - [Layout & content](#layout-content) — accordion, alert, avatar, badge, breadcrumb, card, carousel, content-unavailable, disclosure-group, gauge, list, page-control, progress, resizable, scroll-area, separator, skeleton, spinner, table
+- [Liquid Glass](#liquid-glass) — glass, glass-button, glass-tab-bar
 - [Overlays](#overlays) — action-sheet, command, dialog, hover-card, popover, sheet, toast, tooltip
 - [Menus & navigation](#menus-navigation) — context-menu, dropdown-menu, menubar, navigation-stack, sidebar, tab-bar, toolbar
 - [Music](#music) — album-grid, album-header, audio-player, lyrics-view, mini-player, now-playing, queue-list, track-list
@@ -251,6 +252,26 @@ Exports: `Spinner`
 The macOS list view with alternating rows. SwiftUI counterpart: `Table`.
 
 Exports: `Table`, `TableBody`, `TableCaption`, `TableCell`, `TableFooter`, `TableHead`, `TableHeader`, `TableRow`
+
+## Liquid Glass
+
+### Glass (`glass`)
+
+Liquid Glass: the light-bending control-layer material, regular and clear. SwiftUI counterpart: `glassEffect(_:in:)`.
+
+Exports: `Glass`, `GlassSheen`, `glassVariants`
+
+### Glass Button (`glass-button`)
+
+Liquid Glass capsule button with springy press and optional tint. SwiftUI counterpart: `.buttonStyle(.glass)`.
+
+Exports: `GlassButton`, `glassButtonVariants`
+
+### Glass Tab Bar (`glass-tab-bar`)
+
+Floating glass capsule with a pill morphing between tabs. SwiftUI counterpart: `TabView (iOS 26)`.
+
+Exports: `GlassTabBar`
 
 ## Overlays
 
