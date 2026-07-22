@@ -5,7 +5,7 @@ Human Interface Guidelines — the system color palette, the SF type scale,
 translucent materials, hairline separators — distributed the shadcn way:
 you install the source and own it.
 
-**Docs & live demos:** https://cupertino-ui-rho.vercel.app
+**Docs & live demos:** https://cupertino-ui.baltoon.jp
 (in English, 日本語, 中文, 한국어, Deutsch, Français, Русский)
 
 **Not affiliated with Apple Inc.**
@@ -37,11 +37,11 @@ you install the source and own it.
 
 ```bash
 # 1. one-time: theme tokens (+ cn helper)
-npx shadcn@latest add https://cupertino-ui-rho.vercel.app/r/theme.json
+npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/theme.json
 # import cupertino-ui-theme.css in your global stylesheet, after tailwindcss
 
 # 2. any component
-npx shadcn@latest add https://cupertino-ui-rho.vercel.app/r/button.json
+npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/button.json
 ```
 
 ```tsx
@@ -71,7 +71,7 @@ cp -r skills/cupertino-ui ~/.claude/skills/
 ## Sibling project
 
 [mountainview-ui](https://github.com/PeterTakahashi/mountainview-ui) — the
-same idea for Google's Material Design 3: https://mountainview-ui.vercel.app
+same idea for Google's Material Design 3: https://mountainview-ui.baltoon.jp
 
 ## Credits
 

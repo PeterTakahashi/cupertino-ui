@@ -3,11 +3,11 @@
 Install any component with:
 
 ```bash
-npx shadcn@latest add https://cupertino-ui-rho.vercel.app/r/<slug>.json
+npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/<slug>.json
 ```
 
 Import from `@/components/ui/<slug>`. Per-component docs with live demos:
-`https://cupertino-ui-rho.vercel.app/docs/components/<slug>`
+`https://cupertino-ui.baltoon.jp/docs/components/<slug>`
 
 ## Table of contents
 

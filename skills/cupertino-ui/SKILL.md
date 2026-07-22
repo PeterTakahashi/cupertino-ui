@@ -17,7 +17,7 @@ description: >
 cupertino-ui distributes Apple-HIG React components the shadcn way: the CLI
 copies the component **source** into the user's project (`components/ui/`),
 where it can be edited freely. There is no runtime package to depend on.
-Docs and live demos: https://cupertino-ui-rho.vercel.app
+Docs and live demos: https://cupertino-ui.baltoon.jp
 
 ## Setup (once per project)
 
@@ -29,7 +29,7 @@ Requirements: React 18+/Next.js and **Tailwind CSS v4** (the tokens use
 npx shadcn@latest init
 
 # 2. theme tokens + cn() helper — REQUIRED before any component
-npx shadcn@latest add https://cupertino-ui-rho.vercel.app/r/theme.json
+npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/theme.json
 npm install tw-animate-css
 ```
 
@@ -48,7 +48,7 @@ the theme CSS is loaded.
 ## Adding components
 
 ```bash
-npx shadcn@latest add https://cupertino-ui-rho.vercel.app/r/<name>.json
+npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/<name>.json
 # e.g. button, switch, list, navigation-stack, now-playing …
 ```
 

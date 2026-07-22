@@ -78,5 +78,5 @@ export const siteConfig = {
   github: "https://github.com/PeterTakahashi/cupertino-ui",
   /** Base URL used in `npx shadcn add` commands. */
   registryBase:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://cupertino-ui.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://cupertino-ui.baltoon.jp",
 };
