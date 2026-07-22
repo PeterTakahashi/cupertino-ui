@@ -48,6 +48,19 @@ function SheetOverlay({
   );
 }
 
+/** Apple's momentum projection: where a flick would coast to. */
+function project(velocity: number, decelerationRate = 0.998) {
+  return ((velocity / 1000) * decelerationRate) / (1 - decelerationRate);
+}
+
+/** Progressive resistance past a boundary — never a hard stop. */
+function rubberband(overshoot: number, dimension: number, constant = 0.55) {
+  return (
+    (overshoot * dimension * constant) /
+    (dimension + constant * Math.abs(overshoot))
+  );
+}
+
 function SheetContent({
   className,
   children,
@@ -56,10 +69,82 @@ function SheetContent({
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left";
 }) {
+  const contentRef = React.useRef<HTMLDivElement>(null);
+  const closeRef = React.useRef<HTMLButtonElement>(null);
+  const history = React.useRef<{ t: number; y: number }[]>([]);
+  const start = React.useRef(0);
+
+  // Drag-to-dismiss for the bottom sheet: 1:1 tracking, rubber-band
+  // above the rest position, and a momentum-projected release —
+  // the decision uses where the flick is GOING, not where it ends.
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (side !== "bottom") return;
+    const el = contentRef.current;
+    if (!el) return;
+    try {
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    } catch {
+      // Synthetic events / lost pointers: tracking still works uncaptured.
+    }
+    // Interruptible: continue from the on-screen (presentation) value.
+    const m = new DOMMatrixReadOnly(getComputedStyle(el).transform);
+    el.style.transition = "none";
+    start.current = e.clientY - m.m42;
+    history.current = [{ t: e.timeStamp, y: m.m42 }];
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (side !== "bottom" || history.current.length === 0) return;
+    const el = contentRef.current;
+    if (!el) return;
+    const raw = e.clientY - start.current;
+    const y = raw >= 0 ? raw : rubberband(raw, el.offsetHeight);
+    el.style.transform = `translateY(${y}px)`;
+    history.current.push({ t: e.timeStamp, y });
+    if (history.current.length > 6) history.current.shift();
+  };
+
+  const onPointerUp = () => {
+    if (side !== "bottom" || history.current.length === 0) return;
+    const el = contentRef.current;
+    if (!el) return;
+    const h = history.current;
+    history.current = [];
+    const last = h[h.length - 1];
+    const prev = h.find((p) => last.t - p.t >= 30) ?? h[0];
+    const dt = Math.max(1, last.t - prev.t);
+    const velocity = ((last.y - prev.y) / dt) * 1000; // px/s
+    const projected = last.y + project(velocity);
+    const shouldClose = projected > el.offsetHeight * 0.4;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (shouldClose) {
+      if (reduced) {
+        closeRef.current?.click();
+        return;
+      }
+      // Hand the gesture's velocity to the exit so there is no seam.
+      const remaining = el.offsetHeight - last.y;
+      const duration = Math.min(
+        400,
+        Math.max(120, (remaining / Math.max(Math.abs(velocity), 600)) * 1000)
+      );
+      el.style.transition = `transform ${duration}ms cubic-bezier(0.32, 0.72, 0, 1)`;
+      el.style.transform = `translateY(${el.offsetHeight}px)`;
+      window.setTimeout(() => closeRef.current?.click(), duration);
+    } else {
+      el.style.transition = reduced
+        ? "none"
+        : "transform 400ms var(--spring-smooth, cubic-bezier(0.32, 0.72, 0, 1))";
+      el.style.transform = "translateY(0)";
+    }
+  };
+
   return (
     <SheetPortal>
       <SheetOverlay />
       <SheetPrimitive.Content
+        ref={contentRef}
         data-slot="sheet-content"
         className={cn(
           "fixed z-50 flex flex-col bg-grouped text-label shadow-[var(--shadow-window)] outline-none transition ease-in-out data-[state=open]:animate-in data-[state=open]:duration-350 data-[state=closed]:animate-out data-[state=closed]:duration-250",
@@ -76,10 +161,24 @@ function SheetContent({
         {...props}
       >
         {side === "bottom" ? (
-          <div
-            aria-hidden
-            className="mx-auto mt-[5px] h-[5px] w-9 shrink-0 rounded-full bg-tertiary-label"
-          />
+          <>
+            {/* Generous drag surface around the grabber (hit padding). */}
+            <div
+              aria-hidden
+              className="absolute inset-x-0 top-0 z-10 h-8 cursor-grab touch-none active:cursor-grabbing"
+              onPointerDown={onPointerDown}
+              onPointerMove={onPointerMove}
+              onPointerUp={onPointerUp}
+              onPointerCancel={onPointerUp}
+            />
+            <div
+              aria-hidden
+              className="mx-auto mt-[5px] h-[5px] w-9 shrink-0 rounded-full bg-tertiary-label"
+            />
+            <SheetPrimitive.Close ref={closeRef} className="sr-only" tabIndex={-1}>
+              Close
+            </SheetPrimitive.Close>
+          </>
         ) : null}
         {children}
       </SheetPrimitive.Content>

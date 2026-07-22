@@ -147,6 +147,28 @@ queue and `play(queue, i)` only from a user gesture — **never autoplay**.
 **Toasts** — render `<Toaster />` once, then call
 `toast({ title, description, icon, iconColor })` from anywhere.
 
+
+## Motion & feel (fluid-interface rules baked in)
+
+The components follow Apple's fluid-interface guidance; keep these when
+extending them:
+
+- **Respond on pointer-down** — press feedback is `:active` (instant), never
+  click-only. Keep `active:scale-*` on anything tappable.
+- **Springs, not fixed easings, for anything touched.** The theme ships
+  `--spring-smooth` (critically damped) and `--spring-bouncy` (momentum) as
+  CSS `linear()` easings — default to smooth; use bouncy only after a flick.
+- **Anchor overlays to their trigger**: menus/popovers set their
+  transform-origin from the Radix popper variable (see the origin class in
+  dropdown-menu.tsx) and "materialize" with a small `blur-in` — copy that
+  pattern for new overlays.
+- **Gestures**: `Sheet` (bottom) drags 1:1 with the pointer, rubber-bands
+  above rest, and decides commit/cancel from **projected momentum**
+  (`(v/1000)·d/(1−d)`, d≈0.998) with the release velocity handed to the
+  exit. Reuse its `project`/`rubberband` helpers for new gestures.
+- **Reduced motion/transparency/contrast** are handled in the theme for
+  materials and animations — never add motion that bypasses them.
+
 ## Pitfalls
 
 - `shadcn init` scaffolds a starter `components/ui/button.tsx`; when adding this

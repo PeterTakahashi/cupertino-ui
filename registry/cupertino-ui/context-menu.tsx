@@ -49,7 +49,7 @@ function ContextMenuContent({
       <ContextMenuPrimitive.Content
         data-slot="context-menu-content"
         className={cn(
-          "material-thick z-50 max-h-[var(--radix-context-menu-content-available-height)] min-w-[12rem] overflow-y-auto overflow-x-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+          "material-thick z-50 max-h-[var(--radix-context-menu-content-available-height)] min-w-[12rem] overflow-y-auto overflow-x-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] origin-[var(--radix-context-menu-content-transform-origin)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:blur-in-[6px] data-[state=open]:duration-200 data-[state=open]:ease-[var(--spring-smooth)] data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
           className
         )}
         {...props}
@@ -229,7 +229,7 @@ function ContextMenuSubContent({
     <ContextMenuPrimitive.SubContent
       data-slot="context-menu-sub-content"
       className={cn(
-        "material-thick z-50 min-w-[8rem] overflow-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
+        "material-thick z-50 min-w-[8rem] overflow-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] origin-[var(--radix-context-menu-content-transform-origin)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:blur-in-[6px] data-[state=open]:duration-200 data-[state=open]:ease-[var(--spring-smooth)] data-[state=closed]:animate-out data-[state=closed]:fade-out-0",
         className
       )}
       {...props}

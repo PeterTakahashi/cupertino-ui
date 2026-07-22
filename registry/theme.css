@@ -189,6 +189,15 @@
     0 10px 30px rgba(0, 0, 0, 0.18), 0 30px 90px rgba(0, 0, 0, 0.22);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Springs as CSS linear() — damping 1.0 (no overshoot) and ~0.8 (momentum). */
+  --spring-smooth: linear(
+    0, 0.1758, 0.4553, 0.6742, 0.8115, 0.8942, 0.9426, 0.9698, 0.9848,
+    0.993, 0.9973, 0.9995, 1
+  );
+  --spring-bouncy: linear(
+    0, 0.2371, 0.6357, 0.9268, 1.0764, 1.1268, 1.1183, 1.0826, 1.0428,
+    1.0119, 0.9925, 0.9855, 0.9877, 0.9942, 1.0004, 1.0035, 1.0034, 1
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -309,6 +318,52 @@
     inset 1.2px 2.4px 0.6px -1.8px var(--glass-highlight),
     inset -1.2px -1.2px 0.6px -1.8px var(--glass-highlight),
     0 6px 20px var(--glass-shadow);
+}
+
+/* ------------------------------------------------------------------ */
+/* Accessibility: gentler equivalents, not missing feedback.            */
+/* (prefers-reduced-*: from Apple's fluid-interfaces guidance)          */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .material-ultrathin,
+  .material-thin,
+  .material-regular,
+  .material-thick {
+    background-color: var(--system-background);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .glass-regular,
+  .glass-clear {
+    background-color: var(--secondary-system-background);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .material-ultrathin,
+  .material-thin,
+  .material-regular,
+  .material-thick,
+  .glass-regular,
+  .glass-clear {
+    background-color: var(--system-background);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: inset 0 0 0 1px var(--label);
+  }
 }
 
 /* Sensible base so a fresh install looks right immediately. */

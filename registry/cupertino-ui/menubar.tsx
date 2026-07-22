@@ -83,7 +83,7 @@ function MenubarContent({
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          "material-thick z-50 min-w-[12rem] overflow-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
+          "material-thick z-50 min-w-[12rem] overflow-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] origin-[var(--radix-menubar-content-transform-origin)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:blur-in-[6px] data-[state=open]:duration-200 data-[state=open]:ease-[var(--spring-smooth)]",
           className
         )}
         {...props}
@@ -252,7 +252,7 @@ function MenubarSubContent({
     <MenubarPrimitive.SubContent
       data-slot="menubar-sub-content"
       className={cn(
-        "material-thick z-50 min-w-[8rem] overflow-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
+        "material-thick z-50 min-w-[8rem] overflow-hidden rounded-[10px] p-1 text-label shadow-[var(--shadow-menu)] origin-[var(--radix-menubar-content-transform-origin)] data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:blur-in-[6px] data-[state=open]:duration-200 data-[state=open]:ease-[var(--spring-smooth)]",
         className
       )}
       {...props}
