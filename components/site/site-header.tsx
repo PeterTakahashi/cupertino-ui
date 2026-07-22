@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { MobileMenu } from "@/components/site/mobile-menu";
 import { ThemeToggle } from "@/components/site/theme-toggle";
 import { siteConfig } from "@/lib/docs";
 import { useI18n } from "@/lib/i18n";
@@ -20,11 +21,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-xl shadow-[0_0.5px_0_0_var(--separator)]">
-      <div className="mx-auto flex h-12 max-w-6xl items-center gap-6 px-5">
-        <Link href="/" className="text-headline tracking-tight">
+      <div className="mx-auto flex h-12 max-w-6xl items-center gap-3 px-4 md:gap-6 md:px-5">
+        <MobileMenu />
+        <Link href="/" className="shrink-0 text-headline tracking-tight">
            cupertino-ui
         </Link>
-        <nav className="flex items-center gap-4 text-footnote text-secondary-label">
+        <nav className="hidden items-center gap-4 text-footnote text-secondary-label md:flex">
           <Link href="/docs" className="transition-colors hover:text-label">
             {dict.nav.docs}
           </Link>
@@ -35,14 +37,14 @@ export function SiteHeader() {
             {dict.nav.showcases}
           </Link>
         </nav>
-        <div className="ml-auto flex items-center gap-1">
+        <div className="ml-auto flex shrink-0 items-center gap-1">
           <LanguageSwitcher />
           <a
             href={siteConfig.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="flex size-8 items-center justify-center rounded-full text-secondary-label transition-colors hover:bg-fill-tertiary"
+            className="hidden size-8 items-center justify-center rounded-full text-secondary-label transition-colors hover:bg-fill-tertiary sm:flex"
           >
             <GitHubIcon />
           </a>
