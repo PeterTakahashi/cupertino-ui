@@ -201,72 +201,73 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* HIG type scale (size / line-height / SF tracking)                   */
+/* HIG type scale — rem-based so it honors the user's text size        */
+/* (Dynamic Type on the web); tracking in em keeps SF proportions.     */
 /* ------------------------------------------------------------------ */
 @utility text-large-title {
-  font-size: 34px;
-  line-height: 41px;
-  letter-spacing: 0.4px;
+  font-size: 2.125rem;
+  line-height: 1.2059;
+  letter-spacing: 0.0118em;
   font-weight: 700;
 }
 @utility text-title-1 {
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: 0.38px;
+  font-size: 1.75rem;
+  line-height: 1.2143;
+  letter-spacing: 0.0136em;
   font-weight: 700;
 }
 @utility text-title-2 {
-  font-size: 22px;
-  line-height: 28px;
-  letter-spacing: -0.26px;
+  font-size: 1.375rem;
+  line-height: 1.2727;
+  letter-spacing: -0.0118em;
   font-weight: 700;
 }
 @utility text-title-3 {
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.45px;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.0225em;
   font-weight: 600;
 }
 @utility text-headline {
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.43px;
+  font-size: 1.0625rem;
+  line-height: 1.2941;
+  letter-spacing: -0.0253em;
   font-weight: 600;
 }
 @utility text-body {
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.43px;
+  font-size: 1.0625rem;
+  line-height: 1.2941;
+  letter-spacing: -0.0253em;
   font-weight: 400;
 }
 @utility text-callout {
-  font-size: 16px;
-  line-height: 21px;
-  letter-spacing: -0.31px;
+  font-size: 1rem;
+  line-height: 1.3125;
+  letter-spacing: -0.0194em;
   font-weight: 400;
 }
 @utility text-subheadline {
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.23px;
+  font-size: 0.9375rem;
+  line-height: 1.3333;
+  letter-spacing: -0.0153em;
   font-weight: 400;
 }
 @utility text-footnote {
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: -0.08px;
+  font-size: 0.8125rem;
+  line-height: 1.3846;
+  letter-spacing: -0.0062em;
   font-weight: 400;
 }
 @utility text-caption-1 {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1.3333;
   letter-spacing: 0;
   font-weight: 400;
 }
 @utility text-caption-2 {
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: 0.06px;
+  font-size: 0.6875rem;
+  line-height: 1.1818;
+  letter-spacing: 0.0055em;
   font-weight: 400;
 }
 

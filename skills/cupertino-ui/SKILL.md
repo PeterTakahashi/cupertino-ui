@@ -165,7 +165,13 @@ extending them:
 - **Gestures**: `Sheet` (bottom) drags 1:1 with the pointer, rubber-bands
   above rest, and decides commit/cancel from **projected momentum**
   (`(v/1000)·d/(1−d)`, d≈0.998) with the release velocity handed to the
-  exit. Reuse its `project`/`rubberband` helpers for new gestures.
+  exit. `NavigationStack` has the iOS left-edge swipe-back with the same
+  projection; `Carousel` adds mouse drag that projects the flick but pages
+  one item per gesture. Reuse the `project`/`rubberband` helpers for new
+  gestures.
+- **Type scale is rem/em-based** — it follows the user's browser text size
+  (Dynamic Type). Keep new type utilities in rem with em tracking; never
+  reintroduce px font sizes.
 - **Reduced motion/transparency/contrast** are handled in the theme for
   materials and animations — never add motion that bypasses them.
 
