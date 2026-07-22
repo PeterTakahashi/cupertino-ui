@@ -3,9 +3,6 @@
   "name": "album-grid",
   "title": "Album Grid",
   "description": "The Apple Music library grid with rounded artwork and two-line captions.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/album-grid.tsx",

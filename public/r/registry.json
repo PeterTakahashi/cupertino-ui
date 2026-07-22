@@ -25,9 +25,6 @@
       "type": "registry:ui",
       "title": "Accordion",
       "description": "Grouped-inset disclosure list with rotating chevrons.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/accordion.tsx",
@@ -44,9 +41,6 @@
       "type": "registry:ui",
       "title": "Action Sheet",
       "description": "SwiftUI confirmationDialog: stacked blurred action groups with a detached Cancel.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/action-sheet.tsx",
@@ -62,9 +56,6 @@
       "type": "registry:ui",
       "title": "Album Grid",
       "description": "The Apple Music library grid with rounded artwork and two-line captions.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/album-grid.tsx",
@@ -77,9 +68,6 @@
       "type": "registry:ui",
       "title": "Album Header",
       "description": "The album page header: large artwork, red artist, Play / Shuffle pair.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/album-header.tsx",
@@ -95,9 +83,6 @@
       "type": "registry:ui",
       "title": "Alert",
       "description": "Inline tinted banner, like iOS battery and storage warnings.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/alert.tsx",
@@ -113,9 +98,6 @@
       "type": "registry:ui",
       "title": "Audio Player",
       "description": "HTMLAudioElement engine: queue, transport, seek, and volume behind a context hook.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/audio-player.tsx",
@@ -128,9 +110,6 @@
       "type": "registry:ui",
       "title": "Avatar",
       "description": "Contacts-style circular avatar with monogram fallback.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/avatar.tsx",
@@ -146,9 +125,6 @@
       "type": "registry:ui",
       "title": "Badge",
       "description": "iOS badges and tinted capsules.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/badge.tsx",
@@ -165,9 +141,6 @@
       "type": "registry:ui",
       "title": "Breadcrumb",
       "description": "The macOS Finder path bar with chevron separators.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/breadcrumb.tsx",
@@ -183,9 +156,6 @@
       "type": "registry:ui",
       "title": "Button",
       "description": "SwiftUI-style button: filled, tinted, gray, plain, and destructive variants.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/button.tsx",
@@ -202,9 +172,6 @@
       "type": "registry:ui",
       "title": "Card",
       "description": "SwiftUI GroupBox: a grouped-inset card with hairline shadow.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/card.tsx",
@@ -217,9 +184,6 @@
       "type": "registry:ui",
       "title": "Carousel",
       "description": "TabView .page style: scroll-snap paging with a dot indicator.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/carousel.tsx",
@@ -232,9 +196,6 @@
       "type": "registry:ui",
       "title": "Checkbox",
       "description": "macOS checkbox: accent-filled rounded square with a white check.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/checkbox.tsx",
@@ -251,9 +212,6 @@
       "type": "registry:ui",
       "title": "Color Picker",
       "description": "The rainbow-ring color well plus Apple system-color swatches.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/color-picker.tsx",
@@ -266,9 +224,6 @@
       "type": "registry:ui",
       "title": "Combobox",
       "description": "The macOS NSComboBox: bordered field with a filtered suggestion menu.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/combobox.tsx",
@@ -285,9 +240,6 @@
       "type": "registry:ui",
       "title": "Command",
       "description": "Spotlight: a command palette on thick material with cmd-K dialog.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/command.tsx",
@@ -305,9 +257,6 @@
       "type": "registry:ui",
       "title": "Content Unavailable",
       "description": "SwiftUI ContentUnavailableView: the centered empty state.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/content-unavailable.tsx",
@@ -320,9 +269,6 @@
       "type": "registry:ui",
       "title": "Context Menu",
       "description": "The macOS right-click menu on thick blurred material.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/context-menu.tsx",
@@ -339,9 +285,6 @@
       "type": "registry:ui",
       "title": "Control Group",
       "description": "A bordered cluster of buttons sharing one platter, like macOS back/forward.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/control-group.tsx",
@@ -354,9 +297,6 @@
       "type": "registry:ui",
       "title": "Date Picker",
       "description": "The .graphical inline calendar with month paging and tinted selection.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/date-picker.tsx",
@@ -372,9 +312,6 @@
       "type": "registry:ui",
       "title": "Dialog",
       "description": "The iOS alert on a thick material with hairline-separated actions.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/dialog.tsx",
@@ -390,9 +327,6 @@
       "type": "registry:ui",
       "title": "Disclosure Group",
       "description": "Rotating-chevron disclosure rows, like macOS outline views.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/disclosure-group.tsx",
@@ -409,9 +343,6 @@
       "type": "registry:ui",
       "title": "Dropdown Menu",
       "description": "SwiftUI Menu: the macOS pull-down on blurred material with accent highlight.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/dropdown-menu.tsx",
@@ -428,9 +359,6 @@
       "type": "registry:ui",
       "title": "Form",
       "description": "SwiftUI Form: grouped-inset sections of label/control rows.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/form.tsx",
@@ -443,9 +371,6 @@
       "type": "registry:ui",
       "title": "Gauge",
       "description": "SwiftUI Gauge: the accessoryCircular open ring and the linear capacity bar.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/gauge.tsx",
@@ -458,9 +383,6 @@
       "type": "registry:ui",
       "title": "Glass",
       "description": "Liquid Glass (iOS 26): the adaptive light-bending material for the control layer, in regular and clear variants.",
-      "registryDependencies": [
-        "utils"
-      ],
       "dependencies": [
         "class-variance-authority"
       ],
@@ -476,9 +398,6 @@
       "type": "registry:ui",
       "title": "Glass Button",
       "description": "Liquid Glass capsule button that flexes on press; pour an accent in with the tint prop.",
-      "registryDependencies": [
-        "utils"
-      ],
       "dependencies": [
         "class-variance-authority"
       ],
@@ -498,9 +417,6 @@
       "type": "registry:ui",
       "title": "Glass Tab Bar",
       "description": "The floating iOS 26 tab bar: a glass capsule with a brighter pill morphing between tabs.",
-      "registryDependencies": [
-        "utils"
-      ],
       "dependencies": [
         "class-variance-authority"
       ],
@@ -520,9 +436,6 @@
       "type": "registry:ui",
       "title": "Hover Card",
       "description": "A hover preview panel on thick material.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/hover-card.tsx",
@@ -538,9 +451,6 @@
       "type": "registry:ui",
       "title": "Input",
       "description": "SwiftUI TextField: iOS inset field or macOS rounded-border style.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/input.tsx",
@@ -556,9 +466,6 @@
       "type": "registry:ui",
       "title": "Input OTP",
       "description": "iOS verification-code cells with a blinking caret.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/input-otp.tsx",
@@ -575,9 +482,6 @@
       "type": "registry:ui",
       "title": "Label",
       "description": "Form label set in the subheadline style.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/label.tsx",
@@ -593,9 +497,6 @@
       "type": "registry:ui",
       "title": "List",
       "description": "The iOS Settings list: inset grouped rows, icon tiles, chevrons, hairline separators.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/list.tsx",
@@ -612,9 +513,6 @@
       "type": "registry:ui",
       "title": "Lyrics View",
       "description": "Apple Music lyrics: bold synced lines that light up with playback and seek on tap.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/lyrics-view.tsx",
@@ -631,9 +529,6 @@
       "type": "registry:ui",
       "title": "Menubar",
       "description": "The macOS menu bar with blue-highlight triggers and material menus.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/menubar.tsx",
@@ -650,9 +545,6 @@
       "type": "registry:ui",
       "title": "Mini Player",
       "description": "The floating capsule above the tab bar with play/pause and next.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/mini-player.tsx",
@@ -672,9 +564,6 @@
       "type": "registry:ui",
       "title": "Navigation Stack",
       "description": "SwiftUI NavigationStack: push/pop slide transitions with a back-button nav bar, no routing.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/navigation-stack.tsx",
@@ -690,9 +579,6 @@
       "type": "registry:ui",
       "title": "Now Playing",
       "description": "The full player: shrinking artwork, scrubber, transport, and volume.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/now-playing.tsx",
@@ -712,9 +598,6 @@
       "type": "registry:ui",
       "title": "Page Control",
       "description": "UIPageControl dots for paged content.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/page-control.tsx",
@@ -727,9 +610,6 @@
       "type": "registry:ui",
       "title": "Popover",
       "description": "SwiftUI popover on a thick blurred material.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/popover.tsx",
@@ -745,9 +625,6 @@
       "type": "registry:ui",
       "title": "Progress",
       "description": "SwiftUI ProgressView(value:) \u2014 the thin linear bar.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/progress.tsx",
@@ -763,9 +640,6 @@
       "type": "registry:ui",
       "title": "Queue List",
       "description": "Up Next: the current track pinned with upcoming tracks below; tap to jump.",
-      "registryDependencies": [
-        "utils"
-      ],
       "dependencies": [
         "lucide-react"
       ],
@@ -789,9 +663,6 @@
       "type": "registry:ui",
       "title": "Radio Group",
       "description": "macOS radio buttons with the accent fill and center dot.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/radio-group.tsx",
@@ -807,9 +678,6 @@
       "type": "registry:ui",
       "title": "Resizable",
       "description": "NavigationSplitView's draggable hairline divider.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/resizable.tsx",
@@ -826,9 +694,6 @@
       "type": "registry:ui",
       "title": "Scroll Area",
       "description": "macOS overlay scrollbars that fade in over content.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/scroll-area.tsx",
@@ -844,9 +709,6 @@
       "type": "registry:ui",
       "title": "Search Field",
       "description": "The iOS .searchable() bar with magnifier, clear button, and Cancel.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/search-field.tsx",
@@ -862,9 +724,6 @@
       "type": "registry:ui",
       "title": "Segmented Control",
       "description": "UISegmentedControl built on Radix Tabs; the selected segment floats on a platter.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/segmented-control.tsx",
@@ -880,9 +739,6 @@
       "type": "registry:ui",
       "title": "Select",
       "description": "The macOS pop-up button with the accent chevron capsule, on a blurred menu.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/select.tsx",
@@ -899,9 +755,6 @@
       "type": "registry:ui",
       "title": "Separator",
       "description": "SwiftUI Divider \u2014 a hairline.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/separator.tsx",
@@ -917,9 +770,6 @@
       "type": "registry:ui",
       "title": "Sheet",
       "description": "The iOS bottom sheet with a grabber, plus slide-over panels for other edges.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/sheet.tsx",
@@ -935,9 +785,6 @@
       "type": "registry:ui",
       "title": "Sidebar",
       "description": "NavigationSplitView source list: translucent platter, sections, accent selection.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/sidebar.tsx",
@@ -950,9 +797,6 @@
       "type": "registry:ui",
       "title": "Skeleton",
       "description": "Redaction placeholder, like .redacted(reason: .placeholder).",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/skeleton.tsx",
@@ -983,9 +827,6 @@
       "type": "registry:ui",
       "title": "Slider",
       "description": "iOS slider with the 28pt white thumb on a hairline track.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/slider.tsx",
@@ -1001,9 +842,6 @@
       "type": "registry:ui",
       "title": "Spinner",
       "description": "The UIActivityIndicator with eight fading spokes.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/spinner.tsx",
@@ -1016,9 +854,6 @@
       "type": "registry:ui",
       "title": "Stepper",
       "description": "The iOS \u2212 / + stepper control.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/stepper.tsx",
@@ -1034,9 +869,6 @@
       "type": "registry:ui",
       "title": "Switch",
       "description": "The iOS toggle, springy knob and systemGreen on-state included.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/switch.tsx",
@@ -1052,9 +884,6 @@
       "type": "registry:ui",
       "title": "Tab Bar",
       "description": "The iOS bottom tab bar on blurred material, built on Radix Tabs.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/tab-bar.tsx",
@@ -1070,9 +899,6 @@
       "type": "registry:ui",
       "title": "Table",
       "description": "The macOS list view: alternating rows, hairline header, accent selection.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/table.tsx",
@@ -1085,9 +911,6 @@
       "type": "registry:ui",
       "title": "Textarea",
       "description": "SwiftUI TextEditor as an iOS inset field.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/textarea.tsx",
@@ -1100,9 +923,6 @@
       "type": "registry:ui",
       "title": "Toast",
       "description": "iOS notification banners on thick material; toast() from anywhere.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/toast.tsx",
@@ -1118,9 +938,6 @@
       "type": "registry:ui",
       "title": "Toggle Group",
       "description": "The macOS toggle cluster, like text-style controls in Pages.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/toggle-group.tsx",
@@ -1133,9 +950,6 @@
       "type": "registry:ui",
       "title": "Toolbar",
       "description": "The macOS window toolbar with title, icon buttons, and placement groups.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/toolbar.tsx",
@@ -1148,9 +962,6 @@
       "type": "registry:ui",
       "title": "Tooltip",
       "description": "The macOS help tag.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/tooltip.tsx",
@@ -1166,9 +977,6 @@
       "type": "registry:ui",
       "title": "Track List",
       "description": "Numbered track rows; the current track shows animated equalizer bars.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/cupertino-ui/track-list.tsx",

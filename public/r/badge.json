@@ -7,9 +7,6 @@
     "radix-ui",
     "class-variance-authority"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/badge.tsx",

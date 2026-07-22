@@ -3,9 +3,6 @@
   "name": "table",
   "title": "Table",
   "description": "The macOS list view: alternating rows, hairline header, accent selection.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/table.tsx",

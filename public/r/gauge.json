@@ -3,9 +3,6 @@
   "name": "gauge",
   "title": "Gauge",
   "description": "SwiftUI Gauge: the accessoryCircular open ring and the linear capacity bar.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/gauge.tsx",

@@ -3,9 +3,6 @@
   "name": "textarea",
   "title": "Textarea",
   "description": "SwiftUI TextEditor as an iOS inset field.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/textarea.tsx",

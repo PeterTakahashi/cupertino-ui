@@ -3,9 +3,6 @@
   "name": "sidebar",
   "title": "Sidebar",
   "description": "NavigationSplitView source list: translucent platter, sections, accent selection.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/sidebar.tsx",

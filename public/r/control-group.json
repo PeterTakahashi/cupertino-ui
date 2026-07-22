@@ -3,9 +3,6 @@
   "name": "control-group",
   "title": "Control Group",
   "description": "A bordered cluster of buttons sharing one platter, like macOS back/forward.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/control-group.tsx",

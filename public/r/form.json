@@ -3,9 +3,6 @@
   "name": "form",
   "title": "Form",
   "description": "SwiftUI Form: grouped-inset sections of label/control rows.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/form.tsx",

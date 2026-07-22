@@ -8,9 +8,6 @@
     "lucide-react",
     "cmdk"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/command.tsx",

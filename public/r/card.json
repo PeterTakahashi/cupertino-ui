@@ -3,9 +3,6 @@
   "name": "card",
   "title": "Card",
   "description": "SwiftUI GroupBox: a grouped-inset card with hairline shadow.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/card.tsx",

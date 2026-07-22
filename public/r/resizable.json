@@ -7,9 +7,6 @@
     "lucide-react",
     "react-resizable-panels"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/resizable.tsx",

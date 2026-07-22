@@ -3,9 +3,6 @@
   "name": "color-picker",
   "title": "Color Picker",
   "description": "The rainbow-ring color well plus Apple system-color swatches.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/color-picker.tsx",

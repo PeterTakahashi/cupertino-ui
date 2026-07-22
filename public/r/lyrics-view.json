@@ -3,9 +3,6 @@
   "name": "lyrics-view",
   "title": "Lyrics View",
   "description": "Apple Music lyrics: bold synced lines that light up with playback and seek on tap.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/lyrics-view.tsx",

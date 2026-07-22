@@ -37,7 +37,7 @@ you install the source and own it.
 
 ```bash
 # 1. one-time: theme tokens (+ cn helper)
-npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/theme.json
+npx shadcn@latest add --overwrite https://cupertino-ui.baltoon.jp/r/theme.json
 # import cupertino-ui-theme.css in your global stylesheet, after tailwindcss
 
 # 2. any component

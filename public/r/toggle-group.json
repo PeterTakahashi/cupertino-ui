@@ -3,9 +3,6 @@
   "name": "toggle-group",
   "title": "Toggle Group",
   "description": "The macOS toggle cluster, like text-style controls in Pages.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/toggle-group.tsx",

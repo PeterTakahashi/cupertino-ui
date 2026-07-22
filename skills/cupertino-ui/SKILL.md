@@ -29,7 +29,7 @@ Requirements: React 18+/Next.js and **Tailwind CSS v4** (the tokens use
 npx shadcn@latest init
 
 # 2. theme tokens + cn() helper — REQUIRED before any component
-npx shadcn@latest add https://cupertino-ui.baltoon.jp/r/theme.json
+npx shadcn@latest add --overwrite https://cupertino-ui.baltoon.jp/r/theme.json
 npm install tw-animate-css
 ```
 
@@ -149,6 +149,10 @@ queue and `play(queue, i)` only from a user gesture — **never autoplay**.
 
 ## Pitfalls
 
+- `shadcn init` scaffolds a starter `components/ui/button.tsx`; when adding this
+  registry's `button`, answer yes to the overwrite prompt (or pass
+  `--overwrite`) so the starter doesn't shadow it. Install the theme with
+  `--overwrite` too, so its enhanced `lib/utils.ts` replaces the plain one.
 - Install `theme.json` **first**; it also ships the project's `cn()` helper,
   whose `extendTailwindMerge` config knows the custom type-scale classes.
   Replacing it with a plain `twMerge` silently drops color classes when they

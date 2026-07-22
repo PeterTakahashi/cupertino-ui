@@ -6,9 +6,6 @@
   "dependencies": [
     "radix-ui"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/radio-group.tsx",

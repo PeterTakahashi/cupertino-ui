@@ -3,9 +3,6 @@
   "name": "skeleton",
   "title": "Skeleton",
   "description": "Redaction placeholder, like .redacted(reason: .placeholder).",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/skeleton.tsx",

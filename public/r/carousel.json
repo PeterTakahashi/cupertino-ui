@@ -3,9 +3,6 @@
   "name": "carousel",
   "title": "Carousel",
   "description": "TabView .page style: scroll-snap paging with a dot indicator.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/carousel.tsx",

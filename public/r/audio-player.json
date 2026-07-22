@@ -3,9 +3,6 @@
   "name": "audio-player",
   "title": "Audio Player",
   "description": "HTMLAudioElement engine: queue, transport, seek, and volume behind a context hook.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/audio-player.tsx",

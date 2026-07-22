@@ -25,7 +25,7 @@ export default function InstallationPage() {
       <section className="flex flex-col gap-3">
         <h2 className="text-title-3">{t.s2}</h2>
         <p className="text-callout">{t.s2p1}</p>
-        <CodeBlock code={`npx shadcn@latest add ${base}/r/theme.json`} />
+        <CodeBlock code={`npx shadcn@latest add --overwrite ${base}/r/theme.json`} />
         <p className="text-callout">{t.s2p2}</p>
         <CodeBlock
           code={`@import "tailwindcss";\n@import "tw-animate-css";\n@import "../cupertino-ui-theme.css";`}

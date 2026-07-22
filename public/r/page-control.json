@@ -3,9 +3,6 @@
   "name": "page-control",
   "title": "Page Control",
   "description": "UIPageControl dots for paged content.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/page-control.tsx",

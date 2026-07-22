@@ -3,9 +3,6 @@
   "name": "spinner",
   "title": "Spinner",
   "description": "The UIActivityIndicator with eight fading spokes.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/spinner.tsx",

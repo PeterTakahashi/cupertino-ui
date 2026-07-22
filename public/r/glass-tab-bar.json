@@ -6,9 +6,6 @@
   "dependencies": [
     "class-variance-authority"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/glass-tab-bar.tsx",

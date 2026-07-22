@@ -7,9 +7,6 @@
     "radix-ui",
     "lucide-react"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/context-menu.tsx",

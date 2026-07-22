@@ -6,9 +6,6 @@
   "dependencies": [
     "lucide-react"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/now-playing.tsx",

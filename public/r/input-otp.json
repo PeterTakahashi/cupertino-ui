@@ -7,9 +7,6 @@
     "lucide-react",
     "input-otp"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/input-otp.tsx",

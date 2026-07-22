@@ -3,9 +3,6 @@
   "name": "toolbar",
   "title": "Toolbar",
   "description": "The macOS window toolbar with title, icon buttons, and placement groups.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/cupertino-ui/toolbar.tsx",
